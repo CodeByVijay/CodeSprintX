@@ -2,10 +2,13 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Course;
 use Illuminate\Http\Request;
 use Razorpay\Api\Api;
 use Illuminate\Support\Facades\Session;
 use Exception;
+use Illuminate\Support\Facades\Crypt;
+use Illuminate\Support\Facades\Log;
 
 class PaymentController extends Controller
 {
@@ -20,36 +23,55 @@ class PaymentController extends Controller
         // Validate request
         $request->validate([
             'course' => 'required|string',
-            'duration' => 'required|in:3,6',
-            'amount' => 'required|numeric',
+            'duration' => 'required|string',
+            'token' => 'required|exists:courses,id',
         ]);
 
         try {
             // Initialize Razorpay API
             $api = new Api(config('razorpay.key_id'), config('razorpay.key_secret'));
 
+            $course = Course::findOrFail($request->token);
+
+            if (!$course) {
+                return response()->json(['error' => 'Invalid course token'], 404);
+            }
+
+            // Decrypt duration getting 3 or 6 only
+            $duration = (int) Crypt::decrypt($request->duration);
+            if (!in_array($duration, [3, 6])) {
+                return response()->json(['error' => 'Invalid duration'], 400);
+            }
+
+            if ($duration === 3) {
+                $amount = $course->price_3_month * 100; // Convert to paisa
+            } else {
+                $amount = $course->price_6_month * 100; // Convert to paisa
+            }
+
             // Create order
             $orderData = [
                 'receipt' => 'order_' . time(),
-                'amount' => $request->amount, // Amount in paisa
+                'amount' => $amount, // Amount in paisa
                 'currency' => config('razorpay.currency', 'INR'),
                 'notes' => [
-                    'course' => $request->course,
-                    'duration' => $request->duration . ' months',
+                    'course' => $course->title,
+                    'duration' => $duration . ' months',
                 ]
             ];
 
             $order = $api->order->create($orderData);
+            Log::channel('razorpay')->info('Razorpay Order Created', $order->toArray());
 
             // Store order ID in session
             Session::put('razorpay_order_id', $order->id);
 
             return response()->json([
                 'order_id' => $order->id,
-                'amount' => $request->amount,
+                'amount' => $amount,
                 'currency' => config('razorpay.currency', 'INR'),
-                'course' => $request->course,
-                'duration' => $request->duration,
+                'course' => $course->title,
+                'duration' => $duration,
                 'key_id' => config('razorpay.key_id'), // Send key ID to frontend
             ]);
         } catch (Exception $e) {
@@ -84,6 +106,11 @@ class PaymentController extends Controller
             ];
 
             $api->utility->verifyPaymentSignature($attributes);
+            // ✅ Fetch full payment details
+            $payment = $api->payment->fetch($request->razorpay_payment_id);
+
+            // 🔎 Log full payment object (for debugging)
+            Log::channel('razorpay')->info('Full Payment Details:', $payment->toArray());
 
             // Store payment details in session (in a real app, you would save this to database)
             Session::put('payment_success', true);

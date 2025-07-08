@@ -1,35 +1,49 @@
+<?php
+use Illuminate\Support\Facades\Crypt;
+?>
 @extends('home.partials.app')
 @section('content')
     <!-- Promo Banner -->
-    @if((isset($currentCourse['original_price_3_month']) || isset($currentCourse['original_price_6_month'])) && isset($currentCourse['offer_end_at']))
-    <div class="bg-gradient-to-r from-yellow-500 via-red-500 to-pink-500 text-white py-2 px-4 text-center relative">
-        <div class="container mx-auto">
-            <div class="flex items-center justify-center">
-                <span class="animate-pulse mr-2">🔥</span>
-                <p class="font-bold">
-                    SPECIAL OFFER: Up to
-                    @php
-                        $discounts = [];
-                        if(isset($currentCourse['original_price_3_month'])) {
-                            $original = (float) str_replace(['₹', ','], '', $currentCourse['original_price_3_month']);
-                            $current = (float) str_replace(['₹', ','], '', $currentCourse['price_3_month']);
-                            $discounts[] = round(($original - $current) / $original * 100);
-                        }
-                        if(isset($currentCourse['original_price_6_month'])) {
-                            $original = (float) str_replace(['₹', ','], '', $currentCourse['original_price_6_month']);
-                            $current = (float) str_replace(['₹', ','], '', $currentCourse['price_6_month']);
-                            $discounts[] = round(($original - $current) / $original * 100);
-                        }
-                        echo max($discounts);
-                    @endphp% OFF! Limited Time Discount on {{ $currentCourse['title'] }} Program
-                </p>
-                <span class="animate-pulse ml-2">🔥</span>
-            </div>
-            <div class="text-xs mt-1">
-                Offer ends on {{ date('F j, Y', strtotime($currentCourse['offer_end_at'])) }}! Don't miss this opportunity to kickstart your career.
+    @if (
+        (isset($currentCourse['original_price_3_month']) || isset($currentCourse['original_price_6_month'])) &&
+            isset($currentCourse['offer_end_at']))
+        <div class="bg-gradient-to-r from-yellow-500 via-red-500 to-pink-500 text-white py-2 px-4 text-center relative">
+            <div class="container mx-auto">
+                <div class="flex items-center justify-center">
+                    <span class="animate-pulse mr-2">🔥</span>
+                    <p class="font-bold">
+                        SPECIAL OFFER: Up to
+                        @php
+                            $discounts = [];
+                            if (isset($currentCourse['original_price_3_month'])) {
+                                $original = (float) str_replace(
+                                    ['₹', ','],
+                                    '',
+                                    $currentCourse['original_price_3_month'],
+                                );
+                                $current = (float) str_replace(['₹', ','], '', $currentCourse['price_3_month']);
+                                $discounts[] = round((($original - $current) / $original) * 100);
+                            }
+                            if (isset($currentCourse['original_price_6_month'])) {
+                                $original = (float) str_replace(
+                                    ['₹', ','],
+                                    '',
+                                    $currentCourse['original_price_6_month'],
+                                );
+                                $current = (float) str_replace(['₹', ','], '', $currentCourse['price_6_month']);
+                                $discounts[] = round((($original - $current) / $original) * 100);
+                            }
+                            echo max($discounts);
+                        @endphp% OFF! Limited Time Discount on {{ $currentCourse['title'] }} Program
+                    </p>
+                    <span class="animate-pulse ml-2">🔥</span>
+                </div>
+                <div class="text-xs mt-1">
+                    Offer ends on {{ date('F j, Y', strtotime($currentCourse['offer_end_at'])) }}! Don't miss this
+                    opportunity to kickstart your career.
+                </div>
             </div>
         </div>
-    </div>
     @endif
 
     <!-- Course Header -->
@@ -202,77 +216,107 @@
                     <div class="bg-gray-50 rounded-lg shadow-md p-6 sticky top-24">
                         <h3 class="text-2xl font-bold mb-6">Program Options</h3>
 
-                        @if(isset($currentCourse['original_price_3_month']) || isset($currentCourse['original_price_6_month']))
-                        @if(isset($currentCourse['offer_end_at']))
-                        <div class="mb-4 bg-yellow-50 border border-yellow-200 p-3 rounded-lg">
-                            <div class="flex items-center">
-                                <div class="text-yellow-600 mr-2">
-                                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
-                                    </svg>
+                        @if (isset($currentCourse['original_price_3_month']) || isset($currentCourse['original_price_6_month']))
+                            @if (isset($currentCourse['offer_end_at']))
+                                <div class="mb-4 bg-yellow-50 border border-yellow-200 p-3 rounded-lg">
+                                    <div class="flex items-center">
+                                        <div class="text-yellow-600 mr-2">
+                                            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none"
+                                                viewBox="0 0 24 24" stroke="currentColor">
+                                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                                    d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+                                            </svg>
+                                        </div>
+                                        <div>
+                                            <p class="text-sm font-semibold text-gray-700">Limited Time Offer</p>
+                                            <p class="text-xs text-gray-600">Offer ends on
+                                                {{ date('F j', strtotime($currentCourse['offer_end_at'])) }} (<span
+                                                    id="sidebar-countdown" class="font-bold text-red-600"></span> left)
+                                            </p>
+                                        </div>
+                                    </div>
                                 </div>
-                                <div>
-                                    <p class="text-sm font-semibold text-gray-700">Limited Time Offer</p>
-                                    <p class="text-xs text-gray-600">Offer ends on {{ date('F j', strtotime($currentCourse['offer_end_at'])) }} (<span id="sidebar-countdown" class="font-bold text-red-600"></span> left)</p>
+                            @endif
+                            <div class="mt-6 grid grid-cols-3 gap-3">
+                                <div class="text-center">
+                                    <div
+                                        class="mx-auto w-12 h-12 bg-blue-100 rounded-full flex items-center justify-center mb-2">
+                                        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-blue-600"
+                                            fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                                d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+                                        </svg>
+                                    </div>
+                                    <p class="text-xs font-medium text-gray-700">Quality Guaranteed</p>
+                                </div>
+                                <div class="text-center">
+                                    <div
+                                        class="mx-auto w-12 h-12 bg-green-100 rounded-full flex items-center justify-center mb-2">
+                                        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-green-600"
+                                            fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                                d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                                        </svg>
+                                    </div>
+                                    <p class="text-xs font-medium text-gray-700">Best Price Promise</p>
+                                </div>
+                                <div class="text-center">
+                                    <div
+                                        class="mx-auto w-12 h-12 bg-purple-100 rounded-full flex items-center justify-center mb-2">
+                                        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-purple-600"
+                                            fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                                d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+                                        </svg>
+                                    </div>
+                                    <p class="text-xs font-medium text-gray-700">Limited Time Offer</p>
                                 </div>
                             </div>
-                        </div>
-                        @endif
-                        <div class="mt-6 grid grid-cols-3 gap-3">
-                            <div class="text-center">
-                                <div class="mx-auto w-12 h-12 bg-blue-100 rounded-full flex items-center justify-center mb-2">
-                                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-blue-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
-                                    </svg>
-                                </div>
-                                <p class="text-xs font-medium text-gray-700">Quality Guaranteed</p>
-                            </div>
-                            <div class="text-center">
-                                <div class="mx-auto w-12 h-12 bg-green-100 rounded-full flex items-center justify-center mb-2">
-                                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-green-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
-                                    </svg>
-                                </div>
-                                <p class="text-xs font-medium text-gray-700">Best Price Promise</p>
-                            </div>
-                            <div class="text-center">
-                                <div class="mx-auto w-12 h-12 bg-purple-100 rounded-full flex items-center justify-center mb-2">
-                                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-purple-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
-                                    </svg>
-                                </div>
-                                <p class="text-xs font-medium text-gray-700">Limited Time Offer</p>
-                            </div>
-                        </div>
                         @endif
 
                         <!-- 3 Month Plan -->
-                        <div class="border border-gray-200 rounded-lg bg-white p-6 mb-6 hover:shadow-md transition-shadow relative">
-                            @if(isset($currentCourse['original_price_3_month']))
-                            <div class="absolute -top-4 -right-4 bg-red-500 text-white text-xs font-bold px-3 py-1 rounded-full transform rotate-12">SALE!</div>
+                        <div
+                            class="border border-gray-200 rounded-lg bg-white p-6 mb-6 hover:shadow-md transition-shadow relative">
+                            @if (isset($currentCourse['original_price_3_month']))
+                                <div
+                                    class="absolute -top-4 -right-4 bg-red-500 text-white text-xs font-bold px-3 py-1 rounded-full transform rotate-12">
+                                    SALE!</div>
                             @endif
                             <div class="flex justify-between items-center mb-4">
                                 <h4 class="text-xl font-semibold">3 Month Plan</h4>
                                 <span class="bg-blue-100 text-blue-800 py-1 px-3 rounded-full text-sm">Basic</span>
                             </div>
                             <div class="mb-4">
-                                @if(isset($currentCourse['original_price_3_month']))
-                                <div class="flex items-center mb-1">
-                                    <span class="text-sm text-gray-500 line-through mr-2">₹{{ $currentCourse['original_price_3_month'] }}</span>
-                                    @php
-                                        $original = (float) str_replace(['₹', ','], '', $currentCourse['original_price_3_month']);
-                                        $current = (float) str_replace(['₹', ','], '', $currentCourse['price_3_month']);
-                                        $discount = round(($original - $current) / $original * 100);
-                                        $savings = $original - $current;
-                                    @endphp
-                                    <span class="bg-red-500 text-white text-xs font-bold px-2 py-1 rounded-full">{{ $discount }}% OFF</span>
-                                </div>
-                                <div class="text-green-600 text-sm font-medium mb-1">Save ₹{{ number_format($savings, 2) }}</div>
+                                @if (isset($currentCourse['original_price_3_month']))
+                                    <div class="flex items-center mb-1">
+                                        <span
+                                            class="text-sm text-gray-500 line-through mr-2">₹{{ $currentCourse['original_price_3_month'] }}</span>
+                                        @php
+                                            $original = (float) str_replace(
+                                                ['₹', ','],
+                                                '',
+                                                $currentCourse['original_price_3_month'],
+                                            );
+                                            $current = (float) str_replace(
+                                                ['₹', ','],
+                                                '',
+                                                $currentCourse['price_3_month'],
+                                            );
+                                            $discount = round((($original - $current) / $original) * 100);
+                                            $savings = $original - $current;
+                                        @endphp
+                                        <span
+                                            class="bg-red-500 text-white text-xs font-bold px-2 py-1 rounded-full">{{ $discount }}%
+                                            OFF</span>
+                                    </div>
+                                    <div class="text-green-600 text-sm font-medium mb-1">Save
+                                        ₹{{ number_format($savings, 2) }}</div>
                                 @endif
                                 <div class="flex items-baseline">
-                                    <span class="text-3xl font-bold text-gray-800">₹{{ $currentCourse['price_3_month'] }}</span>
+                                    <span
+                                        class="text-3xl font-bold text-gray-800">₹{{ $currentCourse['price_3_month'] }}</span>
                                     <span class="text-gray-600 ml-1">/one-time</span>
-                                    @if(isset($currentCourse['original_price_3_month']))
+                                    @if (isset($currentCourse['original_price_3_month']))
                                         <span class="ml-2 text-sm text-green-600 font-medium">Limited Time Offer!</span>
                                     @endif
                                 </div>
@@ -301,21 +345,21 @@
                             </ul>
                             <button
                                 class="razorpay-buy-btn block w-full py-4 px-4 bg-primary text-white text-center rounded-md hover:bg-secondary transition-colors font-bold"
-                                data-course="{{ $currentCourse['title'] }}"
-                                data-duration="3"
-                                data-amount="{{ str_replace(['₹', ','], '', $currentCourse['price_3_month']) * 100 }}">
-                                @if(isset($currentCourse['original_price_3_month']))
+                                data-course="{{ $currentCourse['title'] }}" data-token="{{ $currentCourse['id'] }}"
+                                data-duration="{{ Crypt::encrypt('3') }}">
+                                @if (isset($currentCourse['original_price_3_month']))
                                 @endif
                                 Buy Now
                             </button>
 
-                            @if(isset($currentCourse['original_price_3_month']))
-                            <div class="mt-3 bg-gray-50 p-2 rounded text-sm">
-                                <div class="flex items-start">
-                                    <div class="text-yellow-500 mr-1">★★★★★</div>
-                                    <div class="text-gray-600 italic">"Amazing value for money! I couldn't believe the quality at this price." – Rahul S.</div>
+                            @if (isset($currentCourse['original_price_3_month']))
+                                <div class="mt-3 bg-gray-50 p-2 rounded text-sm">
+                                    <div class="flex items-start">
+                                        <div class="text-yellow-500 mr-1">★★★★★</div>
+                                        <div class="text-gray-600 italic">"Amazing value for money! I couldn't believe the
+                                            quality at this price." – Rahul S.</div>
+                                    </div>
                                 </div>
-                            </div>
                             @endif
                         </div>
 
@@ -324,31 +368,46 @@
                             <div class="absolute top-0 right-0 bg-primary text-white py-1 px-4 text-sm rounded-bl-lg">
                                 RECOMMENDED
                             </div>
-                            @if(isset($currentCourse['original_price_6_month']))
-                            <div class="absolute -top-4 -left-4 bg-red-500 text-white text-xs font-bold px-3 py-1 rounded-full transform -rotate-12">BEST DEAL!</div>
+                            @if (isset($currentCourse['original_price_6_month']))
+                                <div
+                                    class="absolute -top-4 -left-4 bg-red-500 text-white text-xs font-bold px-3 py-1 rounded-full transform -rotate-12">
+                                    BEST DEAL!</div>
                             @endif
                             <div class="flex justify-between items-center mb-4">
                                 <h4 class="text-xl font-semibold">6 Month Plan</h4>
                                 <span class="bg-green-100 text-green-800 py-1 px-3 rounded-full text-sm">Advanced</span>
                             </div>
                             <div class="mb-4">
-                                @if(isset($currentCourse['original_price_6_month']))
-                                <div class="flex items-center mb-1">
-                                    <span class="text-sm text-gray-500 line-through mr-2">₹{{ $currentCourse['original_price_6_month'] }}</span>
-                                    @php
-                                        $original = (float) str_replace(['₹', ','], '', $currentCourse['original_price_6_month']);
-                                        $current = (float) str_replace(['₹', ','], '', $currentCourse['price_6_month']);
-                                        $discount = round(($original - $current) / $original * 100);
-                                        $savings = $original - $current;
-                                    @endphp
-                                    <span class="bg-red-500 text-white text-xs font-bold px-2 py-1 rounded-full">{{ $discount }}% OFF</span>
-                                </div>
-                                <div class="text-green-600 text-sm font-medium mb-1">Save ₹{{ number_format($savings, 2) }}</div>
+                                @if (isset($currentCourse['original_price_6_month']))
+                                    <div class="flex items-center mb-1">
+                                        <span
+                                            class="text-sm text-gray-500 line-through mr-2">₹{{ $currentCourse['original_price_6_month'] }}</span>
+                                        @php
+                                            $original = (float) str_replace(
+                                                ['₹', ','],
+                                                '',
+                                                $currentCourse['original_price_6_month'],
+                                            );
+                                            $current = (float) str_replace(
+                                                ['₹', ','],
+                                                '',
+                                                $currentCourse['price_6_month'],
+                                            );
+                                            $discount = round((($original - $current) / $original) * 100);
+                                            $savings = $original - $current;
+                                        @endphp
+                                        <span
+                                            class="bg-red-500 text-white text-xs font-bold px-2 py-1 rounded-full">{{ $discount }}%
+                                            OFF</span>
+                                    </div>
+                                    <div class="text-green-600 text-sm font-medium mb-1">Save
+                                        ₹{{ number_format($savings, 2) }}</div>
                                 @endif
                                 <div class="flex items-baseline">
-                                    <span class="text-3xl font-bold text-gray-800">₹{{ $currentCourse['price_6_month'] }}</span>
+                                    <span
+                                        class="text-3xl font-bold text-gray-800">₹{{ $currentCourse['price_6_month'] }}</span>
                                     <span class="text-gray-600 ml-1">/one-time</span>
-                                    @if(isset($currentCourse['original_price_6_month']))
+                                    @if (isset($currentCourse['original_price_6_month']))
                                         <span class="ml-2 text-sm text-green-600 font-medium">Best Value!</span>
                                     @endif
                                 </div>
@@ -385,21 +444,21 @@
                             </ul>
                             <button
                                 class="razorpay-buy-btn block w-full py-4 px-4 bg-primary text-white text-center rounded-md hover:bg-secondary transition-colors font-bold"
-                                data-course="{{ $currentCourse['title'] }}"
-                                data-duration="6"
-                                data-amount="{{ str_replace(['₹', ','], '', $currentCourse['price_6_month']) * 100 }}">
-                                @if(isset($currentCourse['original_price_6_month']))
+                                data-course="{{ $currentCourse['title'] }}" data-token="{{ $currentCourse['id'] }}"
+                                data-duration="{{ Crypt::encrypt('6') }}">
+                                @if (isset($currentCourse['original_price_6_month']))
                                 @endif
                                 Buy Now
                             </button>
 
-                            @if(isset($currentCourse['original_price_6_month']))
-                            <div class="mt-3 bg-gray-50 p-2 rounded text-sm">
-                                <div class="flex items-start">
-                                    <div class="text-yellow-500 mr-1">★★★★★</div>
-                                    <div class="text-gray-600 italic">"Best investment I made for my career! The 6-month plan is incredible value." – Priya M.</div>
+                            @if (isset($currentCourse['original_price_6_month']))
+                                <div class="mt-3 bg-gray-50 p-2 rounded text-sm">
+                                    <div class="flex items-start">
+                                        <div class="text-yellow-500 mr-1">★★★★★</div>
+                                        <div class="text-gray-600 italic">"Best investment I made for my career! The
+                                            6-month plan is incredible value." – Priya M.</div>
+                                    </div>
                                 </div>
-                            </div>
                             @endif
                         </div>
                     </div>
@@ -514,88 +573,97 @@
         </div>
     </section>
 
-    @if(isset($currentCourse['original_price_3_month']) || isset($currentCourse['original_price_6_month']))
-    <!-- Value Comparison Section -->
-    <section class="py-12 bg-white">
-        <div class="container mx-auto px-4">
-            <div class="text-center mb-8">
-                <h2 class="text-3xl font-bold text-gray-800 mb-2">Why This Offer Is Incredible Value</h2>
-                <p class="text-gray-600">Compare what you get with the cost of alternatives</p>
-            </div>
+    @if (isset($currentCourse['original_price_3_month']) || isset($currentCourse['original_price_6_month']))
+        <!-- Value Comparison Section -->
+        <section class="py-12 bg-white">
+            <div class="container mx-auto px-4">
+                <div class="text-center mb-8">
+                    <h2 class="text-3xl font-bold text-gray-800 mb-2">Why This Offer Is Incredible Value</h2>
+                    <p class="text-gray-600">Compare what you get with the cost of alternatives</p>
+                </div>
 
-            <div class="max-w-4xl mx-auto">
-                <div class="overflow-x-auto">
-                    <table class="min-w-full bg-white border border-gray-200 rounded-lg shadow-md">
-                        <thead>
-                            <tr class="bg-gray-50">
-                                <th class="py-3 px-4 text-left text-gray-700">Feature</th>
-                                <th class="py-3 px-4 text-center text-gray-700">Our {{ $currentCourse['title'] }} Internship</th>
-                                <th class="py-3 px-4 text-center text-gray-700">Typical Online Course</th>
-                                <th class="py-3 px-4 text-center text-gray-700">Offline Training Institute</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr class="border-t border-gray-200">
-                                <td class="py-3 px-4 text-gray-800">Duration</td>
-                                <td class="py-3 px-4 text-center text-gray-800">3-6 months</td>
-                                <td class="py-3 px-4 text-center text-gray-800">1-3 months</td>
-                                <td class="py-3 px-4 text-center text-gray-800">1-6 months</td>
-                            </tr>
-                            <tr class="border-t border-gray-200 bg-gray-50">
-                                <td class="py-3 px-4 text-gray-800">Hands-on Projects</td>
-                                <td class="py-3 px-4 text-center text-green-600 font-bold">Yes (4+ real-world projects)</td>
-                                <td class="py-3 px-4 text-center text-gray-800">Limited (1-2 basic projects)</td>
-                                <td class="py-3 px-4 text-center text-gray-800">Yes (2-3 projects)</td>
-                            </tr>
-                            <tr class="border-t border-gray-200">
-                                <td class="py-3 px-4 text-gray-800">Certificate</td>
-                                <td class="py-3 px-4 text-center text-green-600 font-bold">Yes (Industry recognized)</td>
-                                <td class="py-3 px-4 text-center text-gray-800">Sometimes</td>
-                                <td class="py-3 px-4 text-center text-gray-800">Yes</td>
-                            </tr>
-                            <tr class="border-t border-gray-200 bg-gray-50">
-                                <td class="py-3 px-4 text-gray-800">Job Assistance</td>
-                                <td class="py-3 px-4 text-center text-green-600 font-bold">Yes</td>
-                                <td class="py-3 px-4 text-center text-gray-800">Rarely</td>
-                                <td class="py-3 px-4 text-center text-gray-800">Sometimes</td>
-                            </tr>
-                            <tr class="border-t border-gray-200">
-                                <td class="py-3 px-4 text-gray-800 font-bold">Cost</td>
-                                <td class="py-3 px-4 text-center">
-                                    <div class="mb-1">
-                                        <span class="text-sm">3-Month Plan:</span>
-                                        @if(isset($currentCourse['original_price_3_month']))
-                                        <span class="text-red-500 line-through text-sm">₹{{ $currentCourse['original_price_3_month'] }}</span>
-                                        <span class="text-green-600 font-bold">₹{{ $currentCourse['price_3_month'] }}</span>
-                                        @else
-                                        <span class="text-green-600 font-bold">₹{{ $currentCourse['price_3_month'] }}</span>
-                                        @endif
-                                    </div>
-                                    <div>
-                                        <span class="text-sm">6-Month Plan:</span>
-                                        @if(isset($currentCourse['original_price_6_month']))
-                                        <span class="text-red-500 line-through text-sm">₹{{ $currentCourse['original_price_6_month'] }}</span>
-                                        <span class="text-green-600 font-bold">₹{{ $currentCourse['price_6_month'] }}</span>
-                                        @else
-                                        <span class="text-green-600 font-bold">₹{{ $currentCourse['price_6_month'] }}</span>
-                                        @endif
-                                    </div>
-                                </td>
-                                <td class="py-3 px-4 text-center text-gray-800">₹1,000 - ₹5,000</td>
-                                <td class="py-3 px-4 text-center text-gray-800">₹10,000 - ₹25,000</td>
-                            </tr>
-                            <tr class="border-t border-gray-200 bg-yellow-50">
-                                <td class="py-3 px-4 text-gray-800 font-bold">Value for Money</td>
-                                <td class="py-3 px-4 text-center text-green-600 font-bold">Excellent</td>
-                                <td class="py-3 px-4 text-center text-gray-800">Average</td>
-                                <td class="py-3 px-4 text-center text-gray-800">Good</td>
-                            </tr>
-                        </tbody>
-                    </table>
+                <div class="max-w-4xl mx-auto">
+                    <div class="overflow-x-auto">
+                        <table class="min-w-full bg-white border border-gray-200 rounded-lg shadow-md">
+                            <thead>
+                                <tr class="bg-gray-50">
+                                    <th class="py-3 px-4 text-left text-gray-700">Feature</th>
+                                    <th class="py-3 px-4 text-center text-gray-700">Our {{ $currentCourse['title'] }}
+                                        Internship</th>
+                                    <th class="py-3 px-4 text-center text-gray-700">Typical Online Course</th>
+                                    <th class="py-3 px-4 text-center text-gray-700">Offline Training Institute</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr class="border-t border-gray-200">
+                                    <td class="py-3 px-4 text-gray-800">Duration</td>
+                                    <td class="py-3 px-4 text-center text-gray-800">3-6 months</td>
+                                    <td class="py-3 px-4 text-center text-gray-800">1-3 months</td>
+                                    <td class="py-3 px-4 text-center text-gray-800">1-6 months</td>
+                                </tr>
+                                <tr class="border-t border-gray-200 bg-gray-50">
+                                    <td class="py-3 px-4 text-gray-800">Hands-on Projects</td>
+                                    <td class="py-3 px-4 text-center text-green-600 font-bold">Yes (4+ real-world projects)
+                                    </td>
+                                    <td class="py-3 px-4 text-center text-gray-800">Limited (1-2 basic projects)</td>
+                                    <td class="py-3 px-4 text-center text-gray-800">Yes (2-3 projects)</td>
+                                </tr>
+                                <tr class="border-t border-gray-200">
+                                    <td class="py-3 px-4 text-gray-800">Certificate</td>
+                                    <td class="py-3 px-4 text-center text-green-600 font-bold">Yes (Industry recognized)
+                                    </td>
+                                    <td class="py-3 px-4 text-center text-gray-800">Sometimes</td>
+                                    <td class="py-3 px-4 text-center text-gray-800">Yes</td>
+                                </tr>
+                                <tr class="border-t border-gray-200 bg-gray-50">
+                                    <td class="py-3 px-4 text-gray-800">Job Assistance</td>
+                                    <td class="py-3 px-4 text-center text-green-600 font-bold">Yes</td>
+                                    <td class="py-3 px-4 text-center text-gray-800">Rarely</td>
+                                    <td class="py-3 px-4 text-center text-gray-800">Sometimes</td>
+                                </tr>
+                                <tr class="border-t border-gray-200">
+                                    <td class="py-3 px-4 text-gray-800 font-bold">Cost</td>
+                                    <td class="py-3 px-4 text-center">
+                                        <div class="mb-1">
+                                            <span class="text-sm">3-Month Plan:</span>
+                                            @if (isset($currentCourse['original_price_3_month']))
+                                                <span
+                                                    class="text-red-500 line-through text-sm">₹{{ $currentCourse['original_price_3_month'] }}</span>
+                                                <span
+                                                    class="text-green-600 font-bold">₹{{ $currentCourse['price_3_month'] }}</span>
+                                            @else
+                                                <span
+                                                    class="text-green-600 font-bold">₹{{ $currentCourse['price_3_month'] }}</span>
+                                            @endif
+                                        </div>
+                                        <div>
+                                            <span class="text-sm">6-Month Plan:</span>
+                                            @if (isset($currentCourse['original_price_6_month']))
+                                                <span
+                                                    class="text-red-500 line-through text-sm">₹{{ $currentCourse['original_price_6_month'] }}</span>
+                                                <span
+                                                    class="text-green-600 font-bold">₹{{ $currentCourse['price_6_month'] }}</span>
+                                            @else
+                                                <span
+                                                    class="text-green-600 font-bold">₹{{ $currentCourse['price_6_month'] }}</span>
+                                            @endif
+                                        </div>
+                                    </td>
+                                    <td class="py-3 px-4 text-center text-gray-800">₹1,000 - ₹5,000</td>
+                                    <td class="py-3 px-4 text-center text-gray-800">₹10,000 - ₹25,000</td>
+                                </tr>
+                                <tr class="border-t border-gray-200 bg-yellow-50">
+                                    <td class="py-3 px-4 text-gray-800 font-bold">Value for Money</td>
+                                    <td class="py-3 px-4 text-center text-green-600 font-bold">Excellent</td>
+                                    <td class="py-3 px-4 text-center text-gray-800">Average</td>
+                                    <td class="py-3 px-4 text-center text-gray-800">Good</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
     @endif
 
     <!-- Testimonials -->
@@ -610,49 +678,49 @@
             <div class="flex flex-col sm:flex-row justify-center space-y-4 sm:space-y-0 sm:space-x-4">
                 <button
                     class="cta-buy-btn inline-block px-8 py-4 bg-white text-primary font-medium rounded-md hover:bg-gray-100 transition-colors relative overflow-hidden group"
-                    data-course="{{ $currentCourse['title'] }}"
-                    data-duration="3"
-                    data-amount="{{ str_replace(['₹', ','], '', $currentCourse['price_3_month']) * 100 }}">
-                    @if(isset($currentCourse['original_price_3_month']))
-                    @php
-                        $original = (float) str_replace(['₹', ','], '', $currentCourse['original_price_3_month']);
-                        $current = (float) str_replace(['₹', ','], '', $currentCourse['price_3_month']);
-                        $discount = round(($original - $current) / $original * 100);
-                    @endphp
+                    data-course="{{ $currentCourse['title'] }}" data-token="{{ $currentCourse['id'] }}"
+                    data-duration="{{ Crypt::encrypt('3') }}">
+                    @if (isset($currentCourse['original_price_3_month']))
+                        @php
+                            $original = (float) str_replace(['₹', ','], '', $currentCourse['original_price_3_month']);
+                            $current = (float) str_replace(['₹', ','], '', $currentCourse['price_3_month']);
+                            $discount = round((($original - $current) / $original) * 100);
+                        @endphp
                     @endif
                     <span>
                         Buy 3-Month Plan
-                        @if(isset($currentCourse['original_price_3_month']))
-                        <span class="block mt-1">
-                            <span class="text-sm text-gray-500 line-through">₹{{ $currentCourse['original_price_3_month'] }}</span>
-                            <span class="text-primary font-bold">₹{{ $currentCourse['price_3_month'] }}</span>
-                        </span>
+                        @if (isset($currentCourse['original_price_3_month']))
+                            <span class="block mt-1">
+                                <span
+                                    class="text-sm text-gray-500 line-through">₹{{ $currentCourse['original_price_3_month'] }}</span>
+                                <span class="text-primary font-bold">₹{{ $currentCourse['price_3_month'] }}</span>
+                            </span>
                         @else
-                        <span class="block mt-1 text-primary font-bold">₹{{ $currentCourse['price_3_month'] }}</span>
+                            <span class="block mt-1 text-primary font-bold">₹{{ $currentCourse['price_3_month'] }}</span>
                         @endif
                     </span>
                 </button>
                 <button
                     class="cta-buy-btn inline-block px-8 py-4 bg-secondary text-white font-medium rounded-md hover:bg-blue-800 transition-colors relative overflow-hidden shadow-lg"
-                    data-course="{{ $currentCourse['title'] }}"
-                    data-duration="6"
-                    data-amount="{{ str_replace(['₹', ','], '', $currentCourse['price_6_month']) * 100 }}">
-                    @if(isset($currentCourse['original_price_6_month']))
-                    @php
-                        $original = (float) str_replace(['₹', ','], '', $currentCourse['original_price_6_month']);
-                        $current = (float) str_replace(['₹', ','], '', $currentCourse['price_6_month']);
-                        $discount = round(($original - $current) / $original * 100);
-                    @endphp
+                    data-course="{{ $currentCourse['title'] }}" data-token="{{ $currentCourse['id'] }}"
+                    data-duration="{{ Crypt::encrypt('6') }}">
+                    @if (isset($currentCourse['original_price_6_month']))
+                        @php
+                            $original = (float) str_replace(['₹', ','], '', $currentCourse['original_price_6_month']);
+                            $current = (float) str_replace(['₹', ','], '', $currentCourse['price_6_month']);
+                            $discount = round((($original - $current) / $original) * 100);
+                        @endphp
                     @endif
                     <span>
                         Buy 6-Month Plan
-                        @if(isset($currentCourse['original_price_6_month']))
-                        <span class="block mt-1">
-                            <span class="text-sm text-gray-200 line-through">₹{{ $currentCourse['original_price_6_month'] }}</span>
-                            <span class="text-white font-bold">₹{{ $currentCourse['price_6_month'] }}</span>
-                        </span>
+                        @if (isset($currentCourse['original_price_6_month']))
+                            <span class="block mt-1">
+                                <span
+                                    class="text-sm text-gray-200 line-through">₹{{ $currentCourse['original_price_6_month'] }}</span>
+                                <span class="text-white font-bold">₹{{ $currentCourse['price_6_month'] }}</span>
+                            </span>
                         @else
-                        <span class="block mt-1 text-white font-bold">₹{{ $currentCourse['price_6_month'] }}</span>
+                            <span class="block mt-1 text-white font-bold">₹{{ $currentCourse['price_6_month'] }}</span>
                         @endif
                     </span>
                 </button>
@@ -663,73 +731,113 @@
 
 @section('scripts')
     <script>
-        // Function to properly initialize Razorpay
-        function initializeRazorpay(response, amount, course, duration) {
-            const options = {
-                key: response.key_id,
-                amount: amount,
-                currency: "INR",
-                name: "CodeSprintX",
-                description: course + " Internship - " + duration + " months",
-                image: "{{ asset('assets/images/logo.png') }}",
-                order_id: response.order_id,
-                handler: function(response) {
-                    // Submit form on successful payment
-                    var form = document.createElement('form');
-                    form.method = 'POST';
-                    form.action = "{{ route('payment.verify') }}";
+        // Set up CSRF token for all AJAX requests
+        $.ajaxSetup({
+            headers: {
+                'X-CSRF-TOKEN': "{{ csrf_token() }}"
+            }
+        });
 
-                    // Add CSRF token
-                    var csrfToken = document.createElement('input');
-                    csrfToken.type = 'hidden';
-                    csrfToken.name = '_token';
-                    csrfToken.value = "{{ csrf_token() }}";
-                    form.appendChild(csrfToken);
 
-                    // Add payment details
-                    var paymentField = document.createElement('input');
-                    paymentField.type = 'hidden';
-                    paymentField.name = 'razorpay_payment_id';
-                    paymentField.value = response.razorpay_payment_id;
-                    form.appendChild(paymentField);
+        function handleRazorpayPurchase(button, course, duration, token) {
+            const originalText = button.html(); // Save current button text
+            button.data('original-text', originalText); // Store it in data attribute
 
-                    var orderField = document.createElement('input');
-                    orderField.type = 'hidden';
-                    orderField.name = 'razorpay_order_id';
-                    orderField.value = response.razorpay_order_id;
-                    form.appendChild(orderField);
+            // Show loading state
+            button.prop('disabled', true).html('<i class="fas fa-spinner fa-spin mr-2"></i> Processing...');
 
-                    var signatureField = document.createElement('input');
-                    signatureField.type = 'hidden';
-                    signatureField.name = 'razorpay_signature';
-                    signatureField.value = response.razorpay_signature;
-                    form.appendChild(signatureField);
-
-                    document.body.appendChild(form);
-                    form.submit();
-                },
-                prefill: {
-                    name: "",
-                    email: "",
-                    contact: ""
-                },
-                notes: {
+            $.ajax({
+                url: "{{ route('payment.create-order') }}",
+                method: 'POST',
+                dataType: 'json',
+                data: {
+                    _token: "{{ csrf_token() }}",
                     course: course,
-                    duration: duration + " months"
+                    duration: duration,
+                    token: token
                 },
-                theme: {
-                    color: "#3B82F6"
-                },
-                modal: {
-                    ondismiss: function() {
-                        console.log('Payment cancelled');
-                    }
-                }
-            };
+                success: function(response) {
+                    const options = {
+                        key: response.key_id,
+                        amount: response.amount,
+                        currency: response.currency || 'INR',
+                        name: "CodeSprintX",
+                        description: `${response.course} - ${response.duration} Month Internship Program`,
+                        image: "{{ asset('assets/images/logos/logo_color.png') }}",
+                        order_id: response.order_id,
+                        handler: function(paymentResponse) {
 
-            // Initialize Razorpay
-            const razorpay = new Razorpay(options);
-            razorpay.open();
+                            const form = document.createElement('form');
+                            form.method = 'POST';
+                            form.action = "{{ route('payment.verify') }}";
+
+                            const fields = {
+                                _token: "{{ csrf_token() }}",
+                                razorpay_payment_id: paymentResponse
+                                    .razorpay_payment_id,
+                                razorpay_order_id: paymentResponse.razorpay_order_id,
+                                razorpay_signature: paymentResponse.razorpay_signature
+                            };
+
+                            for (const name in fields) {
+                                const input = document.createElement('input');
+                                input.type = 'hidden';
+                                input.name = name;
+                                input.value = fields[name];
+                                form.appendChild(input);
+                            }
+
+                            document.body.appendChild(form);
+                            form.submit();
+                        },
+                        prefill: {
+                            name: "",
+                            email: "",
+                            contact: ""
+                        },
+                        notes: {
+                            course: course,
+                            duration: `${duration} months`
+                        },
+                        theme: {
+                            color: "#3B82F6"
+                        },
+                        modal: {
+                            ondismiss: function() {
+                                const original = button.data('original-text');
+                                button.prop('disabled', false).html(original);
+                            }
+                        }
+                    };
+
+                    initializeRazorpay(options)
+                        .then(function() {
+                            const original = button.data('original-text');
+                            button.prop('disabled', false).html(original);
+                        })
+                        .catch(function(error) {
+                            alert('There was an error with the payment gateway: ' + error
+                                .message);
+                            const original = button.data('original-text');
+                            button.prop('disabled', false).html(original);
+                        });
+                },
+                error: function(xhr, status, error) {
+                    let errorMessage =
+                        'An error occurred while processing your payment. Please try again.';
+                    try {
+                        const response = JSON.parse(xhr.responseText);
+                        if (response.error) {
+                            errorMessage = response.error;
+                        }
+                    } catch (e) {}
+
+                    alert(errorMessage);
+
+                    const original = button.data('original-text');
+                    button.prop('disabled', false).html(original);
+                }
+            });
         }
 
         // Make sure Razorpay is defined globally
@@ -753,138 +861,92 @@
 
         // Sale countdown timer
         document.addEventListener('DOMContentLoaded', function() {
-            @if(isset($currentCourse['original_price_3_month']) || isset($currentCourse['original_price_6_month']))
-            @if(isset($currentCourse['offer_end_at']))
-            // Use the offer end date from course data
-            const countDownDate = new Date("{{ $currentCourse['offer_end_at'] }}").getTime();
+            @if (isset($currentCourse['original_price_3_month']) || isset($currentCourse['original_price_6_month']))
+                @if (isset($currentCourse['offer_end_at']))
+                    // Use the offer end date from course data
+                    const countDownDate = new Date("{{ $currentCourse['offer_end_at'] }}").getTime();
 
-            // Add countdown timer to promo banner if it doesn't exist yet
-            const promoDiv = document.createElement('div');
-            promoDiv.className = 'text-center font-bold text-lg mt-1';
-            promoDiv.innerHTML = 'Offer ends in: <span id="countdown" class="text-yellow-300"></span>';
+                    // Add countdown timer to promo banner if it doesn't exist yet
+                    const promoDiv = document.createElement('div');
+                    promoDiv.className = 'text-center font-bold text-lg mt-1';
+                    promoDiv.innerHTML = 'Offer ends in: <span id="countdown" class="text-yellow-300"></span>';
 
-            // Check if banner exists and doesn't already have a countdown
-            const promoBanner = document.querySelector('.bg-gradient-to-r.from-yellow-500');
-            if (promoBanner && !document.getElementById('countdown')) {
-                promoBanner.appendChild(promoDiv);
-            }
+                    // Check if banner exists and doesn't already have a countdown
+                    const promoBanner = document.querySelector('.bg-gradient-to-r.from-yellow-500');
+                    if (promoBanner && !document.getElementById('countdown')) {
+                        promoBanner.appendChild(promoDiv);
+                    }
 
-            // Update the countdown every 1 second
-            const countdownTimer = setInterval(function() {
-                // Get current date and time
-                const now = new Date().getTime();
+                    // Update the countdown every 1 second
+                    const countdownTimer = setInterval(function() {
+                        // Get current date and time
+                        const now = new Date().getTime();
 
-                // Find the distance between now and the countdown date
-                const distance = countDownDate - now;
+                        // Find the distance between now and the countdown date
+                        const distance = countDownDate - now;
 
-                // Time calculations for days, hours, minutes and seconds
-                const days = Math.floor(distance / (1000 * 60 * 60 * 24));
-                const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-                const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-                const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+                        // Time calculations for days, hours, minutes and seconds
+                        const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+                        const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+                        const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+                        const seconds = Math.floor((distance % (1000 * 60)) / 1000);
 
-                // Format the countdown display
-                let countdownText = "";
-                if (days > 0) {
-                    countdownText += days + "d ";
-                }
-                countdownText += hours + "h " + minutes + "m " + seconds + "s";
+                        // Format the countdown display
+                        let countdownText = "";
+                        if (days > 0) {
+                            countdownText += days + "d ";
+                        }
+                        countdownText += hours + "h " + minutes + "m " + seconds + "s";
 
-                // Display the result in the element with id="countdown"
-                const countdownEl = document.getElementById("countdown");
-                if (countdownEl) {
-                    countdownEl.innerHTML = countdownText;
-                }
+                        // Display the result in the element with id="countdown"
+                        const countdownEl = document.getElementById("countdown");
+                        if (countdownEl) {
+                            countdownEl.innerHTML = countdownText;
+                        }
 
-                // Also update sidebar countdown if it exists
-                const sidebarCountdownEl = document.getElementById("sidebar-countdown");
-                if (sidebarCountdownEl) {
-                    sidebarCountdownEl.innerHTML = countdownText;
-                }
+                        // Also update sidebar countdown if it exists
+                        const sidebarCountdownEl = document.getElementById("sidebar-countdown");
+                        if (sidebarCountdownEl) {
+                            sidebarCountdownEl.innerHTML = countdownText;
+                        }
 
-                // If the countdown is finished, clear the interval
-                if (distance < 0) {
-                    clearInterval(countdownTimer);
-                    if (countdownEl) countdownEl.innerHTML = "EXPIRED";
-                    if (sidebarCountdownEl) sidebarCountdownEl.innerHTML = "EXPIRED";
-                }
-            }, 1000);
+                        // If the countdown is finished, clear the interval
+                        if (distance < 0) {
+                            clearInterval(countdownTimer);
+                            if (countdownEl) countdownEl.innerHTML = "EXPIRED";
+                            if (sidebarCountdownEl) sidebarCountdownEl.innerHTML = "EXPIRED";
+                        }
+                    }, 1000);
+                @endif
             @endif
-            @endif
 
-            // Wait for document to be ready
-            $('.razorpay-buy-btn, .cta-buy-btn').on('click', function(e) {
+
+            // Handle direct Razorpay buy button
+            $('.razorpay-buy-btn').on('click', function(e) {
+                e.preventDefault();
+
+                const button = $(this);
+                const course = button.data('course');
+                const duration = button.data('duration');
+                const token = button.data('token');
+
+                handleRazorpayPurchase(button, course, duration, token);
+            });
+
+            // Handle CTA buttons that trigger related buy buttons
+            $('.cta-buy-btn').on('click', function(e) {
                 e.preventDefault();
 
                 const course = $(this).data('course');
                 const duration = $(this).data('duration');
-                const amount = $(this).data('amount');
+                const token = $(this).data('token');
 
-                console.log('Buy button clicked:', { course, duration, amount });
+                const button = $(this);
 
-                // Create Razorpay order
-                $.ajax({
-                    url: "{{ route('payment.create-order') }}",
-                    method: 'POST',
-                    dataType: 'json',
-                    data: {
-                        _token: "{{ csrf_token() }}",
-                        course: course,
-                        duration: duration,
-                        amount: amount
-                    },
-                    success: function(response) {
-                        console.log('Order created successfully:', response);
+                handleRazorpayPurchase(button, course, duration, token);
 
-                        // Ensure we have the key and order_id from the response
-                        if (!response.key_id || !response.order_id) {
-                            console.error('Missing required fields in response:', response);
-                            alert('Payment initialization failed. Missing required data from server.');
-                            return;
-                        }
-                        // Load Razorpay dynamically if needed
-                        if (typeof Razorpay === 'undefined') {
-                            console.log('Razorpay not loaded, loading script dynamically...');
-                            // Create script element
-                            var script = document.createElement('script');
-                            script.src = 'https://checkout.razorpay.com/v1/checkout.js';
-                            script.async = true;
-                            script.onload = function() {
-                                console.log('Razorpay script loaded successfully');
-                                // Initialize Razorpay after script is loaded
-                                initializeRazorpay(response, amount, course, duration);
-                            };
-                            script.onerror = function() {
-                                console.error('Failed to load Razorpay script');
-                                alert('Failed to load payment gateway. Please refresh the page and try again.');
-                            };
-                            document.head.appendChild(script);
-                        } else {
-                            console.log('Razorpay already available');
-                            // Razorpay already loaded, initialize directly
-                            initializeRazorpay(response, amount, course, duration);
-                        }
-                    },
-                    error: function(xhr, status, error) {
-                        console.error('Error creating order:', error);
-                        console.error('Status:', status);
-                        console.error('Response:', xhr.responseText);
-
-                        let errorMessage = 'An error occurred while processing your payment. Please try again.';
-
-                        try {
-                            const response = JSON.parse(xhr.responseText);
-                            if (response.error) {
-                                errorMessage = response.error;
-                            }
-                        } catch (e) {
-                            // Use default error message
-                        }
-
-                        alert(errorMessage);
-                    }
-                });
             });
+
         });
     </script>
 @endsection

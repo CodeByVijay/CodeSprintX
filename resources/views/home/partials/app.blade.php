@@ -130,15 +130,10 @@
 
     <!-- Scripts -->
     <script src="{{ asset('assets/js/script.js') }}"></script>
-    <script src="{{ asset('assets/js/security.js') }}"></script>
+    {{-- <script src="{{ asset('assets/js/security.js') }}"></script> --}}
 
     <!-- Page-specific scripts -->
     @yield('scripts')
-
-    <!-- Course page specific scripts -->
-    @if(request()->route()->getName() == 'course.description')
-        @include('home.pages.course_description_scripts_fixed')
-    @endif
 
     <!-- Structured Data for SEO -->
     <script type="application/ld+json">

@@ -130,7 +130,7 @@
 
     <!-- Scripts -->
     <script src="{{ asset('assets/js/script.js') }}"></script>
-    {{-- <script src="{{ asset('assets/js/security.js') }}"></script> --}}
+    <script src="{{ asset('assets/js/security.js') }}"></script>
 
     <!-- Page-specific scripts -->
     @yield('scripts')

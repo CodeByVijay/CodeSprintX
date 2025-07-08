@@ -28,33 +28,33 @@
                     <div class="p-8">
                         <form action="#" method="POST" class="space-y-6">
                             <!-- Email Field -->
-                            <div class="form-group relative">
-                                <label for="email" class="block text-gray-700 font-medium mb-2 text-sm">Email Address</label>
+                            <div class="form-group relative group">
+                                <label for="email" class="block text-gray-700 font-medium mb-2 text-sm group-focus-within:text-xs group-focus-within:text-primary transition-all duration-300">Email Address</label>
                                 <div class="relative">
-                                    <div class="absolute inset-y-0 left-0 pl-4 flex items-center pointer-events-none">
-                                        <i class="fas fa-envelope text-gray-400"></i>
+                                    <div class="absolute inset-y-0 left-0 pl-4 flex items-center pointer-events-none z-10">
+                                        <i class="fas fa-envelope text-gray-400 group-focus-within:text-primary transition-colors duration-300"></i>
                                     </div>
                                     <input type="email" id="email" name="email"
-                                        class="w-full pl-12 pr-4 py-4 border-2 border-gray-200 rounded-xl focus:outline-none focus:border-primary focus:ring-4 focus:ring-primary/10 transition-all duration-300 bg-gray-50 hover:bg-white"
+                                        class="w-full pl-12 pr-4 py-4 border-2 border-gray-200 rounded-xl focus:outline-none focus:border-primary focus:ring-4 focus:ring-primary/10 focus:bg-white transition-all duration-300 bg-gray-50 hover:bg-white"
                                         placeholder="Enter your email" required>
                                 </div>
                             </div>
 
                             <!-- Password Field -->
-                            <div class="form-group relative">
+                            <div class="form-group relative group">
                                 <div class="flex justify-between mb-2">
-                                    <label for="password" class="text-gray-700 font-medium text-sm">Password</label>
+                                    <label for="password" class="text-gray-700 font-medium text-sm group-focus-within:text-xs group-focus-within:text-primary transition-all duration-300">Password</label>
                                     <a href="#" class="text-sm text-primary hover:text-secondary font-medium transition-colors duration-300">Forgot Password?</a>
                                 </div>
                                 <div class="relative">
-                                    <div class="absolute inset-y-0 left-0 pl-4 flex items-center pointer-events-none">
-                                        <i class="fas fa-lock text-gray-400"></i>
+                                    <div class="absolute inset-y-0 left-0 pl-4 flex items-center pointer-events-none z-10">
+                                        <i class="fas fa-lock text-gray-400 group-focus-within:text-primary transition-colors duration-300"></i>
                                     </div>
                                     <input type="password" id="password" name="password"
-                                        class="w-full pl-12 pr-16 py-4 border-2 border-gray-200 rounded-xl focus:outline-none focus:border-primary focus:ring-4 focus:ring-primary/10 transition-all duration-300 bg-gray-50 hover:bg-white"
+                                        class="w-full pl-12 pr-16 py-4 border-2 border-gray-200 rounded-xl focus:outline-none focus:border-primary focus:ring-4 focus:ring-primary/10 focus:bg-white transition-all duration-300 bg-gray-50 hover:bg-white"
                                         placeholder="Enter your password" required>
                                     <button type="button"
-                                        class="toggle-password absolute inset-y-0 right-0 pr-4 flex items-center text-gray-400 hover:text-primary focus:outline-none transition-colors duration-300"
+                                        class="toggle-password absolute inset-y-0 right-0 pr-4 flex items-center text-gray-400 hover:text-primary focus:outline-none transition-colors duration-300 z-10"
                                         onclick="togglePasswordVisibility('password')">
                                         <i class="fas fa-eye"></i>
                                     </button>

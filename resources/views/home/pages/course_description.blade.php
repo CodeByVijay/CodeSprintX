@@ -6,7 +6,8 @@ use Illuminate\Support\Facades\Crypt;
     <!-- Promo Banner -->
     @if (
         (isset($currentCourse['original_price_3_month']) || isset($currentCourse['original_price_6_month'])) &&
-            isset($currentCourse['offer_end_at']))
+            isset($currentCourse['offer_end_at']) &&
+            strtotime($currentCourse['offer_end_at']) > time())
         <div class="bg-gradient-to-r from-yellow-500 via-red-500 to-pink-500 text-white py-2 px-4 text-center relative">
             <div class="container mx-auto">
                 <div class="flex items-center justify-center">
@@ -83,128 +84,269 @@ use Illuminate\Support\Facades\Crypt;
                     <p class="text-gray-700 mb-8">{{ $currentCourse['long_desc'] }}</p>
 
                     <div class="mb-12">
-                        <h3 class="text-2xl font-semibold mb-4">What You'll Learn</h3>
-                        <ul class="grid grid-cols-1 md:grid-cols-2 gap-3">
-                            @foreach ($currentCourse['what_you_learn'] as $learn)
-                                <li class="flex items-center">
-                                    <i class="fas fa-check-circle text-green-500 mr-2"></i>
-                                    <span class="text-gray-700">{{ $learn }}</span>
-                                </li>
+                        <div class="text-center mb-8">
+                            <h3 class="text-3xl font-bold text-gray-800 mb-2">What You'll Learn</h3>
+                            <p class="text-gray-600 max-w-2xl mx-auto">Master essential skills through comprehensive learning modules designed to transform you into a skilled professional.</p>
+                        </div>
+
+                        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                            @foreach ($currentCourse['what_you_learn'] as $index => $learn)
+                                <div class="group relative bg-white rounded-xl shadow-sm border border-gray-100 p-6 hover:shadow-lg hover:border-blue-200 transition-all duration-300">
+                                    <div class="flex items-start space-x-4">
+                                        <div class="flex-shrink-0">
+                                            <div class="w-12 h-12 bg-gradient-to-br from-blue-500 to-purple-600 rounded-lg flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
+                                                <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                                                </svg>
+                                            </div>
+                                        </div>
+                                        <div class="flex-1">
+                                            <p class="text-gray-600 leading-relaxed">{{ $learn }}</p>
+                                        </div>
+                                    </div>
+                                    <div class="absolute top-0 right-0 w-20 h-20 bg-gradient-to-br from-blue-50 to-purple-50 rounded-bl-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                                </div>
                             @endforeach
-                        </ul>
+                        </div>
                     </div>
                     {{-- {{ dd($currentCourse['projects']) }} --}}
 
                     <div class="mb-12">
-                        <h3 class="text-2xl font-semibold mb-4">Projects You'll Work On</h3>
-                        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                        <div class="text-center mb-8">
+                            <h3 class="text-3xl font-bold text-gray-800 mb-2">Projects You'll Work On</h3>
+                            <p class="text-gray-600 max-w-2xl mx-auto">Build real-world applications that showcase your skills and enhance your portfolio with industry-relevant projects.</p>
+                        </div>
+
+                        <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
                             @foreach ($currentCourse['projects'] as $index => $project)
-                                <div class="border border-gray-200 rounded-lg p-4 hover:shadow-md transition-shadow">
-                                    <div class="flex items-center mb-2">
-                                        <div
-                                            class="bg-primary text-white w-8 h-8 rounded-full flex items-center justify-center mr-3">
-                                            {{ $index + 1 }}
+                                <div class="group relative bg-gradient-to-br from-white to-gray-50 rounded-2xl shadow-sm border border-gray-100 overflow-hidden hover:shadow-xl hover:border-blue-200 transition-all duration-500">
+                                    <!-- Project Header -->
+                                    <div class="bg-gradient-to-r from-blue-600 to-purple-600 p-6 relative overflow-hidden">
+                                        <div class="flex items-center justify-between relative z-10">
+                                            <div class="flex items-center space-x-4">
+                                                <div class="w-12 h-12 bg-white/20 backdrop-blur-sm rounded-xl flex items-center justify-center">
+                                                    <span class="text-xl font-bold text-white">{{ $index + 1 }}</span>
+                                                </div>
+                                                <div>
+                                                    <h4 class="text-xl font-bold text-white">{{ $project['name'] }}</h4>
+                                                    <p class="text-blue-100 text-sm">Project {{ $index + 1 }}</p>
+                                                </div>
+                                            </div>
+                                            <div class="w-16 h-16 bg-white/10 backdrop-blur-sm rounded-full flex items-center justify-center">
+                                                <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"></path>
+                                                </svg>
+                                            </div>
                                         </div>
-                                        <h4 class="text-lg font-medium">{{ $project['name'] }}</h4>
+                                        <!-- Decorative Elements -->
+                                        <div class="absolute top-0 right-0 w-32 h-32 bg-white/5 rounded-full -translate-y-8 translate-x-8"></div>
+                                        <div class="absolute bottom-0 left-0 w-24 h-24 bg-white/5 rounded-full translate-y-8 -translate-x-8"></div>
                                     </div>
-                                    <p class="text-gray-600 text-sm ml-11">{{ $project['description'] }}</p>
+
+                                    <!-- Project Content -->
+                                    <div class="p-6">
+                                        <p class="text-gray-600 leading-relaxed">{{ $project['description'] }}</p>
+                                    </div>
+
+                                    <!-- Hover Effect Overlay -->
+                                    <div class="absolute inset-0 bg-gradient-to-r from-blue-600/5 to-purple-600/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
                                 </div>
                             @endforeach
+                        </div>
+
+                        <!-- Additional Info -->
+                        <div class="mt-8 bg-gradient-to-r from-blue-50 to-purple-50 rounded-2xl p-6 border border-blue-100">
+                            <div class="flex items-center justify-center space-x-2 text-blue-700 mb-2">
+                                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                                </svg>
+                                <span class="font-semibold">Portfolio Ready</span>
+                            </div>
+                            <p class="text-center text-gray-600 text-sm">All projects include source code, documentation, and deployment guides that you can showcase to employers.</p>
                         </div>
                     </div>
 
                     <div>
                         <h3 class="text-2xl font-semibold mb-4">Program Structure</h3>
-                        <div class="faq-accordion-category border border-gray-200 rounded-lg overflow-hidden">
-                            <!-- Week 1-2 -->
-                            <div class="faq-item border-b border-gray-200 last:border-b-0">
-                                <button
-                                    class="faq-question flex items-center justify-between w-full p-4 text-left focus:outline-none">
-                                    <span class="text-lg font-medium">Weeks 1-2: Fundamentals</span>
-                                    <svg class="w-5 h-5 transform transition-transform" fill="none" stroke="currentColor"
-                                        viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                            d="M19 9l-7 7-7-7"></path>
-                                    </svg>
+
+                        <!-- Tab Navigation -->
+                        <div class="mb-6">
+                            <div class="flex border-b border-gray-200">
+                                <button id="tab-3-month" class="program-tab px-6 py-3 text-lg font-medium text-blue-600 border-b-2 border-blue-600 bg-blue-50">
+                                    3 Month Program
                                 </button>
-                                <div class="faq-answer hidden px-4 pb-4">
-                                    <p class="text-gray-700 mb-2">Introduction to core concepts and setting up your
-                                        development environment.</p>
-                                    <ul class="list-disc list-inside text-gray-600 text-sm">
-                                        <li>Environment setup and tools installation</li>
-                                        <li>Introduction to programming fundamentals</li>
-                                        <li>Basic syntax and concepts</li>
-                                        <li>First simple project</li>
-                                    </ul>
+                                <button id="tab-6-month" class="program-tab px-6 py-3 text-lg font-medium text-gray-500 hover:text-gray-700">
+                                    6 Month Program
+                                </button>
+                            </div>
+                        </div>
+
+                        <!-- 3 Month Program Content -->
+                        <div id="content-3-month" class="program-content">
+                            <div class="border border-gray-200 rounded-lg overflow-hidden">
+                                <!-- Week 1-2 -->
+                                <div class="border-b border-gray-200 last:border-b-0">
+                                    <div class="bg-gray-50 p-4">
+                                        <h4 class="text-lg font-medium text-gray-800">Weeks 1-2: Fundamentals</h4>
+                                    </div>
+                                    <div class="p-4">
+                                        <p class="text-gray-700 mb-2">Introduction to core concepts and setting up your development environment.</p>
+                                        <ul class="list-disc list-inside text-gray-600 text-sm space-y-1">
+                                            <li>Environment setup and tools installation</li>
+                                            <li>Introduction to programming fundamentals</li>
+                                            <li>Basic syntax and concepts</li>
+                                            <li>First simple project</li>
+                                        </ul>
+                                    </div>
+                                </div>
+
+                                <!-- Week 3-4 -->
+                                <div class="border-b border-gray-200 last:border-b-0">
+                                    <div class="bg-gray-50 p-4">
+                                        <h4 class="text-lg font-medium text-gray-800">Weeks 3-4: Core Concepts</h4>
+                                    </div>
+                                    <div class="p-4">
+                                        <p class="text-gray-700 mb-2">Diving deeper into the core concepts and building your knowledge base.</p>
+                                        <ul class="list-disc list-inside text-gray-600 text-sm space-y-1">
+                                            <li>Advanced syntax and patterns</li>
+                                            <li>Working with data structures</li>
+                                            <li>Understanding key frameworks</li>
+                                            <li>Small practice projects</li>
+                                        </ul>
+                                    </div>
+                                </div>
+
+                                <!-- Week 5-8 -->
+                                <div class="border-b border-gray-200 last:border-b-0">
+                                    <div class="bg-gray-50 p-4">
+                                        <h4 class="text-lg font-medium text-gray-800">Weeks 5-8: Practical Applications</h4>
+                                    </div>
+                                    <div class="p-4">
+                                        <p class="text-gray-700 mb-2">Applying your knowledge to real-world scenarios and building larger projects.</p>
+                                        <ul class="list-disc list-inside text-gray-600 text-sm space-y-1">
+                                            <li>Working with APIs and integrations</li>
+                                            <li>Best practices and design patterns</li>
+                                            <li>Mid-term project development</li>
+                                            <li>Code reviews and feedback</li>
+                                        </ul>
+                                    </div>
+                                </div>
+
+                                <!-- Weeks 9-12 -->
+                                <div>
+                                    <div class="bg-gray-50 p-4">
+                                        <h4 class="text-lg font-medium text-gray-800">Weeks 9-12: Advanced Topics & Final Project</h4>
+                                    </div>
+                                    <div class="p-4">
+                                        <p class="text-gray-700 mb-2">Mastering advanced topics and completing your final capstone project.</p>
+                                        <ul class="list-disc list-inside text-gray-600 text-sm space-y-1">
+                                            <li>Advanced frameworks and libraries</li>
+                                            <li>Performance optimization</li>
+                                            <li>Final project development</li>
+                                            <li>Deployment and portfolio building</li>
+                                        </ul>
+                                    </div>
                                 </div>
                             </div>
+                        </div>
 
-                            <!-- Week 3-4 -->
-                            <div class="faq-item border-b border-gray-200 last:border-b-0">
-                                <button
-                                    class="faq-question flex items-center justify-between w-full p-4 text-left focus:outline-none">
-                                    <span class="text-lg font-medium">Weeks 3-4: Core Concepts</span>
-                                    <svg class="w-5 h-5 transform transition-transform" fill="none" stroke="currentColor"
-                                        viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                            d="M19 9l-7 7-7-7"></path>
-                                    </svg>
-                                </button>
-                                <div class="faq-answer hidden px-4 pb-4">
-                                    <p class="text-gray-700 mb-2">Diving deeper into the core concepts and building your
-                                        knowledge base.</p>
-                                    <ul class="list-disc list-inside text-gray-600 text-sm">
-                                        <li>Advanced syntax and patterns</li>
-                                        <li>Working with data structures</li>
-                                        <li>Understanding key frameworks</li>
-                                        <li>Small practice projects</li>
-                                    </ul>
+                        <!-- 6 Month Program Content -->
+                        <div id="content-6-month" class="program-content hidden">
+                            <div class="border border-gray-200 rounded-lg overflow-hidden">
+                                <!-- Month 1 -->
+                                <div class="border-b border-gray-200 last:border-b-0">
+                                    <div class="bg-gray-50 p-4">
+                                        <h4 class="text-lg font-medium text-gray-800">Month 1: Foundation & Fundamentals</h4>
+                                    </div>
+                                    <div class="p-4">
+                                        <p class="text-gray-700 mb-2">Comprehensive introduction and solid foundation building.</p>
+                                        <ul class="list-disc list-inside text-gray-600 text-sm space-y-1">
+                                            <li>Detailed environment setup and configuration</li>
+                                            <li>In-depth programming fundamentals</li>
+                                            <li>Advanced syntax and best practices</li>
+                                            <li>Multiple foundational projects</li>
+                                        </ul>
+                                    </div>
                                 </div>
-                            </div>
 
-                            <!-- Week 5-8 -->
-                            <div class="faq-item border-b border-gray-200 last:border-b-0">
-                                <button
-                                    class="faq-question flex items-center justify-between w-full p-4 text-left focus:outline-none">
-                                    <span class="text-lg font-medium">Weeks 5-8: Practical Applications</span>
-                                    <svg class="w-5 h-5 transform transition-transform" fill="none" stroke="currentColor"
-                                        viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                            d="M19 9l-7 7-7-7"></path>
-                                    </svg>
-                                </button>
-                                <div class="faq-answer hidden px-4 pb-4">
-                                    <p class="text-gray-700 mb-2">Applying your knowledge to real-world scenarios and
-                                        building larger projects.</p>
-                                    <ul class="list-disc list-inside text-gray-600 text-sm">
-                                        <li>Working with APIs and integrations</li>
-                                        <li>Best practices and design patterns</li>
-                                        <li>Mid-term project development</li>
-                                        <li>Code reviews and feedback</li>
-                                    </ul>
+                                <!-- Month 2 -->
+                                <div class="border-b border-gray-200 last:border-b-0">
+                                    <div class="bg-gray-50 p-4">
+                                        <h4 class="text-lg font-medium text-gray-800">Month 2: Core Technologies & Frameworks</h4>
+                                    </div>
+                                    <div class="p-4">
+                                        <p class="text-gray-700 mb-2">Deep dive into core technologies and popular frameworks.</p>
+                                        <ul class="list-disc list-inside text-gray-600 text-sm space-y-1">
+                                            <li>Advanced data structures and algorithms</li>
+                                            <li>Framework mastery and best practices</li>
+                                            <li>Database integration and management</li>
+                                            <li>Intermediate project development</li>
+                                        </ul>
+                                    </div>
                                 </div>
-                            </div>
 
-                            <!-- Weeks 9-12 -->
-                            <div class="faq-item">
-                                <button
-                                    class="faq-question flex items-center justify-between w-full p-4 text-left focus:outline-none">
-                                    <span class="text-lg font-medium">Weeks 9-12: Advanced Topics & Final Project</span>
-                                    <svg class="w-5 h-5 transform transition-transform" fill="none" stroke="currentColor"
-                                        viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                            d="M19 9l-7 7-7-7"></path>
-                                    </svg>
-                                </button>
-                                <div class="faq-answer hidden px-4 pb-4">
-                                    <p class="text-gray-700 mb-2">Mastering advanced topics and completing your final
-                                        capstone project.</p>
-                                    <ul class="list-disc list-inside text-gray-600 text-sm">
-                                        <li>Advanced frameworks and libraries</li>
-                                        <li>Performance optimization</li>
-                                        <li>Final project development</li>
-                                        <li>Deployment and portfolio building</li>
-                                    </ul>
+                                <!-- Month 3 -->
+                                <div class="border-b border-gray-200 last:border-b-0">
+                                    <div class="bg-gray-50 p-4">
+                                        <h4 class="text-lg font-medium text-gray-800">Month 3: Advanced Applications & APIs</h4>
+                                    </div>
+                                    <div class="p-4">
+                                        <p class="text-gray-700 mb-2">Building complex applications with third-party integrations.</p>
+                                        <ul class="list-disc list-inside text-gray-600 text-sm space-y-1">
+                                            <li>RESTful API development and consumption</li>
+                                            <li>Authentication and authorization systems</li>
+                                            <li>Real-time features and websockets</li>
+                                            <li>Complex project architecture</li>
+                                        </ul>
+                                    </div>
+                                </div>
+
+                                <!-- Month 4 -->
+                                <div class="border-b border-gray-200 last:border-b-0">
+                                    <div class="bg-gray-50 p-4">
+                                        <h4 class="text-lg font-medium text-gray-800">Month 4: Testing & Quality Assurance</h4>
+                                    </div>
+                                    <div class="p-4">
+                                        <p class="text-gray-700 mb-2">Ensuring code quality through comprehensive testing strategies.</p>
+                                        <ul class="list-disc list-inside text-gray-600 text-sm space-y-1">
+                                            <li>Unit testing and integration testing</li>
+                                            <li>Test-driven development (TDD)</li>
+                                            <li>Code review processes and tools</li>
+                                            <li>Quality assurance best practices</li>
+                                        </ul>
+                                    </div>
+                                </div>
+
+                                <!-- Month 5 -->
+                                <div class="border-b border-gray-200 last:border-b-0">
+                                    <div class="bg-gray-50 p-4">
+                                        <h4 class="text-lg font-medium text-gray-800">Month 5: Performance & Deployment</h4>
+                                    </div>
+                                    <div class="p-4">
+                                        <p class="text-gray-700 mb-2">Optimizing applications and preparing for production deployment.</p>
+                                        <ul class="list-disc list-inside text-gray-600 text-sm space-y-1">
+                                            <li>Performance optimization techniques</li>
+                                            <li>Caching strategies and implementation</li>
+                                            <li>CI/CD pipeline setup</li>
+                                            <li>Cloud deployment and scaling</li>
+                                        </ul>
+                                    </div>
+                                </div>
+
+                                <!-- Month 6 -->
+                                <div>
+                                    <div class="bg-gray-50 p-4">
+                                        <h4 class="text-lg font-medium text-gray-800">Month 6: Capstone Project & Career Prep</h4>
+                                    </div>
+                                    <div class="p-4">
+                                        <p class="text-gray-700 mb-2">Final comprehensive project and career preparation.</p>
+                                        <ul class="list-disc list-inside text-gray-600 text-sm space-y-1">
+                                            <li>Full-stack capstone project development</li>
+                                            <li>Portfolio building and presentation</li>
+                                            <li>Interview preparation and coding challenges</li>
+                                            <li>Job application strategies and networking</li>
+                                        </ul>
+                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -217,7 +359,7 @@ use Illuminate\Support\Facades\Crypt;
                         <h3 class="text-2xl font-bold mb-6">Program Options</h3>
 
                         @if (isset($currentCourse['original_price_3_month']) || isset($currentCourse['original_price_6_month']))
-                            @if (isset($currentCourse['offer_end_at']))
+                            @if (isset($currentCourse['offer_end_at']) && strtotime($currentCourse['offer_end_at']) > time())
                                 <div class="mb-4 bg-yellow-50 border border-yellow-200 p-3 rounded-lg">
                                     <div class="flex items-center">
                                         <div class="text-yellow-600 mr-2">
@@ -277,7 +419,7 @@ use Illuminate\Support\Facades\Crypt;
                         <!-- 3 Month Plan -->
                         <div
                             class="border border-gray-200 rounded-lg bg-white p-6 mb-6 hover:shadow-md transition-shadow relative">
-                            @if (isset($currentCourse['original_price_3_month']))
+                            @if (isset($currentCourse['original_price_3_month']) && isset($currentCourse['offer_end_at']) && strtotime($currentCourse['offer_end_at']) > time())
                                 <div
                                     class="absolute -top-4 -right-4 bg-red-500 text-white text-xs font-bold px-3 py-1 rounded-full transform rotate-12">
                                     SALE!</div>
@@ -287,7 +429,7 @@ use Illuminate\Support\Facades\Crypt;
                                 <span class="bg-blue-100 text-blue-800 py-1 px-3 rounded-full text-sm">Basic</span>
                             </div>
                             <div class="mb-4">
-                                @if (isset($currentCourse['original_price_3_month']))
+                                @if (isset($currentCourse['original_price_3_month']) && isset($currentCourse['offer_end_at']) && strtotime($currentCourse['offer_end_at']) > time())
                                     <div class="flex items-center mb-1">
                                         <span
                                             class="text-sm text-gray-500 line-through mr-2">₹{{ $currentCourse['original_price_3_month'] }}</span>
@@ -313,10 +455,13 @@ use Illuminate\Support\Facades\Crypt;
                                         ₹{{ number_format($savings, 2) }}</div>
                                 @endif
                                 <div class="flex items-baseline">
-                                    <span
-                                        class="text-3xl font-bold text-gray-800">₹{{ $currentCourse['price_3_month'] }}</span>
+                                    @if (isset($currentCourse['original_price_3_month']) && (!isset($currentCourse['offer_end_at']) || strtotime($currentCourse['offer_end_at']) <= time()))
+                                        <span class="text-3xl font-bold text-gray-800">₹{{ $currentCourse['original_price_3_month'] }}</span>
+                                    @else
+                                        <span class="text-3xl font-bold text-gray-800">₹{{ $currentCourse['price_3_month'] }}</span>
+                                    @endif
                                     <span class="text-gray-600 ml-1">/one-time</span>
-                                    @if (isset($currentCourse['original_price_3_month']))
+                                    @if (isset($currentCourse['original_price_3_month']) && isset($currentCourse['offer_end_at']) && strtotime($currentCourse['offer_end_at']) > time())
                                         <span class="ml-2 text-sm text-green-600 font-medium">Limited Time Offer!</span>
                                     @endif
                                 </div>
@@ -352,7 +497,7 @@ use Illuminate\Support\Facades\Crypt;
                                 Buy Now
                             </button>
 
-                            @if (isset($currentCourse['original_price_3_month']))
+                            @if (isset($currentCourse['original_price_3_month']) && isset($currentCourse['offer_end_at']) && strtotime($currentCourse['offer_end_at']) > time())
                                 <div class="mt-3 bg-gray-50 p-2 rounded text-sm">
                                     <div class="flex items-start">
                                         <div class="text-yellow-500 mr-1">★★★★★</div>
@@ -368,7 +513,7 @@ use Illuminate\Support\Facades\Crypt;
                             <div class="absolute top-0 right-0 bg-primary text-white py-1 px-4 text-sm rounded-bl-lg">
                                 RECOMMENDED
                             </div>
-                            @if (isset($currentCourse['original_price_6_month']))
+                            @if (isset($currentCourse['original_price_6_month']) && isset($currentCourse['offer_end_at']) && strtotime($currentCourse['offer_end_at']) > time())
                                 <div
                                     class="absolute -top-4 -left-4 bg-red-500 text-white text-xs font-bold px-3 py-1 rounded-full transform -rotate-12">
                                     BEST DEAL!</div>
@@ -378,7 +523,7 @@ use Illuminate\Support\Facades\Crypt;
                                 <span class="bg-green-100 text-green-800 py-1 px-3 rounded-full text-sm">Advanced</span>
                             </div>
                             <div class="mb-4">
-                                @if (isset($currentCourse['original_price_6_month']))
+                                @if (isset($currentCourse['original_price_6_month']) && isset($currentCourse['offer_end_at']) && strtotime($currentCourse['offer_end_at']) > time())
                                     <div class="flex items-center mb-1">
                                         <span
                                             class="text-sm text-gray-500 line-through mr-2">₹{{ $currentCourse['original_price_6_month'] }}</span>
@@ -404,10 +549,13 @@ use Illuminate\Support\Facades\Crypt;
                                         ₹{{ number_format($savings, 2) }}</div>
                                 @endif
                                 <div class="flex items-baseline">
-                                    <span
-                                        class="text-3xl font-bold text-gray-800">₹{{ $currentCourse['price_6_month'] }}</span>
+                                    @if (isset($currentCourse['original_price_6_month']) && (!isset($currentCourse['offer_end_at']) || strtotime($currentCourse['offer_end_at']) <= time()))
+                                        <span class="text-3xl font-bold text-gray-800">₹{{ $currentCourse['original_price_6_month'] }}</span>
+                                    @else
+                                        <span class="text-3xl font-bold text-gray-800">₹{{ $currentCourse['price_6_month'] }}</span>
+                                    @endif
                                     <span class="text-gray-600 ml-1">/one-time</span>
-                                    @if (isset($currentCourse['original_price_6_month']))
+                                    @if (isset($currentCourse['original_price_6_month']) && isset($currentCourse['offer_end_at']) && strtotime($currentCourse['offer_end_at']) > time())
                                         <span class="ml-2 text-sm text-green-600 font-medium">Best Value!</span>
                                     @endif
                                 </div>
@@ -451,7 +599,7 @@ use Illuminate\Support\Facades\Crypt;
                                 Buy Now
                             </button>
 
-                            @if (isset($currentCourse['original_price_6_month']))
+                            @if (isset($currentCourse['original_price_6_month']) && isset($currentCourse['offer_end_at']) && strtotime($currentCourse['offer_end_at']) > time())
                                 <div class="mt-3 bg-gray-50 p-2 rounded text-sm">
                                     <div class="flex items-start">
                                         <div class="text-yellow-500 mr-1">★★★★★</div>
@@ -626,11 +774,14 @@ use Illuminate\Support\Facades\Crypt;
                                     <td class="py-3 px-4 text-center">
                                         <div class="mb-1">
                                             <span class="text-sm">3-Month Plan:</span>
-                                            @if (isset($currentCourse['original_price_3_month']))
+                                            @if (isset($currentCourse['original_price_3_month']) && isset($currentCourse['offer_end_at']) && strtotime($currentCourse['offer_end_at']) > time())
                                                 <span
                                                     class="text-red-500 line-through text-sm">₹{{ $currentCourse['original_price_3_month'] }}</span>
                                                 <span
                                                     class="text-green-600 font-bold">₹{{ $currentCourse['price_3_month'] }}</span>
+                                            @elseif (isset($currentCourse['original_price_3_month']))
+                                                <span
+                                                    class="text-green-600 font-bold">₹{{ $currentCourse['original_price_3_month'] }}</span>
                                             @else
                                                 <span
                                                     class="text-green-600 font-bold">₹{{ $currentCourse['price_3_month'] }}</span>
@@ -638,11 +789,14 @@ use Illuminate\Support\Facades\Crypt;
                                         </div>
                                         <div>
                                             <span class="text-sm">6-Month Plan:</span>
-                                            @if (isset($currentCourse['original_price_6_month']))
+                                            @if (isset($currentCourse['original_price_6_month']) && isset($currentCourse['offer_end_at']) && strtotime($currentCourse['offer_end_at']) > time())
                                                 <span
                                                     class="text-red-500 line-through text-sm">₹{{ $currentCourse['original_price_6_month'] }}</span>
                                                 <span
                                                     class="text-green-600 font-bold">₹{{ $currentCourse['price_6_month'] }}</span>
+                                            @elseif (isset($currentCourse['original_price_6_month']))
+                                                <span
+                                                    class="text-green-600 font-bold">₹{{ $currentCourse['original_price_6_month'] }}</span>
                                             @else
                                                 <span
                                                     class="text-green-600 font-bold">₹{{ $currentCourse['price_6_month'] }}</span>
@@ -689,12 +843,14 @@ use Illuminate\Support\Facades\Crypt;
                     @endif
                     <span>
                         Buy 3-Month Plan
-                        @if (isset($currentCourse['original_price_3_month']))
+                        @if (isset($currentCourse['original_price_3_month']) && isset($currentCourse['offer_end_at']) && strtotime($currentCourse['offer_end_at']) > time())
                             <span class="block mt-1">
                                 <span
                                     class="text-sm text-gray-500 line-through">₹{{ $currentCourse['original_price_3_month'] }}</span>
                                 <span class="text-primary font-bold">₹{{ $currentCourse['price_3_month'] }}</span>
                             </span>
+                        @elseif (isset($currentCourse['original_price_3_month']))
+                            <span class="block mt-1 text-primary font-bold">₹{{ $currentCourse['original_price_3_month'] }}</span>
                         @else
                             <span class="block mt-1 text-primary font-bold">₹{{ $currentCourse['price_3_month'] }}</span>
                         @endif
@@ -713,12 +869,14 @@ use Illuminate\Support\Facades\Crypt;
                     @endif
                     <span>
                         Buy 6-Month Plan
-                        @if (isset($currentCourse['original_price_6_month']))
+                        @if (isset($currentCourse['original_price_6_month']) && isset($currentCourse['offer_end_at']) && strtotime($currentCourse['offer_end_at']) > time())
                             <span class="block mt-1">
                                 <span
                                     class="text-sm text-gray-200 line-through">₹{{ $currentCourse['original_price_6_month'] }}</span>
                                 <span class="text-white font-bold">₹{{ $currentCourse['price_6_month'] }}</span>
                             </span>
+                        @elseif (isset($currentCourse['original_price_6_month']))
+                            <span class="block mt-1 text-white font-bold">₹{{ $currentCourse['original_price_6_month'] }}</span>
                         @else
                             <span class="block mt-1 text-white font-bold">₹{{ $currentCourse['price_6_month'] }}</span>
                         @endif
@@ -862,7 +1020,7 @@ use Illuminate\Support\Facades\Crypt;
         // Sale countdown timer
         document.addEventListener('DOMContentLoaded', function() {
             @if (isset($currentCourse['original_price_3_month']) || isset($currentCourse['original_price_6_month']))
-                @if (isset($currentCourse['offer_end_at']))
+                @if (isset($currentCourse['offer_end_at']) && strtotime($currentCourse['offer_end_at']) > time())
                     // Use the offer end date from course data
                     const countDownDate = new Date("{{ $currentCourse['offer_end_at'] }}").getTime();
 
@@ -910,11 +1068,10 @@ use Illuminate\Support\Facades\Crypt;
                             sidebarCountdownEl.innerHTML = countdownText;
                         }
 
-                        // If the countdown is finished, clear the interval
+                        // If the countdown is finished, clear the interval and reload page
                         if (distance < 0) {
                             clearInterval(countdownTimer);
-                            if (countdownEl) countdownEl.innerHTML = "EXPIRED";
-                            if (sidebarCountdownEl) sidebarCountdownEl.innerHTML = "EXPIRED";
+                            location.reload();
                         }
                     }, 1000);
                 @endif
@@ -945,6 +1102,26 @@ use Illuminate\Support\Facades\Crypt;
 
                 handleRazorpayPurchase(button, course, duration, token);
 
+            });
+
+            // Program Structure Tab Functionality
+            $('.program-tab').on('click', function(e) {
+                e.preventDefault();
+
+                // Remove active states from all tabs
+                $('.program-tab').removeClass('text-blue-600 border-blue-600 bg-blue-50').addClass('text-gray-500');
+                $('.program-tab').removeClass('border-b-2');
+
+                // Hide all content
+                $('.program-content').addClass('hidden');
+
+                // Add active state to clicked tab
+                $(this).removeClass('text-gray-500').addClass('text-blue-600 border-blue-600 bg-blue-50 border-b-2');
+
+                // Show corresponding content
+                const tabId = $(this).attr('id');
+                const contentId = tabId.replace('tab-', 'content-');
+                $('#' + contentId).removeClass('hidden');
             });
 
         });

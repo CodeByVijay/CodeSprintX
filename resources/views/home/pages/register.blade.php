@@ -30,150 +30,95 @@ $pageDescription = "Register for a CodeSprintX account to enroll in our professi
                     <form action="#" method="POST" class="space-y-6">
                         <!-- Name Fields -->
                         <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-                            <div class="form-group relative">
-                                <label for="first_name" class="block text-gray-700 font-medium mb-2 text-sm">First Name</label>
+                            <div class="form-group relative group">
+                                <label for="first_name" class="block text-gray-700 font-medium mb-2 text-sm group-focus-within:text-xs group-focus-within:text-primary transition-all duration-300">First Name</label>
                                 <div class="relative">
-                                    <div class="absolute inset-y-0 left-0 pl-4 flex items-center pointer-events-none">
-                                        <i class="fas fa-user text-gray-400"></i>
+                                    <div class="absolute inset-y-0 left-0 pl-4 flex items-center pointer-events-none z-10">
+                                        <i class="fas fa-user text-gray-400 group-focus-within:text-primary transition-colors duration-300"></i>
                                     </div>
                                     <input type="text" id="first_name" name="first_name"
-                                        class="w-full pl-12 pr-4 py-4 border-2 border-gray-200 rounded-xl focus:outline-none focus:border-primary focus:ring-4 focus:ring-primary/10 transition-all duration-300 bg-gray-50 hover:bg-white"
+                                        class="w-full pl-12 pr-4 py-4 border-2 border-gray-200 rounded-xl focus:outline-none focus:border-primary focus:ring-4 focus:ring-primary/10 focus:bg-white transition-all duration-300 bg-gray-50 hover:bg-white"
                                         placeholder="First name" required>
                                 </div>
                             </div>
 
-                            <div class="form-group relative">
-                                <label for="last_name" class="block text-gray-700 font-medium mb-2 text-sm">Last Name</label>
+                            <div class="form-group relative group">
+                                <label for="last_name" class="block text-gray-700 font-medium mb-2 text-sm group-focus-within:text-xs group-focus-within:text-primary transition-all duration-300">Last Name</label>
                                 <div class="relative">
-                                    <div class="absolute inset-y-0 left-0 pl-4 flex items-center pointer-events-none">
-                                        <i class="fas fa-user text-gray-400"></i>
+                                    <div class="absolute inset-y-0 left-0 pl-4 flex items-center pointer-events-none z-10">
+                                        <i class="fas fa-user text-gray-400 group-focus-within:text-primary transition-colors duration-300"></i>
                                     </div>
                                     <input type="text" id="last_name" name="last_name"
-                                        class="w-full pl-12 pr-4 py-4 border-2 border-gray-200 rounded-xl focus:outline-none focus:border-primary focus:ring-4 focus:ring-primary/10 transition-all duration-300 bg-gray-50 hover:bg-white"
+                                        class="w-full pl-12 pr-4 py-4 border-2 border-gray-200 rounded-xl focus:outline-none focus:border-primary focus:ring-4 focus:ring-primary/10 focus:bg-white transition-all duration-300 bg-gray-50 hover:bg-white"
                                         placeholder="Last name" required>
                                 </div>
                             </div>
                         </div>
 
                         <!-- Email Field -->
-                        <div class="form-group relative">
-                            <label for="email" class="block text-gray-700 font-medium mb-2 text-sm">Email Address</label>
+                        <div class="form-group relative group">
+                            <label for="email" class="block text-gray-700 font-medium mb-2 text-sm group-focus-within:text-xs group-focus-within:text-primary transition-all duration-300">Email Address</label>
                             <div class="relative">
-                                <div class="absolute inset-y-0 left-0 pl-4 flex items-center pointer-events-none">
-                                    <i class="fas fa-envelope text-gray-400"></i>
+                                <div class="absolute inset-y-0 left-0 pl-4 flex items-center pointer-events-none z-10">
+                                    <i class="fas fa-envelope text-gray-400 group-focus-within:text-primary transition-colors duration-300"></i>
                                 </div>
                                 <input type="email" id="email" name="email"
-                                    class="w-full pl-12 pr-4 py-4 border-2 border-gray-200 rounded-xl focus:outline-none focus:border-primary focus:ring-4 focus:ring-primary/10 transition-all duration-300 bg-gray-50 hover:bg-white"
+                                    class="w-full pl-12 pr-4 py-4 border-2 border-gray-200 rounded-xl focus:outline-none focus:border-primary focus:ring-4 focus:ring-primary/10 focus:bg-white transition-all duration-300 bg-gray-50 hover:bg-white"
                                     placeholder="Enter your email" required>
                             </div>
                         </div>
 
                         <!-- Phone Field -->
-                        <div class="form-group relative">
-                            <label for="phone" class="block text-gray-700 font-medium mb-2 text-sm">Phone Number</label>
+                        <div class="form-group relative group">
+                            <label for="phone" class="block text-gray-700 font-medium mb-2 text-sm group-focus-within:text-xs group-focus-within:text-primary transition-all duration-300">Phone Number</label>
                             <div class="relative">
-                                <div class="absolute inset-y-0 left-0 pl-4 flex items-center pointer-events-none">
-                                    <i class="fas fa-phone text-gray-400"></i>
+                                <div class="absolute inset-y-0 left-0 pl-4 flex items-center pointer-events-none z-10">
+                                    <i class="fas fa-phone text-gray-400 group-focus-within:text-primary transition-colors duration-300"></i>
                                 </div>
                                 <input type="tel" id="phone" name="phone"
-                                    class="w-full pl-12 pr-4 py-4 border-2 border-gray-200 rounded-xl focus:outline-none focus:border-primary focus:ring-4 focus:ring-primary/10 transition-all duration-300 bg-gray-50 hover:bg-white"
-                                    placeholder="Enter your phone number" required>
+                                    class="w-full pl-12 pr-4 py-4 border-2 border-gray-200 rounded-xl focus:outline-none focus:border-primary focus:ring-4 focus:ring-primary/10 focus:bg-white transition-all duration-300 bg-gray-50 hover:bg-white"
+                                    placeholder="Enter 10-digit phone number"
+                                    pattern="[0-9]{10}"
+                                    minlength="10"
+                                    maxlength="10"
+                                    oninput="this.value = this.value.replace(/[^0-9]/g, '').slice(0, 10)"
+                                    required>
                             </div>
                         </div>
 
                         <!-- Password Fields -->
                         <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-                            <div class="form-group relative">
-                                <label for="password" class="block text-gray-700 font-medium mb-2 text-sm">Password</label>
+                            <div class="form-group relative group">
+                                <label for="password" class="block text-gray-700 font-medium mb-2 text-sm group-focus-within:text-xs group-focus-within:text-primary transition-all duration-300">Password</label>
                                 <div class="relative">
-                                    <div class="absolute inset-y-0 left-0 pl-4 flex items-center pointer-events-none">
-                                        <i class="fas fa-lock text-gray-400"></i>
+                                    <div class="absolute inset-y-0 left-0 pl-4 flex items-center pointer-events-none z-10">
+                                        <i class="fas fa-lock text-gray-400 group-focus-within:text-primary transition-colors duration-300"></i>
                                     </div>
                                     <input type="password" id="password" name="password"
-                                        class="w-full pl-12 pr-16 py-4 border-2 border-gray-200 rounded-xl focus:outline-none focus:border-primary focus:ring-4 focus:ring-primary/10 transition-all duration-300 bg-gray-50 hover:bg-white"
+                                        class="w-full pl-12 pr-16 py-4 border-2 border-gray-200 rounded-xl focus:outline-none focus:border-primary focus:ring-4 focus:ring-primary/10 focus:bg-white transition-all duration-300 bg-gray-50 hover:bg-white"
                                         placeholder="Create password" required>
                                     <button type="button"
-                                        class="toggle-password absolute inset-y-0 right-0 pr-4 flex items-center text-gray-400 hover:text-primary focus:outline-none transition-colors duration-300"
+                                        class="toggle-password absolute inset-y-0 right-0 pr-4 flex items-center text-gray-400 hover:text-primary focus:outline-none transition-colors duration-300 z-10"
                                         onclick="togglePasswordVisibility('password')">
                                         <i class="fas fa-eye"></i>
                                     </button>
                                 </div>
                             </div>
 
-                            <div class="form-group relative">
-                                <label for="confirm_password" class="block text-gray-700 font-medium mb-2 text-sm">Confirm Password</label>
+                            <div class="form-group relative group">
+                                <label for="confirm_password" class="block text-gray-700 font-medium mb-2 text-sm group-focus-within:text-xs group-focus-within:text-primary transition-all duration-300">Confirm Password</label>
                                 <div class="relative">
-                                    <div class="absolute inset-y-0 left-0 pl-4 flex items-center pointer-events-none">
-                                        <i class="fas fa-lock text-gray-400"></i>
+                                    <div class="absolute inset-y-0 left-0 pl-4 flex items-center pointer-events-none z-10">
+                                        <i class="fas fa-lock text-gray-400 group-focus-within:text-primary transition-colors duration-300"></i>
                                     </div>
                                     <input type="password" id="confirm_password" name="confirm_password"
-                                        class="w-full pl-12 pr-16 py-4 border-2 border-gray-200 rounded-xl focus:outline-none focus:border-primary focus:ring-4 focus:ring-primary/10 transition-all duration-300 bg-gray-50 hover:bg-white"
+                                        class="w-full pl-12 pr-16 py-4 border-2 border-gray-200 rounded-xl focus:outline-none focus:border-primary focus:ring-4 focus:ring-primary/10 focus:bg-white transition-all duration-300 bg-gray-50 hover:bg-white"
                                         placeholder="Confirm password" required>
                                     <button type="button"
-                                        class="toggle-password absolute inset-y-0 right-0 pr-4 flex items-center text-gray-400 hover:text-primary focus:outline-none transition-colors duration-300"
+                                        class="toggle-password absolute inset-y-0 right-0 pr-4 flex items-center text-gray-400 hover:text-primary focus:outline-none transition-colors duration-300 z-10"
                                         onclick="togglePasswordVisibility('confirm_password')">
                                         <i class="fas fa-eye"></i>
                                     </button>
-                                </div>
-                            </div>
-                        </div>
-
-                        <!-- Education Field -->
-                        <div class="form-group relative">
-                            <label for="education" class="block text-gray-700 font-medium mb-2 text-sm">Highest Education</label>
-                            <div class="relative">
-                                <div class="absolute inset-y-0 left-0 pl-4 flex items-center pointer-events-none">
-                                    <i class="fas fa-graduation-cap text-gray-400"></i>
-                                </div>
-                                <select id="education" name="education"
-                                    class="w-full pl-12 pr-4 py-4 border-2 border-gray-200 rounded-xl focus:outline-none focus:border-primary focus:ring-4 focus:ring-primary/10 transition-all duration-300 bg-gray-50 hover:bg-white appearance-none"
-                                    required>
-                                    <option value="">Select your highest education</option>
-                                    <option value="high_school">High School</option>
-                                    <option value="bachelors">Bachelor's Degree</option>
-                                    <option value="masters">Master's Degree</option>
-                                    <option value="phd">PhD</option>
-                                    <option value="other">Other</option>
-                                </select>
-                                <div class="absolute inset-y-0 right-0 pr-4 flex items-center pointer-events-none">
-                                    <i class="fas fa-chevron-down text-gray-400"></i>
-                                </div>
-                            </div>
-                        </div>
-
-                        <!-- Interests -->
-                        <div class="form-group">
-                            <label class="block text-gray-700 font-medium mb-4 text-sm">Areas of Interest</label>
-                            <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
-                                <div class="flex items-center p-4 border-2 border-gray-200 rounded-xl hover:border-primary transition-colors duration-300 group">
-                                    <input type="checkbox" id="web_dev" name="interests[]" value="web_dev"
-                                        class="w-5 h-5 text-primary focus:ring-primary border-gray-300 rounded transition-colors duration-300">
-                                    <label for="web_dev" class="ml-3 text-gray-700 group-hover:text-primary transition-colors duration-300 font-medium">Web Development</label>
-                                </div>
-                                <div class="flex items-center p-4 border-2 border-gray-200 rounded-xl hover:border-primary transition-colors duration-300 group">
-                                    <input type="checkbox" id="python" name="interests[]" value="python"
-                                        class="w-5 h-5 text-primary focus:ring-primary border-gray-300 rounded transition-colors duration-300">
-                                    <label for="python" class="ml-3 text-gray-700 group-hover:text-primary transition-colors duration-300 font-medium">Python</label>
-                                </div>
-                                <div class="flex items-center p-4 border-2 border-gray-200 rounded-xl hover:border-primary transition-colors duration-300 group">
-                                    <input type="checkbox" id="java" name="interests[]" value="java"
-                                        class="w-5 h-5 text-primary focus:ring-primary border-gray-300 rounded transition-colors duration-300">
-                                    <label for="java" class="ml-3 text-gray-700 group-hover:text-primary transition-colors duration-300 font-medium">Java</label>
-                                </div>
-                                <div class="flex items-center p-4 border-2 border-gray-200 rounded-xl hover:border-primary transition-colors duration-300 group">
-                                    <input type="checkbox" id="data_science" name="interests[]" value="data_science"
-                                        class="w-5 h-5 text-primary focus:ring-primary border-gray-300 rounded transition-colors duration-300">
-                                    <label for="data_science" class="ml-3 text-gray-700 group-hover:text-primary transition-colors duration-300 font-medium">Data Science</label>
-                                </div>
-                                <div class="flex items-center p-4 border-2 border-gray-200 rounded-xl hover:border-primary transition-colors duration-300 group">
-                                    <input type="checkbox" id="mobile_dev" name="interests[]" value="mobile_dev"
-                                        class="w-5 h-5 text-primary focus:ring-primary border-gray-300 rounded transition-colors duration-300">
-                                    <label for="mobile_dev" class="ml-3 text-gray-700 group-hover:text-primary transition-colors duration-300 font-medium">Mobile Development</label>
-                                </div>
-                                <div class="flex items-center p-4 border-2 border-gray-200 rounded-xl hover:border-primary transition-colors duration-300 group">
-                                    <input type="checkbox" id="cybersecurity" name="interests[]" value="cybersecurity"
-                                        class="w-5 h-5 text-primary focus:ring-primary border-gray-300 rounded transition-colors duration-300">
-                                    <label for="cybersecurity" class="ml-3 text-gray-700 group-hover:text-primary transition-colors duration-300 font-medium">Cybersecurity</label>
                                 </div>
                             </div>
                         </div>
@@ -214,9 +159,48 @@ $pageDescription = "Register for a CodeSprintX account to enroll in our professi
                 </div>
             </div>
         </div>
-    </div>
-</section>
+    </div>    </section>
+@endsection
 
+@section('scripts')
+<script>
 
+    // Phone number validation
+    document.addEventListener('DOMContentLoaded', function() {
+        const phoneInput = document.getElementById('phone');
 
+        // Prevent non-numeric input and limit to 10 digits
+        phoneInput.addEventListener('input', function(e) {
+            // Remove any non-numeric characters
+            let value = e.target.value.replace(/[^0-9]/g, '');
+
+            // Limit to 10 digits
+            if (value.length > 10) {
+                value = value.slice(0, 10);
+            }
+
+            e.target.value = value;
+        });
+
+        // Prevent pasting non-numeric content
+        phoneInput.addEventListener('paste', function(e) {
+            e.preventDefault();
+            const paste = (e.clipboardData || window.clipboardData).getData('text');
+            const numericPaste = paste.replace(/[^0-9]/g, '').slice(0, 10);
+            e.target.value = numericPaste;
+        });
+
+        // Additional validation on form submit
+        const form = phoneInput.closest('form');
+        form.addEventListener('submit', function(e) {
+            const phoneValue = phoneInput.value;
+            if (phoneValue.length !== 10) {
+                e.preventDefault();
+                alert('Please enter exactly 10 digits for the phone number.');
+                phoneInput.focus();
+                return false;
+            }
+        });
+    });
+</script>
 @endsection

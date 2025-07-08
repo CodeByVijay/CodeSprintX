@@ -37,7 +37,7 @@
     </div>
 
     <!-- Main Content with proper spacing -->
-    <div class="px-4 md:container md:mx-auto  relative z-20 pb-12">
+    <div class="px-4 md:container md:mx-auto  relative z-10 pb-12">
         <div class="grid grid-cols-1 lg:grid-cols-3 gap-6 md:gap-8">
             <!-- Left Column: Profile Overview -->
             <div class="lg:col-span-1">

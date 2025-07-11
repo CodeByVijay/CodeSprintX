@@ -17,7 +17,7 @@
                         </div>
                         <div class="min-w-0 flex-1">
                             <h4 class="font-medium text-gray-800 mb-1">Email</h4>
-                            <a href="mailto:info@codesprintx.vijayamule.xyz" class="text-primary hover:text-secondary text-sm sm:text-base break-all overflow-wrap-anywhere transition-colors duration-300 hover:underline">info@codesprintx.vijayamule.xyz</a>
+                            <a href="mailto:info@codesprintx.com" class="text-primary hover:text-secondary text-sm sm:text-base break-all overflow-wrap-anywhere transition-colors duration-300 hover:underline">info@codesprintx.com</a>
                         </div>
                     </div>
 
@@ -27,7 +27,7 @@
                         </div>
                         <div class="min-w-0 flex-1">
                             <h4 class="font-medium text-gray-800 mb-1">Address</h4>
-                            <p class="text-gray-600 text-sm sm:text-base">123 Education Lane, Knowledge City</p>
+                            <p class="text-gray-600 text-sm sm:text-base">New Delhi, India, 110001</p>
                         </div>
                     </div>
 
@@ -45,16 +45,16 @@
                 <div class="mt-8">
                     <h4 class="font-medium text-gray-800 mb-4">Follow Us</h4>
                     <div class="flex flex-wrap gap-3 sm:gap-4">
-                        <a href="#" class="bg-blue-600 text-white rounded-full w-10 h-10 flex items-center justify-center hover:bg-blue-700 transition-colors transform hover:scale-105">
+                        {{-- <a href="#" class="bg-blue-600 text-white rounded-full w-10 h-10 flex items-center justify-center hover:bg-blue-700 transition-colors transform hover:scale-105">
                             <i class="fab fa-facebook-f text-sm"></i>
                         </a>
                         <a href="#" class="bg-blue-400 text-white rounded-full w-10 h-10 flex items-center justify-center hover:bg-blue-500 transition-colors transform hover:scale-105">
                             <i class="fab fa-twitter text-sm"></i>
-                        </a>
+                        </a> --}}
                         <a href="#" class="bg-pink-600 text-white rounded-full w-10 h-10 flex items-center justify-center hover:bg-pink-700 transition-colors transform hover:scale-105">
                             <i class="fab fa-instagram text-sm"></i>
                         </a>
-                        <a href="#" class="bg-blue-700 text-white rounded-full w-10 h-10 flex items-center justify-center hover:bg-blue-800 transition-colors transform hover:scale-105">
+                        <a href="https://www.linkedin.com/company/codesprintx" target="_blank" class="bg-blue-700 text-white rounded-full w-10 h-10 flex items-center justify-center hover:bg-blue-800 transition-colors transform hover:scale-105">
                             <i class="fab fa-linkedin-in text-sm"></i>
                         </a>
                     </div>

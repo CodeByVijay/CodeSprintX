@@ -34,7 +34,7 @@ $pageDescription = "Get in touch with CodeSprintX. We're here to answer your que
                         </div>
                         <div>
                             <h4 class="font-medium text-gray-800">Email</h4>
-                            <p class="text-gray-600">info@codesprintx.vijayamule.xyz</p>
+                            <p class="text-gray-600">info@codesprintx.com</p>
                         </div>
                     </div>
 
@@ -44,7 +44,7 @@ $pageDescription = "Get in touch with CodeSprintX. We're here to answer your que
                         </div>
                         <div>
                             <h4 class="font-medium text-gray-800">Address</h4>
-                            <p class="text-gray-600">123 Education Lane, Knowledge City</p>
+                            <p class="text-gray-600">New Delhi, India, 110001</p>
                         </div>
                     </div>
 
@@ -62,16 +62,16 @@ $pageDescription = "Get in touch with CodeSprintX. We're here to answer your que
                 <div class="mt-8">
                     <h4 class="font-medium text-gray-800 mb-4">Follow Us</h4>
                     <div class="flex space-x-4">
-                        <a href="#" class="bg-blue-600 text-white rounded-full w-10 h-10 flex items-center justify-center hover:bg-blue-700 transition-colors">
+                        {{-- <a href="#" class="bg-blue-600 text-white rounded-full w-10 h-10 flex items-center justify-center hover:bg-blue-700 transition-colors">
                             <i class="fab fa-facebook-f"></i>
                         </a>
                         <a href="#" class="bg-blue-400 text-white rounded-full w-10 h-10 flex items-center justify-center hover:bg-blue-500 transition-colors">
                             <i class="fab fa-twitter"></i>
-                        </a>
+                        </a> --}}
                         <a href="#" class="bg-pink-600 text-white rounded-full w-10 h-10 flex items-center justify-center hover:bg-pink-700 transition-colors">
                             <i class="fab fa-instagram"></i>
                         </a>
-                        <a href="#" class="bg-blue-700 text-white rounded-full w-10 h-10 flex items-center justify-center hover:bg-blue-800 transition-colors">
+                        <a href="https://www.linkedin.com/company/codesprintx" target="_blank" class="bg-blue-700 text-white rounded-full w-10 h-10 flex items-center justify-center hover:bg-blue-800 transition-colors">
                             <i class="fab fa-linkedin-in"></i>
                         </a>
                     </div>
@@ -125,7 +125,7 @@ $pageDescription = "Get in touch with CodeSprintX. We're here to answer your que
             <div class="aspect-w-16 aspect-h-9 bg-gray-200 flex items-center justify-center">
                 {{-- <p class="text-gray-500">Map placeholder - replace with actual Google Maps embed</p> --}}
 
-                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d58885.80905309024!2d75.84599618302536!3d22.714742923725822!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3962fd24699f2011%3A0xe19470f3f121dfc6!2sIndore%2C%20Madhya%20Pradesh%20452001!5e0!3m2!1sen!2sin!4v1749820707602!5m2!1sen!2sin" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d28017.146327946597!2d77.19302304094629!3d28.62546724275067!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390ce2b43a255341%3A0x2b687f3210cdd91d!2sNew%20Delhi%2C%20Delhi%20110001!5e0!3m2!1sen!2sin!4v1749905624217!5m2!1sen!2sin" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
 
             </div>
         </div>

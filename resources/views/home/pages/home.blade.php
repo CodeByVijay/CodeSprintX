@@ -11,7 +11,7 @@ use App\Helpers\ColorHelper;
     <!-- Hero Banner -->
     <section class="relative bg-gray-900 text-white overflow-hidden">
         <div class="absolute inset-0 overflow-hidden">
-            <img src="https://placehold.co/1920x1080.png?text=Hero+Banner(1920x1080)" alt="Students learning"
+            <img src="{{ asset('assets/images/hero_section.png') }}" alt="Students learning"
                 class="w-full h-full object-cover opacity-20">
             <div class="absolute inset-0 hero-overlay"></div>
         </div>
@@ -27,7 +27,7 @@ use App\Helpers\ColorHelper;
                         class="inline-block px-8 py-4 bg-primary text-white font-semibold rounded-xl hover:bg-secondary transition-all duration-300 text-center btn-modern btn-pulse">
                         Explore Programs
                     </a>
-                    <a href="#contact"
+                    <a href="{{ route('contact-us') }}"
                         class="inline-block px-8 py-4 bg-white text-gray-900 font-semibold rounded-xl hover:bg-gray-100 transition-all duration-300 text-center btn-modern">
                         Contact Us
                     </a>
@@ -240,7 +240,7 @@ use App\Helpers\ColorHelper;
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 text-center">
                 <!-- Stat 1 -->
                 <div class="stat-card animate-on-scroll">
-                    <div class="stat-number">5000+</div>
+                    <div class="stat-number">500+</div>
                     <p class="text-blue-100 text-lg font-medium">Students Trained</p>
                 </div>
 
@@ -258,7 +258,7 @@ use App\Helpers\ColorHelper;
 
                 <!-- Stat 4 -->
                 <div class="stat-card animate-on-scroll">
-                    <div class="stat-number">50+</div>
+                    <div class="stat-number">10+</div>
                     <p class="text-blue-100 text-lg font-medium">Corporate Partners</p>
                 </div>
             </div>

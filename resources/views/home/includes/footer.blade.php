@@ -14,16 +14,16 @@
                 </div>
                  <p class="text-gray-300 mb-6 leading-relaxed">Providing professional internship programs to help students and professionals advance their careers through practical skills development and industry expertise.</p>
                  <div class="flex space-x-4">
-                     <a href="#" class="w-12 h-12 bg-gradient-to-br from-blue-600 to-blue-700 rounded-xl flex items-center justify-center text-white hover:from-blue-500 hover:to-blue-600 transition-all duration-300 transform hover:scale-110 hover:shadow-lg">
+                     {{-- <a href="#" class="w-12 h-12 bg-gradient-to-br from-blue-600 to-blue-700 rounded-xl flex items-center justify-center text-white hover:from-blue-500 hover:to-blue-600 transition-all duration-300 transform hover:scale-110 hover:shadow-lg">
                          <i class="fab fa-facebook-f text-lg"></i>
                      </a>
                      <a href="#" class="w-12 h-12 bg-gradient-to-br from-sky-500 to-sky-600 rounded-xl flex items-center justify-center text-white hover:from-sky-400 hover:to-sky-500 transition-all duration-300 transform hover:scale-110 hover:shadow-lg">
                          <i class="fab fa-twitter text-lg"></i>
-                     </a>
+                     </a> --}}
                      <a href="#" class="w-12 h-12 bg-gradient-to-br from-pink-600 to-purple-600 rounded-xl flex items-center justify-center text-white hover:from-pink-500 hover:to-purple-500 transition-all duration-300 transform hover:scale-110 hover:shadow-lg">
                          <i class="fab fa-instagram text-lg"></i>
                      </a>
-                     <a href="#" class="w-12 h-12 bg-gradient-to-br from-blue-700 to-blue-800 rounded-xl flex items-center justify-center text-white hover:from-blue-600 hover:to-blue-700 transition-all duration-300 transform hover:scale-110 hover:shadow-lg">
+                     <a href="https://www.linkedin.com/company/codesprintx" target="_blank" class="w-12 h-12 bg-gradient-to-br from-blue-700 to-blue-800 rounded-xl flex items-center justify-center text-white hover:from-blue-600 hover:to-blue-700 transition-all duration-300 transform hover:scale-110 hover:shadow-lg">
                          <i class="fab fa-linkedin-in text-lg"></i>
                      </a>
                  </div>
@@ -101,8 +101,8 @@
          <div class="border-t border-gray-700 pt-8 text-center">
              <div class="bg-gradient-to-r from-gray-800 to-gray-700 rounded-2xl p-6 backdrop-blur-sm border border-gray-600">
                  <p class="text-sm text-gray-300">
-                     &copy; {{ date('Y') }}
-                     <a href="https://codesprintx.vijayamule.xyz/" target="_blank" class="text-primary hover:text-secondary transition-colors duration-300 font-semibold">
+                     &copy; 2021 - {{ date('Y') }}
+                     <a href="https://codesprintx.com/" target="_blank" class="text-primary hover:text-secondary transition-colors duration-300 font-semibold">
                          CodeSprintX
                      </a>.
                      All rights reserved. Built with ❤️ for future developers.

@@ -96,7 +96,7 @@
                 <h2>Contact Us</h2>
                 <p>If you have questions or concerns about this privacy policy or our practices, please contact us at:</p>
                 <p>Email: info@codesprintx.com</p>
-                <p>Address: 123 Education Lane, Knowledge City</p>
+                <p>Address: New Delhi, India, 110001</p>
             </div>
         </div>
     </section>

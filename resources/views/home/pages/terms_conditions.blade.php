@@ -117,7 +117,7 @@ $pageDescription = "Read the terms and conditions for using CodeSprintX's intern
             <h2>Contact Us</h2>
             <p>If you have questions about these Terms, please contact us at:</p>
             <p>Email: info@codesprintx.com</p>
-            <p>Address: 123 Education Lane, Knowledge City</p>
+            <p>Address: New Delhi, India, 110001</p>
         </div>
     </div>
 </section>

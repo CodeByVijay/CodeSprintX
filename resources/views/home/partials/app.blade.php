@@ -15,27 +15,38 @@
 
     <!-- SEO Meta Tags -->
     <title>{{ $pageTitle ?? 'CodeSprintX - Professional Internship Programs' }}</title>
-    <meta name="description" content="{{ $pageDescription ?? 'CodeSprintX offers 3-month and 6-month internship programs in Web Development, Python, Java and more. Get certified and boost your career.' }}">
-    <meta name="keywords" content="{{ $pageKeywords ?? 'internship, skill development, web development, python, java, professional training, certification' }}">
+    <meta name="description"
+        content="{{ $pageDescription ?? 'CodeSprintX offers 3-month and 6-month internship programs in Web Development, Python, Java and more. Get certified and boost your career.' }}">
+    <meta name="keywords"
+        content="{{ $pageKeywords ?? 'internship, skill development, web development, python, java, professional training, certification' }}">
     <meta name="author" content="CodeSprintX">
 
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website">
     <meta property="og:url" content="{{ url()->current() }}">
     <meta property="og:title" content="{{ $pageTitle ?? 'CodeSprintX - Professional Internship Programs' }}">
-    <meta property="og:description" content="{{ $pageDescription ?? 'CodeSprintX offers 3-month and 6-month internship programs in Web Development, Python, Java and more. Get certified and boost your career.' }}">
+    <meta property="og:description"
+        content="{{ $pageDescription ?? 'CodeSprintX offers 3-month and 6-month internship programs in Web Development, Python, Java and more. Get certified and boost your career.' }}">
     <meta property="og:image" content="{{ asset('assets/images/logos/logo_color.webp') }}">
 
     <!-- Twitter -->
     <meta property="twitter:card" content="summary_large_image">
     <meta property="twitter:url" content="{{ url()->current() }}">
     <meta property="twitter:title" content="{{ $pageTitle ?? 'CodeSprintX - Professional Internship Programs' }}">
-    <meta property="twitter:description" content="{{ $pageDescription ?? 'CodeSprintX offers 3-month and 6-month internship programs in Web Development, Python, Java and more. Get certified and boost your career.' }}">
+    <meta property="twitter:description"
+        content="{{ $pageDescription ?? 'CodeSprintX offers 3-month and 6-month internship programs in Web Development, Python, Java and more. Get certified and boost your career.' }}">
     <meta property="twitter:image" content="{{ asset('assets/images/logos/logo_color.webp') }}">
 
     <!-- Favicon & App Icons -->
     <link rel="icon" href="https://placehold.co/32x32.png?text=SC" type="image/png">
     <link rel="apple-touch-icon" href="https://placehold.co/192x192.png?text=SC" type="image/png">
+
+    <link rel="apple-touch-icon" sizes="180x180"
+        href="{{ asset('assets/images/logos/favicon/apple-touch-icon.png') }}">
+    <link rel="icon" type="image/png" sizes="32x32"
+        href="{{ asset('assets/images/logos/favicon/favicon-32x32.png') }}">
+    <link rel="icon" type="image/png" sizes="16x16"
+        href="{{ asset('assets/images/logos/favicon/favicon-16x16.png') }}">
 
     <!-- PWA Manifest -->
     <link rel="manifest" href="{{ asset('manifest.json') }}">
@@ -73,7 +84,7 @@
     <!-- FontAwesome -->
     <link rel="preload" href="{{ asset('assets/css/fontawesome.css') }}" as="style">
 
-    <link rel="stylesheet" href="{{ asset('assets/css/fontawesome.css') }}" as="style"/>
+    <link rel="stylesheet" href="{{ asset('assets/css/fontawesome.css') }}" as="style" />
 
     <!-- jQuery -->
     <script src="{{ asset('assets/js/jquery.js') }}"></script>
@@ -81,11 +92,6 @@
     <!-- jQuery UI for better animations -->
     <script src="{{ asset('assets/js/jquery-ui.min.js') }}"></script>
 
-    <!-- Razorpay SDK (pre-loaded) -->
-    <script src="{{ asset('assets/js/razorpay-checkout.js') }}"></script>
-
-    <!-- Razorpay Helper -->
-    <script src="{{ asset('assets/js/razorpay-helper.min.js') }}"></script>
 
     <!-- Custom CSS -->
     <link rel="stylesheet" href="{{ asset('assets/css/style.min.css') }}">

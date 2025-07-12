@@ -888,6 +888,12 @@ use Illuminate\Support\Facades\Crypt;
 @endsection
 
 @section('scripts')
+ <!-- Razorpay Helper -->
+    <script src="{{ asset('assets/js/razorpay-helper.min.js') }}"></script>
+
+    <!-- Razorpay SDK (pre-loaded) -->
+    <script src="{{ asset('assets/js/razorpay-checkout.js') }}"></script>
+
     <script>
         // Set up CSRF token for all AJAX requests
         $.ajaxSetup({

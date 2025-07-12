@@ -6,9 +6,9 @@
         </div>
 
         <div class="testimonial-slider relative max-w-7xl mx-auto" data-aos="fade-up" data-aos-delay="100" aria-roledescription="carousel" aria-label="Student testimonials">
-            <div class="testimonial-track flex transition-transform duration-500 ease-in-out">
+            <div class="testimonial-track flex transition-transform duration-500 ease-in-out" role="list">
                 <!-- Testimonial 1 -->
-                <div class="testimonial-slide w-full md:w-1/2 lg:w-1/3 flex-shrink-0 px-2 sm:px-4" aria-roledescription="slide" aria-label="Testimonial from Rahul Sharma">
+                <div class="testimonial-slide w-full md:w-1/2 lg:w-1/3 flex-shrink-0 px-2 sm:px-4" aria-roledescription="slide" aria-label="Testimonial from Rahul Sharma" role="listitem">
                     <div class="bg-gray-50 rounded-lg shadow-md p-4 sm:p-8 h-full transition-all duration-300 hover:shadow-lg">
                         <div class="flex items-center mb-4 sm:mb-6">
                             <img src="https://placehold.co/100x100.png" alt="Student" class="w-12 h-12 sm:w-16 sm:h-16 rounded-full object-cover mr-3 sm:mr-4 flex-shrink-0">
@@ -29,7 +29,7 @@
                 </div>
 
                 <!-- Testimonial 2 -->
-                <div class="testimonial-slide w-full md:w-1/2 lg:w-1/3 flex-shrink-0 px-4" aria-roledescription="slide" aria-label="Testimonial from Priya Patel">
+                <div class="testimonial-slide w-full md:w-1/2 lg:w-1/3 flex-shrink-0 px-4" aria-roledescription="slide" aria-label="Testimonial from Priya Patel" role="listitem">
                     <div class="bg-gray-50 rounded-lg shadow-md p-8 h-full transition-all duration-300 hover:shadow-lg">
                         <div class="flex items-center mb-6">
                             <img src="https://placehold.co/100x100.png" alt="Student" class="w-16 h-16 rounded-full object-cover mr-4">
@@ -50,7 +50,7 @@
                 </div>
 
                 <!-- Testimonial 3 -->
-                <div class="testimonial-slide w-full md:w-1/2 lg:w-1/3 flex-shrink-0 px-4" aria-roledescription="slide" aria-label="Testimonial from Arjun Mehta">
+                <div class="testimonial-slide w-full md:w-1/2 lg:w-1/3 flex-shrink-0 px-4" aria-roledescription="slide" aria-label="Testimonial from Arjun Mehta" role="listitem">
                     <div class="bg-gray-50 rounded-lg shadow-md p-8 h-full transition-all duration-300 hover:shadow-lg">
                         <div class="flex items-center mb-6">
                             <img src="https://placehold.co/100x100.png" alt="Student" class="w-16 h-16 rounded-full object-cover mr-4">
@@ -71,7 +71,7 @@
                 </div>
 
                 <!-- Testimonial 4 -->
-                <div class="testimonial-slide w-full md:w-1/2 lg:w-1/3 flex-shrink-0 px-4" aria-roledescription="slide" aria-label="Testimonial from Neha Gupta">
+                <div class="testimonial-slide w-full md:w-1/2 lg:w-1/3 flex-shrink-0 px-4" aria-roledescription="slide" aria-label="Testimonial from Neha Gupta" role="listitem">
                     <div class="bg-gray-50 rounded-lg shadow-md p-8 h-full transition-all duration-300 hover:shadow-lg">
                         <div class="flex items-center mb-6">
                             <img src="https://placehold.co/100x100.png" alt="Student" class="w-16 h-16 rounded-full object-cover mr-4">
@@ -92,7 +92,7 @@
                 </div>
 
                 <!-- Testimonial 5 -->
-                <div class="testimonial-slide w-full md:w-1/2 lg:w-1/3 flex-shrink-0 px-4" aria-roledescription="slide" aria-label="Testimonial from Vikram Singh">
+                <div class="testimonial-slide w-full md:w-1/2 lg:w-1/3 flex-shrink-0 px-4" aria-roledescription="slide" aria-label="Testimonial from Vikram Singh" role="listitem">
                     <div class="bg-gray-50 rounded-lg shadow-md p-8 h-full transition-all duration-300 hover:shadow-lg">
                         <div class="flex items-center mb-6">
                             <img src="https://placehold.co/100x100.png" alt="Student" class="w-16 h-16 rounded-full object-cover mr-4">
@@ -113,7 +113,7 @@
                 </div>
 
                 <!-- Testimonial 6 -->
-                <div class="testimonial-slide w-full md:w-1/2 lg:w-1/3 flex-shrink-0 px-4" aria-roledescription="slide" aria-label="Testimonial from Anjali Desai">
+                <div class="testimonial-slide w-full md:w-1/2 lg:w-1/3 flex-shrink-0 px-4" aria-roledescription="slide" aria-label="Testimonial from Anjali Desai" role="listitem">
                     <div class="bg-gray-50 rounded-lg shadow-md p-8 h-full transition-all duration-300 hover:shadow-lg">
                         <div class="flex items-center mb-6">
                             <img src="https://placehold.co/100x100.png" alt="Student" class="w-16 h-16 rounded-full object-cover mr-4">
@@ -134,7 +134,7 @@
                 </div>
 
                 <!-- Testimonial 7 -->
-                <div class="testimonial-slide w-full md:w-1/2 lg:w-1/3 flex-shrink-0 px-4" aria-roledescription="slide" aria-label="Testimonial from Rohan Kapoor">
+                <div class="testimonial-slide w-full md:w-1/2 lg:w-1/3 flex-shrink-0 px-4" aria-roledescription="slide" aria-label="Testimonial from Rohan Kapoor" role="listitem">
                     <div class="bg-gray-50 rounded-lg shadow-md p-8 h-full transition-all duration-300 hover:shadow-lg">
                         <div class="flex items-center mb-6">
                             <img src="https://placehold.co/100x100.png" alt="Student" class="w-16 h-16 rounded-full object-cover mr-4">
@@ -155,7 +155,7 @@
                 </div>
 
                 <!-- Testimonial 8 -->
-                <div class="testimonial-slide w-full md:w-1/2 lg:w-1/3 flex-shrink-0 px-4" aria-roledescription="slide" aria-label="Testimonial from Divya Malhotra">
+                <div class="testimonial-slide w-full md:w-1/2 lg:w-1/3 flex-shrink-0 px-4" aria-roledescription="slide" aria-label="Testimonial from Divya Malhotra" role="listitem">
                     <div class="bg-gray-50 rounded-lg shadow-md p-8 h-full transition-all duration-300 hover:shadow-lg">
                         <div class="flex items-center mb-6">
                             <img src="https://placehold.co/100x100.png" alt="Student" class="w-16 h-16 rounded-full object-cover mr-4">

@@ -29,7 +29,7 @@
             </nav>
 
             <!-- Authentication Buttons (Desktop) -->
-            <div class="hidden md:flex space-x-3">
+            <div class="hidden md:flex space-x-3" role="menu">
                 <a href="{{ route('login') }}" class="inline-block px-5 py-2 text-primary border-2 border-primary rounded-xl hover:bg-primary hover:text-white font-medium transition-all duration-300 btn-modern text-sm">
                     Login
                 </a>
@@ -45,8 +45,8 @@
         </div>
 
         <!-- Mobile Menu -->
-        <div id="mobile-menu" class="md:hidden bg-white/95 backdrop-blur-md border-t border-gray-100 shadow-2xl absolute left-0 right-0 top-full z-40 mx-4 rounded-b-2xl" aria-labelledby="mobile-menu-button">
-            <div class="container mx-auto px-4 py-4 space-y-2">
+        <div id="mobile-menu" class="md:hidden bg-white/95 backdrop-blur-md border-t border-gray-100 shadow-2xl absolute left-0 right-0 top-full z-40 mx-4 rounded-b-2xl" aria-labelledby="mobile-menu-button" role="menu">
+            <div class="container mx-auto px-4 py-4 space-y-2" role="menuitem">
                 <a href="{{ route('home') }}" class="nav-link block text-gray-700 hover:text-primary font-medium transition-all duration-300 py-2.5 px-3 rounded-lg hover:bg-blue-50 border-l-4 border-transparent hover:border-primary">
                     <i class="fas fa-home mr-3 text-primary text-sm"></i>Home
                 </a>

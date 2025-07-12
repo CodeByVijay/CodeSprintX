@@ -124,8 +124,6 @@ $pageDescription = "Get in touch with CodeSprintX. We're here to answer your que
             <!-- Replace with actual map embed code if needed -->
             <div class="aspect-w-16 aspect-h-9 bg-gray-200 flex items-center justify-center">
                 {{-- <p class="text-gray-500">Map placeholder - replace with actual Google Maps embed</p> --}}
-
-                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d28017.146327946597!2d77.19302304094629!3d28.62546724275067!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390ce2b43a255341%3A0x2b687f3210cdd91d!2sNew%20Delhi%2C%20Delhi%20110001!5e0!3m2!1sen!2sin!4v1749905624217!5m2!1sen!2sin" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
                 <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d28017.146327946597!2d77.19302304094629!3d28.62546724275067!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390ce2b43a255341%3A0x2b687f3210cdd91d!2sNew%20Delhi%2C%20Delhi%20110001!5e0!3m2!1sen!2sin!4v1749905624217!5m2!1sen!2sin" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" title="Map showing CodeSprintX office location in New Delhi, India" aria-label="Map showing CodeSprintX office location in New Delhi, India"></iframe>
 
             </div>

@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Auth\AuthController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\CourseController;
 use App\Http\Controllers\HomeController;
@@ -8,13 +9,13 @@ use App\Http\Controllers\StudentController;
 
 
 // Authentication Routes
-Route::get('/login', function () {
-    return view('home.pages.login');
-})->name('login');
+Route::get('/login', [AuthController::class, 'showLoginForm'])->name('login');
 
-Route::get('/register', function () {
-    return view('home.pages.register');
-})->name('register');
+Route::get('/register', [AuthController::class, 'showRegisterForm'])->name('register');
+
+Route::post('/register', [AuthController::class, 'register'])->name('auth.register');
+Route::post('/login', [AuthController::class, 'login'])->name('auth.login');
+
 
 Route::get('/', [HomeController::class, 'index'])->name('home');
 

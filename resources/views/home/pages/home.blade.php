@@ -40,7 +40,8 @@ use App\Helpers\ColorHelper;
     <section class="py-20 bg-white section-pattern" role="region" aria-labelledby="why-choose-heading">
         <div class="container mx-auto px-4">
             <div class="text-center mb-16 animate-on-scroll">
-                <h2 id="why-choose-heading" class="text-4xl md:text-5xl font-bold text-gray-800 mb-4 section-heading">Why Choose CodeSprintX</h2>
+                <h2 id="why-choose-heading" class="text-4xl md:text-5xl font-bold text-gray-800 mb-4 section-heading">Why
+                    Choose CodeSprintX</h2>
                 <p class="text-xl text-gray-600 max-w-2xl mx-auto">What makes our internship programs stand out from the
                     competition</p>
             </div>
@@ -98,10 +99,12 @@ use App\Helpers\ColorHelper;
     </section>
 
     <!-- Internship Programs -->
-    <section id="courses" class="py-20 bg-gradient-to-br from-gray-50 to-blue-50 section-pattern" role="region" aria-labelledby="internship-programs-heading">
+    <section id="courses" class="py-20 bg-gradient-to-br from-gray-50 to-blue-50 section-pattern" role="region"
+        aria-labelledby="internship-programs-heading">
         <div class="container mx-auto px-4">
             <div class="text-center mb-16 animate-on-scroll">
-                <h2 id="internship-programs-heading" class="text-4xl md:text-5xl font-bold text-gray-800 mb-4 section-heading">Our Internship Programs</h2>
+                <h2 id="internship-programs-heading"
+                    class="text-4xl md:text-5xl font-bold text-gray-800 mb-4 section-heading">Our Internship Programs</h2>
                 <p class="text-xl text-gray-600 max-w-3xl mx-auto">Choose from our range of professional internship domains
                     designed to launch your career</p>
             </div>
@@ -117,7 +120,7 @@ use App\Helpers\ColorHelper;
 
 
                             <div class="absolute inset-0 bg-black bg-opacity-10"></div>
-                        <i class="{{ $program->icon }} text-7xl relative z-10" aria-hidden="true"></i>
+                            <i class="{{ $program->icon }} text-7xl relative z-10" aria-hidden="true"></i>
                         </div>
                         <div class="p-8">
                             <h3 class="text-2xl font-bold mb-3 text-gray-800">{{ $program->title }}</h3>
@@ -275,7 +278,8 @@ use App\Helpers\ColorHelper;
     <section class="py-16 bg-white" role="region" aria-labelledby="partners-heading">
         <div class="container mx-auto px-4">
             <div class="text-center mb-12 animate-on-scroll">
-                <h2 id="partners-heading" class="text-3xl md:text-4xl font-bold text-gray-800 mb-4 section-heading">Our Corporate Partners</h2>
+                <h2 id="partners-heading" class="text-3xl md:text-4xl font-bold text-gray-800 mb-4 section-heading">Our
+                    Corporate Partners</h2>
                 <p class="text-lg text-gray-600">Trusted by leading companies worldwide</p>
             </div>
 
@@ -322,7 +326,8 @@ use App\Helpers\ColorHelper;
     <section class="py-20 cta-section text-white relative overflow-hidden" role="region" aria-labelledby="cta-heading">
         <div class="container mx-auto px-4 text-center">
             <div class="max-w-4xl mx-auto animate-on-scroll">
-                <h2 id="cta-heading" class="text-4xl md:text-5xl font-bold mb-6">Ready to Start Your Professional Journey?</h2>
+                <h2 id="cta-heading" class="text-4xl md:text-5xl font-bold mb-6">Ready to Start Your Professional Journey?
+                </h2>
                 <p class="text-xl md:text-2xl text-gray-300 mb-10 max-w-3xl mx-auto leading-relaxed">Join our internship
                     programs today and take the first step towards a successful career in technology.</p>
                 <div class="flex flex-col sm:flex-row justify-center space-y-4 sm:space-y-0 sm:space-x-6">
@@ -330,10 +335,17 @@ use App\Helpers\ColorHelper;
                         class="inline-block px-10 py-4 bg-gradient-to-r from-primary to-secondary text-white font-semibold rounded-xl hover:from-secondary hover:to-primary transition-all duration-300 btn-modern btn-pulse">
                         Explore Programs
                     </a>
-                    <a href="{{ route('register') }}"
-                        class="inline-block px-10 py-4 bg-white text-gray-900 font-semibold rounded-xl hover:bg-gray-100 transition-all duration-300 btn-modern">
-                        Register Now
-                    </a>
+                    @if (Auth::check())
+                        <a href="{{ route('student.dashboard') }}"
+                            class="inline-block px-10 py-4 bg-white text-gray-900 font-semibold rounded-xl hover:bg-gray-100 transition-all duration-300 btn-modern">
+                            Go to Dashboard
+                        </a>
+                    @else
+                        <a href="{{ route('register') }}"
+                            class="inline-block px-10 py-4 bg-white text-gray-900 font-semibold rounded-xl hover:bg-gray-100 transition-all duration-300 btn-modern">
+                            Register Now
+                        </a>
+                    @endif
                 </div>
             </div>
         </div>

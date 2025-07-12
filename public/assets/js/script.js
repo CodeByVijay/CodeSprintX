@@ -518,8 +518,8 @@ $(document).ready(function() {
 
                 if (valid) {
                     // Show success message
-                    $(this).hide();
-                    $(this).after('<div class="p-4 mt-4 bg-green-100 text-green-700 rounded-md"><i class="fas fa-check-circle mr-2"></i>Thank you! Your message has been sent successfully.</div>');
+                    $(this).submit();
+                    // $(this).after('<div class="p-4 mt-4 bg-green-100 text-green-700 rounded-md"><i class="fas fa-check-circle mr-2"></i>Thank you! Your message has been sent successfully.</div>');
                 }
             });
 

@@ -4,7 +4,7 @@
             <!-- Logo -->
             <div class="flex-shrink-0">
                 <a href="{{ route('home') }}" class="block transform hover:scale-105 transition-transform duration-300">
-                    <img src="{{ asset('assets/images/logos/logo_color.png') }}" alt="CodeSprintX Logo" class="h-10 filter drop-shadow-sm">
+                    <img src="{{ asset('assets/images/logos/logo_color.webp') }}" alt="CodeSprintX Logo" class="h-10 filter drop-shadow-sm">
                 </a>
             </div>
 

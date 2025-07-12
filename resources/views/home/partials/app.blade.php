@@ -24,14 +24,14 @@
     <meta property="og:url" content="{{ url()->current() }}">
     <meta property="og:title" content="{{ $pageTitle ?? 'CodeSprintX - Professional Internship Programs' }}">
     <meta property="og:description" content="{{ $pageDescription ?? 'CodeSprintX offers 3-month and 6-month internship programs in Web Development, Python, Java and more. Get certified and boost your career.' }}">
-    <meta property="og:image" content="{{ asset('assets/images/logos/logo_color.png') }}">
+    <meta property="og:image" content="{{ asset('assets/images/logos/logo_color.webp') }}">
 
     <!-- Twitter -->
     <meta property="twitter:card" content="summary_large_image">
     <meta property="twitter:url" content="{{ url()->current() }}">
     <meta property="twitter:title" content="{{ $pageTitle ?? 'CodeSprintX - Professional Internship Programs' }}">
     <meta property="twitter:description" content="{{ $pageDescription ?? 'CodeSprintX offers 3-month and 6-month internship programs in Web Development, Python, Java and more. Get certified and boost your career.' }}">
-    <meta property="twitter:image" content="{{ asset('assets/images/logos/logo_color.png') }}">
+    <meta property="twitter:image" content="{{ asset('assets/images/logos/logo_color.webp') }}">
 
     <!-- Favicon & App Icons -->
     <link rel="icon" href="https://placehold.co/32x32.png?text=SC" type="image/png">
@@ -66,31 +66,29 @@
     </script>
 
     <!-- Preload Key Assets -->
-    <link rel="preload" href="{{ asset('assets/images/logos/logo_color.png') }}" as="image">
-    <link rel="preload" href="{{ asset('assets/css/style.css') }}" as="style">
-    <link rel="preload" href="{{ asset('assets/js/script.js') }}" as="script">
+    <link rel="preload" href="{{ asset('assets/images/logos/logo_color.webp') }}" as="image">
+    <link rel="preload" href="{{ asset('assets/css/style.min.css') }}" as="style">
+    <link rel="preload" href="{{ asset('assets/js/script.min.js') }}" as="script">
 
     <!-- FontAwesome -->
-    <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
-        as="style">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
-        integrity="sha512-Avb2QiuDEEvB4bZJYdft8v5raYoqOn0fFIl7JjKcgKP9n2A8YHiWQR2b6FQlRCFpJDFgP3MqGCWsmi/gIgbKQ=="
-        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="preload" href="{{ asset('assets/css/fontawesome.css') }}" as="style">
+
+    <link rel="stylesheet" href="{{ asset('assets/css/fontawesome.css') }}" as="style"/>
 
     <!-- jQuery -->
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="{{ asset('assets/js/jquery.js') }}"></script>
 
     <!-- jQuery UI for better animations -->
-    <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.min.js"></script>
+    <script src="{{ asset('assets/js/jquery-ui.min.js') }}"></script>
 
     <!-- Razorpay SDK (pre-loaded) -->
-    <script src="https://checkout.razorpay.com/v1/checkout.js"></script>
+    <script src="{{ asset('assets/js/razorpay-checkout.js') }}"></script>
 
     <!-- Razorpay Helper -->
-    <script src="{{ asset('assets/js/razorpay-helper.js') }}"></script>
+    <script src="{{ asset('assets/js/razorpay-helper.min.js') }}"></script>
 
     <!-- Custom CSS -->
-    <link rel="stylesheet" href="{{ asset('assets/css/style.css') }}">
+    <link rel="stylesheet" href="{{ asset('assets/css/style.min.css') }}">
 </head>
 
 <body class="font-sans antialiased text-gray-800 bg-gray-50">
@@ -129,8 +127,8 @@
     </div> -->
 
     <!-- Scripts -->
-    <script src="{{ asset('assets/js/script.js') }}"></script>
-    <script src="{{ asset('assets/js/security.js') }}"></script>
+    <script src="{{ asset('assets/js/script.min.js') }}"></script>
+    <script src="{{ asset('assets/js/security.min.js') }}"></script>
 
     <!-- Page-specific scripts -->
     @yield('scripts')
@@ -142,7 +140,7 @@
         "@type": "EducationalOrganization",
         "name": "CodeSprintX",
         "url": "https://codesprintx.com",
-        "logo": "{{ asset('assets/images/logos/logo_color.png') }}",
+        "logo": "{{ asset('assets/images/logos/logo_color.webp') }}",
         "description": "CodeSprintX offers professional internship programs in Web Development, Python, Java and more. Get certified and boost your career with our 3-month and 6-month programs.",
         "address": {
             "@type": "PostalAddress",
@@ -156,7 +154,7 @@
             "@type": "ContactPoint",
             "telephone": "+91-9876543210",
             "contactType": "customer service",
-            "email": "info@codesprintx.vijayamule.xyz"
+            "email": "info@codesprintx.com"
         },
         "sameAs": [
             "https://www.facebook.com/CodeSprintX",

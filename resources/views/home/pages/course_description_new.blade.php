@@ -1052,7 +1052,7 @@ use Illuminate\Support\Facades\Crypt;
                         currency: response.currency || 'INR',
                         name: "CodeSprintX",
                         description: `${response.course} - ${response.duration} Month Internship Program`,
-                        image: "{{ asset('assets/images/logos/logo_color.png') }}",
+                        image: "{{ asset('assets/images/logos/logo_color.webp') }}",
                         order_id: response.order_id,
                         handler: function(paymentResponse) {
 

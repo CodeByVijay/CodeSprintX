@@ -11,7 +11,7 @@ use App\Helpers\ColorHelper;
     <!-- Hero Banner -->
     <section class="relative bg-gray-900 text-white overflow-hidden">
         <div class="absolute inset-0 overflow-hidden">
-            <img src="{{ asset('assets/images/hero_section.png') }}" alt="Students learning"
+            <img src="{{ asset('assets/images/hero_section.webp') }}" alt="Students learning"
                 class="w-full h-full object-cover opacity-20">
             <div class="absolute inset-0 hero-overlay"></div>
         </div>

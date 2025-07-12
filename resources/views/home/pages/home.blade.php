@@ -9,7 +9,7 @@ use App\Helpers\ColorHelper;
     ?>
 
     <!-- Hero Banner -->
-    <section class="relative bg-gray-900 text-white overflow-hidden">
+    <section class="relative bg-gray-900 text-white overflow-hidden" role="region" aria-label="Hero Banner">
         <div class="absolute inset-0 overflow-hidden">
             <img src="{{ asset('assets/images/hero_section.webp') }}" alt="Students learning"
                 class="w-full h-full object-cover opacity-20">
@@ -37,10 +37,10 @@ use App\Helpers\ColorHelper;
     </section>
 
     <!-- Why Choose Us -->
-    <section class="py-20 bg-white section-pattern">
+    <section class="py-20 bg-white section-pattern" role="region" aria-labelledby="why-choose-heading">
         <div class="container mx-auto px-4">
             <div class="text-center mb-16 animate-on-scroll">
-                <h2 class="text-4xl md:text-5xl font-bold text-gray-800 mb-4 section-heading">Why Choose CodeSprintX</h2>
+                <h2 id="why-choose-heading" class="text-4xl md:text-5xl font-bold text-gray-800 mb-4 section-heading">Why Choose CodeSprintX</h2>
                 <p class="text-xl text-gray-600 max-w-2xl mx-auto">What makes our internship programs stand out from the
                     competition</p>
             </div>
@@ -98,10 +98,10 @@ use App\Helpers\ColorHelper;
     </section>
 
     <!-- Internship Programs -->
-    <section id="courses" class="py-20 bg-gradient-to-br from-gray-50 to-blue-50 section-pattern">
+    <section id="courses" class="py-20 bg-gradient-to-br from-gray-50 to-blue-50 section-pattern" role="region" aria-labelledby="internship-programs-heading">
         <div class="container mx-auto px-4">
             <div class="text-center mb-16 animate-on-scroll">
-                <h2 class="text-4xl md:text-5xl font-bold text-gray-800 mb-4 section-heading">Our Internship Programs</h2>
+                <h2 id="internship-programs-heading" class="text-4xl md:text-5xl font-bold text-gray-800 mb-4 section-heading">Our Internship Programs</h2>
                 <p class="text-xl text-gray-600 max-w-3xl mx-auto">Choose from our range of professional internship domains
                     designed to launch your career</p>
             </div>
@@ -240,8 +240,9 @@ use App\Helpers\ColorHelper;
     </section>
 
     <!-- Statistics -->
-    <section class="py-20 stats-section text-white relative overflow-hidden">
+    <section class="py-20 stats-section text-white relative overflow-hidden" role="region" aria-labelledby="stats-heading">
         <div class="container mx-auto px-4">
+            <h2 id="stats-heading" class="sr-only">Key Statistics</h2>
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 text-center">
                 <!-- Stat 1 -->
                 <div class="stat-card animate-on-scroll">
@@ -271,10 +272,10 @@ use App\Helpers\ColorHelper;
     </section>
 
     <!-- Company Logo Slider -->
-    <section class="py-16 bg-white">
+    <section class="py-16 bg-white" role="region" aria-labelledby="partners-heading">
         <div class="container mx-auto px-4">
             <div class="text-center mb-12 animate-on-scroll">
-                <h2 class="text-3xl md:text-4xl font-bold text-gray-800 mb-4 section-heading">Our Corporate Partners</h2>
+                <h2 id="partners-heading" class="text-3xl md:text-4xl font-bold text-gray-800 mb-4 section-heading">Our Corporate Partners</h2>
                 <p class="text-lg text-gray-600">Trusted by leading companies worldwide</p>
             </div>
 
@@ -318,10 +319,10 @@ use App\Helpers\ColorHelper;
     @include('home.includes.testimonials')
 
     <!-- CTA Section -->
-    <section class="py-20 cta-section text-white relative overflow-hidden">
+    <section class="py-20 cta-section text-white relative overflow-hidden" role="region" aria-labelledby="cta-heading">
         <div class="container mx-auto px-4 text-center">
             <div class="max-w-4xl mx-auto animate-on-scroll">
-                <h2 class="text-4xl md:text-5xl font-bold mb-6">Ready to Start Your Professional Journey?</h2>
+                <h2 id="cta-heading" class="text-4xl md:text-5xl font-bold mb-6">Ready to Start Your Professional Journey?</h2>
                 <p class="text-xl md:text-2xl text-gray-300 mb-10 max-w-3xl mx-auto leading-relaxed">Join our internship
                     programs today and take the first step towards a successful career in technology.</p>
                 <div class="flex flex-col sm:flex-row justify-center space-y-4 sm:space-y-0 sm:space-x-6">

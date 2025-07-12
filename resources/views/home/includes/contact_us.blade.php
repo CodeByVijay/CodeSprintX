@@ -1,7 +1,7 @@
-<section id="contact" class="py-12 sm:py-16 bg-gray-100">
+<section id="contact" class="py-12 sm:py-16 bg-gray-100" role="region" aria-labelledby="contact-heading">
     <div class="container mx-auto px-4">
         <div class="text-center mb-8 sm:mb-12">
-            <h2 class="text-2xl sm:text-3xl font-bold text-gray-800 mb-2">Get In Touch</h2>
+            <h2 id="contact-heading" class="text-2xl sm:text-3xl font-bold text-gray-800 mb-2">Get In Touch</h2>
             <p class="text-gray-600 px-4">Have questions? We're here to help!</p>
         </div>
 
@@ -51,10 +51,10 @@
                         <a href="#" class="bg-blue-400 text-white rounded-full w-10 h-10 flex items-center justify-center hover:bg-blue-500 transition-colors transform hover:scale-105">
                             <i class="fab fa-twitter text-sm"></i>
                         </a> --}}
-                        <a href="#" class="bg-pink-600 text-white rounded-full w-10 h-10 flex items-center justify-center hover:bg-pink-700 transition-colors transform hover:scale-105">
+                        <a href="https://www.instagram.com/codesprintx_official/" target="_blank" class="bg-pink-600 text-white rounded-full w-10 h-10 flex items-center justify-center hover:bg-pink-700 transition-colors transform hover:scale-105" area-label="Instagram">
                             <i class="fab fa-instagram text-sm" aria-hidden="true"></i>
                         </a>
-                        <a href="https://www.linkedin.com/company/codesprintx" target="_blank" class="bg-blue-700 text-white rounded-full w-10 h-10 flex items-center justify-center hover:bg-blue-800 transition-colors transform hover:scale-105">
+                        <a href="https://www.linkedin.com/company/codesprintx" target="_blank" class="bg-blue-700 text-white rounded-full w-10 h-10 flex items-center justify-center hover:bg-blue-800 transition-colors transform hover:scale-105" area-label="LinkedIn">
                             <i class="fab fa-linkedin-in text-sm" aria-hidden="true"></i>
                         </a>
                     </div>

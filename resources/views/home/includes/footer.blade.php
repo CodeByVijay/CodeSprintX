@@ -14,7 +14,7 @@
                 </div>
                  <p class="text-gray-300 mb-6 leading-relaxed">Providing professional internship programs to help students and professionals advance their careers through practical skills development and industry expertise.</p>
                  <div class="flex space-x-4" aria-label="Social media links">
-                     <a href="#" class="w-12 h-12 bg-gradient-to-br from-pink-600 to-purple-600 rounded-xl flex items-center justify-center text-white hover:from-pink-500 hover:to-purple-500 transition-all duration-300 transform hover:scale-110 hover:shadow-lg" aria-label="Instagram">
+                     <a href="https://www.instagram.com/codesprintx_official/" target="_blank" rel="noopener" class="w-12 h-12 bg-gradient-to-br from-pink-600 to-purple-600 rounded-xl flex items-center justify-center text-white hover:from-pink-500 hover:to-purple-500 transition-all duration-300 transform hover:scale-110 hover:shadow-lg" aria-label="Instagram">
                          <i class="fab fa-instagram text-lg" aria-hidden="true"></i>
                      </a>
                      <a href="https://www.linkedin.com/company/codesprintx" target="_blank" rel="noopener" class="w-12 h-12 bg-gradient-to-br from-blue-700 to-blue-800 rounded-xl flex items-center justify-center text-white hover:from-blue-600 hover:to-blue-700 transition-all duration-300 transform hover:scale-110 hover:shadow-lg" aria-label="LinkedIn">

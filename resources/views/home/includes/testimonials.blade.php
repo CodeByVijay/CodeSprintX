@@ -1,11 +1,11 @@
-<section class="py-16 bg-white" id="testimonials" aria-labelledby="testimonials-title">
+<section class="py-16 bg-white" id="testimonials" aria-labelledby="testimonials-title" role="region">
     <div class="container mx-auto px-4">
         <div class="text-center mb-12" data-aos="fade-up">
             <h2 id="testimonials-title" class="text-2xl sm:text-3xl font-bold text-gray-800 mb-2">What Our Students Say</h2>
             <p class="text-gray-600 text-sm sm:text-base">Hear from those who have completed our internship programs</p>
         </div>
 
-        <div class="testimonial-slider relative max-w-7xl mx-auto" data-aos="fade-up" data-aos-delay="100" aria-roledescription="carousel" aria-label="Student testimonials">
+        <div class="testimonial-slider relative max-w-7xl mx-auto" data-aos="fade-up" data-aos-delay="100" aria-roledescription="carousel" aria-label="Student testimonials" role="region">
             <div class="testimonial-track flex transition-transform duration-500 ease-in-out" role="list" tabindex="0">
                 <!-- Testimonial 1 -->
                 <div class="testimonial-slide w-full md:w-1/2 lg:w-1/3 flex-shrink-0 px-2 sm:px-4" aria-roledescription="slide" aria-label="Testimonial from Rahul Sharma" role="listitem">

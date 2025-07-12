@@ -20,7 +20,7 @@ $pageDescription = "Register for a CodeSprintX account to enroll in our professi
                 <!-- Header -->
                 <div class="bg-gradient-to-r from-purple-600 to-primary p-8 text-center">
                     <div class="w-20 h-20 bg-white/20 rounded-full flex items-center justify-center mx-auto mb-4 backdrop-blur-sm">
-                        <i class="fas fa-user-plus text-3xl text-white"></i>
+                        <i class="fas fa-user-plus text-3xl text-white" aria-hidden="true"></i>
                     </div>
                     <h2 class="text-3xl font-bold text-white mb-2">Create an Account</h2>
                     <p class="text-purple-100">Join CodeSprintX to start your professional journey</p>
@@ -34,11 +34,11 @@ $pageDescription = "Register for a CodeSprintX account to enroll in our professi
                                 <label for="first_name" class="block text-gray-700 font-medium mb-2 text-sm group-focus-within:text-xs group-focus-within:text-primary transition-all duration-300">First Name</label>
                                 <div class="relative">
                                     <div class="absolute inset-y-0 left-0 pl-4 flex items-center pointer-events-none z-10">
-                                        <i class="fas fa-user text-gray-400 group-focus-within:text-primary transition-colors duration-300"></i>
+                                        <i class="fas fa-user text-gray-400 group-focus-within:text-primary transition-colors duration-300" aria-hidden="true"></i>
                                     </div>
                                     <input type="text" id="first_name" name="first_name"
                                         class="w-full pl-12 pr-4 py-4 border-2 border-gray-200 rounded-xl focus:outline-none focus:border-primary focus:ring-4 focus:ring-primary/10 focus:bg-white transition-all duration-300 bg-gray-50 hover:bg-white"
-                                        placeholder="First name" required>
+                                        placeholder="First name" required aria-label="First Name" aria-required="true" autocomplete="given-name">
                                 </div>
                             </div>
 
@@ -46,34 +46,34 @@ $pageDescription = "Register for a CodeSprintX account to enroll in our professi
                                 <label for="last_name" class="block text-gray-700 font-medium mb-2 text-sm group-focus-within:text-xs group-focus-within:text-primary transition-all duration-300">Last Name</label>
                                 <div class="relative">
                                     <div class="absolute inset-y-0 left-0 pl-4 flex items-center pointer-events-none z-10">
-                                        <i class="fas fa-user text-gray-400 group-focus-within:text-primary transition-colors duration-300"></i>
+                                        <i class="fas fa-user text-gray-400 group-focus-within:text-primary transition-colors duration-300" aria-hidden="true"></i>
                                     </div>
                                     <input type="text" id="last_name" name="last_name"
                                         class="w-full pl-12 pr-4 py-4 border-2 border-gray-200 rounded-xl focus:outline-none focus:border-primary focus:ring-4 focus:ring-primary/10 focus:bg-white transition-all duration-300 bg-gray-50 hover:bg-white"
-                                        placeholder="Last name" required>
+                                        placeholder="Last name" required aria-label="Last Name" aria-required="true" autocomplete="family-name">
                                 </div>
                             </div>
                         </div>
 
                         <!-- Email Field -->
                         <div class="form-group relative group">
-                            <label for="email" class="block text-gray-700 font-medium mb-2 text-sm group-focus-within:text-xs group-focus-within:text-primary transition-all duration-300">Email Address</label>
+                                <label for="email" class="block text-gray-700 font-medium mb-2 text-sm group-focus-within:text-xs group-focus-within:text-primary transition-all duration-300">Email Address</label>
                             <div class="relative">
                                 <div class="absolute inset-y-0 left-0 pl-4 flex items-center pointer-events-none z-10">
-                                    <i class="fas fa-envelope text-gray-400 group-focus-within:text-primary transition-colors duration-300"></i>
+                                    <i class="fas fa-envelope text-gray-400 group-focus-within:text-primary transition-colors duration-300" aria-hidden="true"></i>
                                 </div>
                                 <input type="email" id="email" name="email"
                                     class="w-full pl-12 pr-4 py-4 border-2 border-gray-200 rounded-xl focus:outline-none focus:border-primary focus:ring-4 focus:ring-primary/10 focus:bg-white transition-all duration-300 bg-gray-50 hover:bg-white"
-                                    placeholder="Enter your email" required>
+                                    placeholder="Enter your email" required aria-label="Email Address" aria-required="true" autocomplete="email">
                             </div>
                         </div>
 
                         <!-- Phone Field -->
                         <div class="form-group relative group">
-                            <label for="phone" class="block text-gray-700 font-medium mb-2 text-sm group-focus-within:text-xs group-focus-within:text-primary transition-all duration-300">Phone Number</label>
+                                <label for="phone" class="block text-gray-700 font-medium mb-2 text-sm group-focus-within:text-xs group-focus-within:text-primary transition-all duration-300">Phone Number</label>
                             <div class="relative">
                                 <div class="absolute inset-y-0 left-0 pl-4 flex items-center pointer-events-none z-10">
-                                    <i class="fas fa-phone text-gray-400 group-focus-within:text-primary transition-colors duration-300"></i>
+                                    <i class="fas fa-phone text-gray-400 group-focus-within:text-primary transition-colors duration-300" aria-hidden="true"></i>
                                 </div>
                                 <input type="tel" id="phone" name="phone"
                                     class="w-full pl-12 pr-4 py-4 border-2 border-gray-200 rounded-xl focus:outline-none focus:border-primary focus:ring-4 focus:ring-primary/10 focus:bg-white transition-all duration-300 bg-gray-50 hover:bg-white"
@@ -82,7 +82,7 @@ $pageDescription = "Register for a CodeSprintX account to enroll in our professi
                                     minlength="10"
                                     maxlength="10"
                                     oninput="this.value = this.value.replace(/[^0-9]/g, '').slice(0, 10)"
-                                    required>
+                                    required aria-label="Phone Number" aria-required="true" autocomplete="tel">
                             </div>
                         </div>
 
@@ -92,15 +92,16 @@ $pageDescription = "Register for a CodeSprintX account to enroll in our professi
                                 <label for="password" class="block text-gray-700 font-medium mb-2 text-sm group-focus-within:text-xs group-focus-within:text-primary transition-all duration-300">Password</label>
                                 <div class="relative">
                                     <div class="absolute inset-y-0 left-0 pl-4 flex items-center pointer-events-none z-10">
-                                        <i class="fas fa-lock text-gray-400 group-focus-within:text-primary transition-colors duration-300"></i>
+                                        <i class="fas fa-lock text-gray-400 group-focus-within:text-primary transition-colors duration-300" aria-hidden="true"></i>
                                     </div>
                                     <input type="password" id="password" name="password"
                                         class="w-full pl-12 pr-16 py-4 border-2 border-gray-200 rounded-xl focus:outline-none focus:border-primary focus:ring-4 focus:ring-primary/10 focus:bg-white transition-all duration-300 bg-gray-50 hover:bg-white"
-                                        placeholder="Create password" required>
+                                        placeholder="Create password" required aria-label="Password" aria-required="true" autocomplete="new-password">
                                     <button type="button"
                                         class="toggle-password absolute inset-y-0 right-0 pr-4 flex items-center text-gray-400 hover:text-primary focus:outline-none transition-colors duration-300 z-10"
-                                        onclick="togglePasswordVisibility('password')">
-                                        <i class="fas fa-eye"></i>
+                                        onclick="togglePasswordVisibility('password')"
+                                        aria-label="Show or hide password">
+                                        <i class="fas fa-eye" aria-hidden="true"></i>
                                     </button>
                                 </div>
                             </div>
@@ -109,15 +110,16 @@ $pageDescription = "Register for a CodeSprintX account to enroll in our professi
                                 <label for="confirm_password" class="block text-gray-700 font-medium mb-2 text-sm group-focus-within:text-xs group-focus-within:text-primary transition-all duration-300">Confirm Password</label>
                                 <div class="relative">
                                     <div class="absolute inset-y-0 left-0 pl-4 flex items-center pointer-events-none z-10">
-                                        <i class="fas fa-lock text-gray-400 group-focus-within:text-primary transition-colors duration-300"></i>
+                                        <i class="fas fa-lock text-gray-400 group-focus-within:text-primary transition-colors duration-300" aria-hidden="true"></i>
                                     </div>
                                     <input type="password" id="confirm_password" name="confirm_password"
                                         class="w-full pl-12 pr-16 py-4 border-2 border-gray-200 rounded-xl focus:outline-none focus:border-primary focus:ring-4 focus:ring-primary/10 focus:bg-white transition-all duration-300 bg-gray-50 hover:bg-white"
-                                        placeholder="Confirm password" required>
+                                        placeholder="Confirm password" required aria-label="Confirm Password" aria-required="true" autocomplete="new-password">
                                     <button type="button"
                                         class="toggle-password absolute inset-y-0 right-0 pr-4 flex items-center text-gray-400 hover:text-primary focus:outline-none transition-colors duration-300 z-10"
-                                        onclick="togglePasswordVisibility('confirm_password')">
-                                        <i class="fas fa-eye"></i>
+                                        onclick="togglePasswordVisibility('confirm_password')"
+                                        aria-label="Show or hide confirm password">
+                                        <i class="fas fa-eye" aria-hidden="true"></i>
                                     </button>
                                 </div>
                             </div>
@@ -125,25 +127,26 @@ $pageDescription = "Register for a CodeSprintX account to enroll in our professi
 
                         <!-- Terms and Conditions -->
                         <div class="flex items-start p-4 border-2 border-gray-200 rounded-xl">
-                            <div class="flex items-center h-5 mt-1">
-                                <input type="checkbox" id="terms" name="terms"
-                                    class="w-5 h-5 text-primary focus:ring-primary border-gray-300 rounded transition-colors duration-300"
-                                    required>
-                            </div>
-                            <div class="ml-3 text-sm">
-                                <label for="terms" class="text-gray-700 leading-relaxed">
-                                    I agree to the
-                                    <a href="{{ route('terms-conditions') }}" class="text-primary hover:text-secondary font-semibold transition-colors duration-300">Terms & Conditions</a>
-                                    and
-                                    <a href="{{ route('privacy-policy') }}" class="text-primary hover:text-secondary font-semibold transition-colors duration-300">Privacy Policy</a>
-                                </label>
-                            </div>
+                        <div class="flex items-center h-5 mt-1">
+                            <input type="checkbox" id="terms" name="terms"
+                                class="w-5 h-5 text-primary focus:ring-primary border-gray-300 rounded transition-colors duration-300"
+                                required aria-label="Agree to Terms and Privacy Policy" aria-required="true">
+                        </div>
+                        <div class="ml-3 text-sm">
+                            <label for="terms" class="text-gray-700 leading-relaxed">
+                                I agree to the
+                                <a href="{{ route('terms-conditions') }}" class="text-primary hover:text-secondary font-semibold transition-colors duration-300" aria-label="Read Terms and Conditions">Terms & Conditions</a>
+                                and
+                                <a href="{{ route('privacy-policy') }}" class="text-primary hover:text-secondary font-semibold transition-colors duration-300" aria-label="Read Privacy Policy">Privacy Policy</a>
+                            </label>
+                        </div>
                         </div>
 
                         <!-- Register Button -->
                         <button type="submit"
-                            class="w-full bg-gradient-to-r from-purple-600 to-primary text-white py-4 px-6 rounded-xl hover:from-primary hover:to-purple-600 font-semibold transition-all duration-300 focus:outline-none focus:ring-4 focus:ring-primary/20 btn-modern shadow-lg hover:shadow-xl transform hover:-translate-y-0.5">
-                            <i class="fas fa-user-plus mr-2"></i>
+                            class="w-full bg-gradient-to-r from-purple-600 to-primary text-white py-4 px-6 rounded-xl hover:from-primary hover:to-purple-600 font-semibold transition-all duration-300 focus:outline-none focus:ring-4 focus:ring-primary/20 btn-modern shadow-lg hover:shadow-xl transform hover:-translate-y-0.5"
+                            aria-label="Create Account">
+                            <i class="fas fa-user-plus mr-2" aria-hidden="true"></i>
                             Create Account
                         </button>
                     </form>

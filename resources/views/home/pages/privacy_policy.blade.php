@@ -14,10 +14,10 @@
     </section>
 
     <!-- Privacy Policy Content -->
-    <section class="py-12 bg-white">
+    <main id="main-content" class="py-12 bg-white" aria-labelledby="privacy-policy-title" tabindex="0">
         <div class="container mx-auto px-4 max-w-4xl">
             <div class="prose prose-lg max-w-none">
-                <h2>Introduction</h2>
+                <h2 id="privacy-policy-title">Introduction</h2>
                 <p>CodeSprintX ("we," "our," or "us") is committed to protecting your privacy. This Privacy Policy explains
                     how we collect, use, disclose, and safeguard your information when you visit our website or use our
                     services.</p>
@@ -99,5 +99,5 @@
                 <p>Address: New Delhi, India, 110001</p>
             </div>
         </div>
-    </section>
+    </main>
 @endsection

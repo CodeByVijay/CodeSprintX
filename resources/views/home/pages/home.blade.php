@@ -51,7 +51,7 @@ use App\Helpers\ColorHelper;
                     class="feature-card bg-white rounded-2xl p-8 text-center shadow-lg hover:shadow-2xl transition-all duration-300 animate-on-scroll">
                     <div
                         class="feature-icon inline-block p-6 bg-gradient-to-br from-blue-100 to-purple-100 text-primary rounded-2xl mb-6">
-                        <i class="fas fa-laptop-code text-3xl"></i>
+                        <i class="fas fa-laptop-code text-3xl" aria-hidden="true"></i>
                     </div>
                     <h3 class="text-xl font-bold mb-3 text-gray-800">Industry-Relevant Skills</h3>
                     <p class="text-gray-600 leading-relaxed">Learn skills that are in high demand in today's job market with
@@ -63,7 +63,7 @@ use App\Helpers\ColorHelper;
                     class="feature-card bg-white rounded-2xl p-8 text-center shadow-lg hover:shadow-2xl transition-all duration-300 animate-on-scroll">
                     <div
                         class="feature-icon inline-block p-6 bg-gradient-to-br from-green-100 to-blue-100 text-primary rounded-2xl mb-6">
-                        <i class="fas fa-certificate text-3xl"></i>
+                        <i class="fas fa-certificate text-3xl" aria-hidden="true"></i>
                     </div>
                     <h3 class="text-xl font-bold mb-3 text-gray-800">Recognized Certification</h3>
                     <p class="text-gray-600 leading-relaxed">Get certified upon completion to boost your resume and career
@@ -75,7 +75,7 @@ use App\Helpers\ColorHelper;
                     class="feature-card bg-white rounded-2xl p-8 text-center shadow-lg hover:shadow-2xl transition-all duration-300 animate-on-scroll">
                     <div
                         class="feature-icon inline-block p-6 bg-gradient-to-br from-purple-100 to-pink-100 text-primary rounded-2xl mb-6">
-                        <i class="fas fa-project-diagram text-3xl"></i>
+                        <i class="fas fa-project-diagram text-3xl" aria-hidden="true"></i>
                     </div>
                     <h3 class="text-xl font-bold mb-3 text-gray-800">Practical Projects</h3>
                     <p class="text-gray-600 leading-relaxed">Build real-world projects for your professional portfolio that
@@ -87,7 +87,7 @@ use App\Helpers\ColorHelper;
                     class="feature-card bg-white rounded-2xl p-8 text-center shadow-lg hover:shadow-2xl transition-all duration-300 animate-on-scroll">
                     <div
                         class="feature-icon inline-block p-6 bg-gradient-to-br from-yellow-100 to-orange-100 text-primary rounded-2xl mb-6">
-                        <i class="fas fa-user-tie text-3xl"></i>
+                        <i class="fas fa-user-tie text-3xl" aria-hidden="true"></i>
                     </div>
                     <h3 class="text-xl font-bold mb-3 text-gray-800">Expert Mentorship</h3>
                     <p class="text-gray-600 leading-relaxed">Learn from industry professionals with years of experience and
@@ -117,7 +117,7 @@ use App\Helpers\ColorHelper;
 
 
                             <div class="absolute inset-0 bg-black bg-opacity-10"></div>
-                            <i class="{{ $program->icon }} text-7xl relative z-10"></i>
+                        <i class="{{ $program->icon }} text-7xl relative z-10" aria-hidden="true"></i>
                         </div>
                         <div class="p-8">
                             <h3 class="text-2xl font-bold mb-3 text-gray-800">{{ $program->title }}</h3>
@@ -141,6 +141,7 @@ use App\Helpers\ColorHelper;
                 <div class="h-52 bg-gradient-to-br from-yellow-500 to-orange-600 flex items-center justify-center text-white relative overflow-hidden">
                     <div class="absolute inset-0 bg-black bg-opacity-10"></div>
                     <i class="fab fa-python text-7xl relative z-10"></i>
+                    <i class="fab fa-python text-7xl relative z-10" aria-hidden="true"></i>
                 </div>
                 <div class="p-8">
                     <h3 class="text-2xl font-bold mb-3 text-gray-800">Python Development</h3>
@@ -160,6 +161,7 @@ use App\Helpers\ColorHelper;
                 <div class="h-52 bg-gradient-to-br from-red-500 to-red-700 flex items-center justify-center text-white relative overflow-hidden">
                     <div class="absolute inset-0 bg-black bg-opacity-10"></div>
                     <i class="fab fa-java text-7xl relative z-10"></i>
+                    <i class="fab fa-java text-7xl relative z-10" aria-hidden="true"></i>
                 </div>
                 <div class="p-8">
                     <h3 class="text-2xl font-bold mb-3 text-gray-800">Java Development</h3>
@@ -179,6 +181,7 @@ use App\Helpers\ColorHelper;
                 <div class="h-52 bg-gradient-to-br from-purple-500 to-purple-700 flex items-center justify-center text-white relative overflow-hidden">
                     <div class="absolute inset-0 bg-black bg-opacity-10"></div>
                     <i class="fas fa-database text-7xl relative z-10"></i>
+                    <i class="fas fa-database text-7xl relative z-10" aria-hidden="true"></i>
                 </div>
                 <div class="p-8">
                     <h3 class="text-2xl font-bold mb-3 text-gray-800">Data Science</h3>
@@ -198,6 +201,7 @@ use App\Helpers\ColorHelper;
                 <div class="h-52 bg-gradient-to-br from-green-500 to-green-700 flex items-center justify-center text-white relative overflow-hidden">
                     <div class="absolute inset-0 bg-black bg-opacity-10"></div>
                     <i class="fas fa-mobile-alt text-7xl relative z-10"></i>
+                    <i class="fas fa-mobile-alt text-7xl relative z-10" aria-hidden="true"></i>
                 </div>
                 <div class="p-8">
                     <h3 class="text-2xl font-bold mb-3 text-gray-800">Mobile App Development</h3>
@@ -217,6 +221,7 @@ use App\Helpers\ColorHelper;
                 <div class="h-52 bg-gradient-to-br from-gray-700 to-gray-900 flex items-center justify-center text-white relative overflow-hidden">
                     <div class="absolute inset-0 bg-black bg-opacity-10"></div>
                     <i class="fas fa-shield-alt text-7xl relative z-10"></i>
+                    <i class="fas fa-shield-alt text-7xl relative z-10" aria-hidden="true"></i>
                 </div>
                 <div class="p-8">
                     <h3 class="text-2xl font-bold mb-3 text-gray-800">Cybersecurity</h3>
@@ -277,13 +282,21 @@ use App\Helpers\ColorHelper;
                 <div class="logo-slide">
                     <!-- Add company logos here for seamless looping -->
                     <img src="https://placehold.co/160x80.png?text=Company+1" alt="Company 1">
+                    <img src="https://placehold.co/160x80.png?text=Company+1" alt="Logo of Company 1">
                     <img src="https://placehold.co/160x80.png?text=Company+2" alt="Company 2">
+                    <img src="https://placehold.co/160x80.png?text=Company+2" alt="Logo of Company 2">
                     <img src="https://placehold.co/160x80.png?text=Company+3" alt="Company 3">
+                    <img src="https://placehold.co/160x80.png?text=Company+3" alt="Logo of Company 3">
                     <img src="https://placehold.co/160x80.png?text=Company+4" alt="Company 4">
+                    <img src="https://placehold.co/160x80.png?text=Company+4" alt="Logo of Company 4">
                     <img src="https://placehold.co/160x80.png?text=Company+5" alt="Company 5">
+                    <img src="https://placehold.co/160x80.png?text=Company+5" alt="Logo of Company 5">
                     <img src="https://placehold.co/160x80.png?text=Company+6" alt="Company 6">
+                    <img src="https://placehold.co/160x80.png?text=Company+6" alt="Logo of Company 6">
                     <img src="https://placehold.co/160x80.png?text=Company+7" alt="Company 7">
+                    <img src="https://placehold.co/160x80.png?text=Company+7" alt="Logo of Company 7">
                     <img src="https://placehold.co/160x80.png?text=Company+8" alt="Company 8">
+                    <img src="https://placehold.co/160x80.png?text=Company+8" alt="Logo of Company 8">
                 </div>
 
                 <div class="logo-slide">

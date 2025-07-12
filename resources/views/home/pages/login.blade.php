@@ -65,15 +65,16 @@
                             <div class="flex items-center">
                                 <div class="relative">
                                     <input type="checkbox" id="remember" name="remember"
-                                        class="w-5 h-5 text-primary focus:ring-primary border-gray-300 rounded transition-colors duration-300">
+                                        class="w-5 h-5 text-primary focus:ring-primary border-gray-300 rounded transition-colors duration-300" aria-checked="false">
                                 </div>
                                 <label for="remember" class="ml-3 text-gray-700 font-medium">Remember me</label>
                             </div>
 
                             <!-- Login Button -->
                             <button type="submit"
-                                class="w-full bg-gradient-to-r from-primary to-secondary text-white py-4 px-6 rounded-xl hover:from-secondary hover:to-primary font-semibold transition-all duration-300 focus:outline-none focus:ring-4 focus:ring-primary/20 btn-modern shadow-lg hover:shadow-xl transform hover:-translate-y-0.5">
-                                <i class="fas fa-sign-in-alt mr-2"></i>
+                                class="w-full bg-gradient-to-r from-primary to-secondary text-white py-4 px-6 rounded-xl hover:from-secondary hover:to-primary font-semibold transition-all duration-300 focus:outline-none focus:ring-4 focus:ring-primary/20 btn-modern shadow-lg hover:shadow-xl transform hover:-translate-y-0.5"
+                                aria-label="Login to your account">
+                                <i class="fas fa-sign-in-alt mr-2" aria-hidden="true"></i>
                                 Login to Account
                             </button>
                         </form>

@@ -96,6 +96,8 @@
 </head>
 
 <body class="font-sans antialiased text-gray-800 bg-gray-50">
+    <!-- Skip to main content for accessibility -->
+    <a href="#main-content" class="sr-only focus:not-sr-only focus:absolute focus:top-0 focus:left-0 focus:bg-primary focus:text-white focus:p-4 z-50">Skip to main content</a>
     <!-- No JavaScript Warning -->
     <noscript>
         <div
@@ -112,7 +114,7 @@
     @include('home.includes.header')
 
     <!-- Main Content -->
-    <main>
+    <main id="main-content" tabindex="-1">
         @yield('content')
     </main>
 

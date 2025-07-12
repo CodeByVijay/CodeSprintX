@@ -15,10 +15,10 @@ $pageDescription = "Information about CodeSprintX's shipping policy for digital 
 </section>
 
 <!-- Shipping Policy Content -->
-<section class="py-12 bg-white">
+<main id="main-content" class="py-12 bg-white" aria-labelledby="shipping-policy-title" tabindex="0">
     <div class="container mx-auto px-4 max-w-4xl">
         <div class="prose prose-lg max-w-none">
-            <h2>Digital Delivery Policy</h2>
+            <h2 id="shipping-policy-title">Digital Delivery Policy</h2>
             <p>CodeSprintX provides online internship programs and digital educational content. As our offerings are entirely digital in nature, we do not ship physical products or materials. This policy outlines how we deliver our digital services and content to you.</p>
 
             <h2>Digital Content Delivery</h2>

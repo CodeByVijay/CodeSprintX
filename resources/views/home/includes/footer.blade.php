@@ -9,22 +9,16 @@
          <div class="grid grid-cols-1 md:grid-cols-3 gap-12 mb-12">            <!-- Company Info -->
             <div class="animate-on-scroll">
                 <div class="mb-6">
-                    <h3 class="text-2xl font-bold mb-4 gradient-text">CodeSprintX</h3>
+                    <h3 class="text-2xl font-bold mb-4 gradient-text" id="footer-org">CodeSprintX</h3>
                     <div class="w-20 h-1 bg-gradient-to-r from-primary to-secondary rounded-full"></div>
                 </div>
                  <p class="text-gray-300 mb-6 leading-relaxed">Providing professional internship programs to help students and professionals advance their careers through practical skills development and industry expertise.</p>
-                 <div class="flex space-x-4">
-                     {{-- <a href="#" class="w-12 h-12 bg-gradient-to-br from-blue-600 to-blue-700 rounded-xl flex items-center justify-center text-white hover:from-blue-500 hover:to-blue-600 transition-all duration-300 transform hover:scale-110 hover:shadow-lg">
-                         <i class="fab fa-facebook-f text-lg"></i>
+                 <div class="flex space-x-4" aria-label="Social media links">
+                     <a href="#" class="w-12 h-12 bg-gradient-to-br from-pink-600 to-purple-600 rounded-xl flex items-center justify-center text-white hover:from-pink-500 hover:to-purple-500 transition-all duration-300 transform hover:scale-110 hover:shadow-lg" aria-label="Instagram">
+                         <i class="fab fa-instagram text-lg" aria-hidden="true"></i>
                      </a>
-                     <a href="#" class="w-12 h-12 bg-gradient-to-br from-sky-500 to-sky-600 rounded-xl flex items-center justify-center text-white hover:from-sky-400 hover:to-sky-500 transition-all duration-300 transform hover:scale-110 hover:shadow-lg">
-                         <i class="fab fa-twitter text-lg"></i>
-                     </a> --}}
-                     <a href="#" class="w-12 h-12 bg-gradient-to-br from-pink-600 to-purple-600 rounded-xl flex items-center justify-center text-white hover:from-pink-500 hover:to-purple-500 transition-all duration-300 transform hover:scale-110 hover:shadow-lg">
-                         <i class="fab fa-instagram text-lg"></i>
-                     </a>
-                     <a href="https://www.linkedin.com/company/codesprintx" target="_blank" class="w-12 h-12 bg-gradient-to-br from-blue-700 to-blue-800 rounded-xl flex items-center justify-center text-white hover:from-blue-600 hover:to-blue-700 transition-all duration-300 transform hover:scale-110 hover:shadow-lg">
-                         <i class="fab fa-linkedin-in text-lg"></i>
+                     <a href="https://www.linkedin.com/company/codesprintx" target="_blank" rel="noopener" class="w-12 h-12 bg-gradient-to-br from-blue-700 to-blue-800 rounded-xl flex items-center justify-center text-white hover:from-blue-600 hover:to-blue-700 transition-all duration-300 transform hover:scale-110 hover:shadow-lg" aria-label="LinkedIn">
+                         <i class="fab fa-linkedin-in text-lg" aria-hidden="true"></i>
                      </a>
                  </div>
              </div>
@@ -32,31 +26,31 @@
              <!-- Quick Links -->
              <div class="animate-on-scroll">
                  <div class="mb-6">
-                     <h3 class="text-xl font-bold mb-4 text-white">Quick Links</h3>
+                     <h3 class="text-xl font-bold mb-4 text-white" id="footer-quick-links">Quick Links</h3>
                      <div class="w-16 h-1 bg-gradient-to-r from-primary to-secondary rounded-full"></div>
                  </div>
-                 <ul class="space-y-3">
+                 <ul class="space-y-3" aria-labelledby="footer-quick-links">
                      <li>
                          <a href="{{ route('home') }}" class="text-gray-300 hover:text-white transition-all duration-300 flex items-center group">
-                             <i class="fas fa-chevron-right mr-3 text-primary transform group-hover:translate-x-1 transition-transform duration-300"></i>
+                             <i class="fas fa-chevron-right mr-3 text-primary transform group-hover:translate-x-1 transition-transform duration-300" aria-hidden="true"></i>
                              <span class="group-hover:text-primary transition-colors duration-300">Home</span>
                          </a>
                      </li>
                      <li>
                          <a href="{{ route('about-us') }}" class="text-gray-300 hover:text-white transition-all duration-300 flex items-center group">
-                             <i class="fas fa-chevron-right mr-3 text-primary transform group-hover:translate-x-1 transition-transform duration-300"></i>
+                             <i class="fas fa-chevron-right mr-3 text-primary transform group-hover:translate-x-1 transition-transform duration-300" aria-hidden="true"></i>
                              <span class="group-hover:text-primary transition-colors duration-300">About Us</span>
                          </a>
                      </li>
                      <li>
                          <a href="{{ route('home') }}#courses" class="text-gray-300 hover:text-white transition-all duration-300 flex items-center group">
-                             <i class="fas fa-chevron-right mr-3 text-primary transform group-hover:translate-x-1 transition-transform duration-300"></i>
+                             <i class="fas fa-chevron-right mr-3 text-primary transform group-hover:translate-x-1 transition-transform duration-300" aria-hidden="true"></i>
                              <span class="group-hover:text-primary transition-colors duration-300">Courses</span>
                          </a>
                      </li>
                      <li>
                          <a href="{{ route('contact-us') }}" class="text-gray-300 hover:text-white transition-all duration-300 flex items-center group">
-                             <i class="fas fa-chevron-right mr-3 text-primary transform group-hover:translate-x-1 transition-transform duration-300"></i>
+                             <i class="fas fa-chevron-right mr-3 text-primary transform group-hover:translate-x-1 transition-transform duration-300" aria-hidden="true"></i>
                              <span class="group-hover:text-primary transition-colors duration-300">Contact</span>
                          </a>
                      </li>

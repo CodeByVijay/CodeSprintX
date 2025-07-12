@@ -67,7 +67,7 @@ use Illuminate\Support\Facades\Crypt;
                 </div>
                 <div class="mt-8 md:mt-0 md:w-1/3 flex justify-center">
                     <div class="text-9xl">
-                        <i class="{{ $currentCourse['icon'] }}"></i>
+                        <i class="{{ $currentCourse['icon'] }}" aria-hidden="true"></i>
                     </div>
                 </div>
             </div>
@@ -96,7 +96,7 @@ use Illuminate\Support\Facades\Crypt;
                                         <div class="flex-shrink-0">
                                             <div class="w-12 h-12 bg-gradient-to-br from-blue-500 to-purple-600 rounded-lg flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
                                                 <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" aria-hidden="true"></path>
                                                 </svg>
                                             </div>
                                         </div>
@@ -134,7 +134,7 @@ use Illuminate\Support\Facades\Crypt;
                                             </div>
                                             <div class="w-16 h-16 bg-white/10 backdrop-blur-sm rounded-full flex items-center justify-center">
                                                 <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"></path>
+                                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4" aria-hidden="true"></path>
                                                 </svg>
                                             </div>
                                         </div>
@@ -158,7 +158,7 @@ use Illuminate\Support\Facades\Crypt;
                         <div class="mt-8 bg-gradient-to-r from-blue-50 to-purple-50 rounded-2xl p-6 border border-blue-100">
                             <div class="flex items-center justify-center space-x-2 text-blue-700 mb-2">
                                 <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" aria-hidden="true"></path>
                                 </svg>
                                 <span class="font-semibold">Portfolio Ready</span>
                             </div>
@@ -171,11 +171,11 @@ use Illuminate\Support\Facades\Crypt;
 
                         <!-- Tab Navigation -->
                         <div class="mb-6">
-                            <div class="flex border-b border-gray-200">
-                                <button id="tab-3-month" class="program-tab px-6 py-3 text-lg font-medium text-blue-600 border-b-2 border-blue-600 bg-blue-50">
+                            <div class="flex border-b border-gray-200" role="tablist" aria-label="Program Duration Tabs">
+                                <button id="tab-3-month" class="program-tab px-6 py-3 text-lg font-medium text-blue-600 border-b-2 border-blue-600 bg-blue-50" role="tab" aria-selected="true" aria-controls="content-3-month" tabindex="0">
                                     3 Month Program
                                 </button>
-                                <button id="tab-6-month" class="program-tab px-6 py-3 text-lg font-medium text-gray-500 hover:text-gray-700">
+                                <button id="tab-6-month" class="program-tab px-6 py-3 text-lg font-medium text-gray-500 hover:text-gray-700" role="tab" aria-selected="false" aria-controls="content-6-month" tabindex="-1">
                                     6 Month Program
                                 </button>
                             </div>
@@ -183,7 +183,7 @@ use Illuminate\Support\Facades\Crypt;
 
                         <!-- 3 Month Program Content -->
                         <div id="content-3-month" class="program-content">
-                            <div class="border border-gray-200 rounded-lg overflow-hidden">
+                            <div class="border border-gray-200 rounded-lg overflow-hidden" role="tabpanel" aria-labelledby="tab-3-month">
                                 <!-- Week 1-2 -->
                                 <div class="border-b border-gray-200 last:border-b-0">
                                     <div class="bg-gray-50 p-4">
@@ -252,7 +252,7 @@ use Illuminate\Support\Facades\Crypt;
 
                         <!-- 6 Month Program Content -->
                         <div id="content-6-month" class="program-content hidden">
-                            <div class="border border-gray-200 rounded-lg overflow-hidden">
+                            <div class="border border-gray-200 rounded-lg overflow-hidden" role="tabpanel" aria-labelledby="tab-6-month">
                                 <!-- Month 1 -->
                                 <div class="border-b border-gray-200 last:border-b-0">
                                     <div class="bg-gray-50 p-4">

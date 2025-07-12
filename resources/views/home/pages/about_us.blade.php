@@ -27,7 +27,7 @@ $pageDescription = "Learn about CodeSprintX's mission to provide quality interns
                 <p class="text-gray-600">Today, CodeSprintX has grown to become a trusted name in professional internship programs, with thousands of successful students who have launched their careers through our platform.</p>
             </div>
             <div class="rounded-lg overflow-hidden shadow-lg">
-                <img src="https://placehold.co/800x400.png?text=CodeSprintX+Team" alt="CodeSprintX Team" class="w-full h-auto">
+                <img src="https://placehold.co/800x400.png?text=CodeSprintX+Team" alt="Group photo of the CodeSprintX team" class="w-full h-auto">
             </div>
         </div>
     </div>
@@ -45,7 +45,7 @@ $pageDescription = "Learn about CodeSprintX's mission to provide quality interns
             <!-- Mission -->
             <div class="bg-white rounded-lg shadow-md p-8">
                 <div class="inline-block p-4 bg-blue-100 text-primary rounded-full mb-4">
-                    <i class="fas fa-bullseye text-2xl"></i>
+                    <i class="fas fa-bullseye text-2xl" aria-hidden="true"></i>
                 </div>
                 <h3 class="text-xl font-semibold mb-4">Our Mission</h3>
                 <p class="text-gray-600">To empower students and young professionals with practical skills and industry exposure through high-quality internship programs, bridging the gap between academic learning and professional requirements at CodeSprintX.</p>
@@ -54,7 +54,7 @@ $pageDescription = "Learn about CodeSprintX's mission to provide quality interns
             <!-- Vision -->
             <div class="bg-white rounded-lg shadow-md p-8">
                 <div class="inline-block p-4 bg-blue-100 text-primary rounded-full mb-4">
-                    <i class="fas fa-eye text-2xl"></i>
+                    <i class="fas fa-eye text-2xl" aria-hidden="true"></i>
                 </div>
                 <h3 class="text-xl font-semibold mb-4">Our Vision</h3>
                 <p class="text-gray-600">To become the global leader in skill-based internship programs, creating a world where every student has access to quality practical training that enhances their employability and career prospects through CodeSprintX.</p>
@@ -75,7 +75,7 @@ $pageDescription = "Learn about CodeSprintX's mission to provide quality interns
             <!-- Value 1 -->
             <div class="p-6 border border-gray-200 rounded-lg hover:shadow-md transition-shadow">
                 <div class="text-primary mb-4">
-                    <i class="fas fa-star text-3xl"></i>
+                    <i class="fas fa-star text-3xl" aria-hidden="true"></i>
                 </div>
                 <h3 class="text-xl font-semibold mb-2">Excellence</h3>
                 <p class="text-gray-600">We strive for excellence in all our programs, ensuring the highest quality of training and support.</p>
@@ -84,7 +84,7 @@ $pageDescription = "Learn about CodeSprintX's mission to provide quality interns
             <!-- Value 2 -->
             <div class="p-6 border border-gray-200 rounded-lg hover:shadow-md transition-shadow">
                 <div class="text-primary mb-4">
-                    <i class="fas fa-lightbulb text-3xl"></i>
+                    <i class="fas fa-lightbulb text-3xl" aria-hidden="true"></i>
                 </div>
                 <h3 class="text-xl font-semibold mb-2">Innovation</h3>
                 <p class="text-gray-600">We continuously update our curriculum to reflect the latest industry trends and technological advancements.</p>
@@ -93,7 +93,7 @@ $pageDescription = "Learn about CodeSprintX's mission to provide quality interns
             <!-- Value 3 -->
             <div class="p-6 border border-gray-200 rounded-lg hover:shadow-md transition-shadow">
                 <div class="text-primary mb-4">
-                    <i class="fas fa-users text-3xl"></i>
+                    <i class="fas fa-users text-3xl" aria-hidden="true"></i>
                 </div>
                 <h3 class="text-xl font-semibold mb-2">Inclusivity</h3>
                 <p class="text-gray-600">We believe in creating opportunities for everyone, regardless of their background or previous experience.</p>
@@ -102,7 +102,7 @@ $pageDescription = "Learn about CodeSprintX's mission to provide quality interns
             <!-- Value 4 -->
             <div class="p-6 border border-gray-200 rounded-lg hover:shadow-md transition-shadow">
                 <div class="text-primary mb-4">
-                    <i class="fas fa-handshake text-3xl"></i>
+                    <i class="fas fa-handshake text-3xl" aria-hidden="true"></i>
                 </div>
                 <h3 class="text-xl font-semibold mb-2">Integrity</h3>
                 <p class="text-gray-600">We operate with honesty, transparency, and ethical practices in all our dealings.</p>
@@ -122,17 +122,17 @@ $pageDescription = "Learn about CodeSprintX's mission to provide quality interns
         <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
             <!-- Team Member 1 -->
             <div class="bg-white rounded-lg shadow-md overflow-hidden">
-                <img src="https://placehold.co/600x400.png?text=Rahul+Sharma" alt="Team Member" class="w-full h-64 object-cover">
+                <img src="https://placehold.co/600x400.png?text=Rahul+Sharma" alt="Rahul Sharma, Founder & CEO of CodeSprintX" class="w-full h-64 object-cover">
                 <div class="p-6">
                     <h3 class="text-xl font-semibold mb-1">Rahul Sharma</h3>
                     <p class="text-primary mb-3">Founder & CEO</p>
                     <p class="text-gray-600 mb-4">With over 15 years of experience in the tech industry, Rahul leads our vision and strategic direction.</p>
                     <div class="flex space-x-3">
                         <a href="#" class="text-gray-400 hover:text-blue-500 transition-colors">
-                            <i class="fab fa-linkedin"></i>
+                            <i class="fab fa-linkedin" aria-hidden="true"></i>
                         </a>
                         <a href="#" class="text-gray-400 hover:text-blue-400 transition-colors">
-                            <i class="fab fa-twitter"></i>
+                            <i class="fab fa-twitter" aria-hidden="true"></i>
                         </a>
                     </div>
                 </div>
@@ -140,17 +140,17 @@ $pageDescription = "Learn about CodeSprintX's mission to provide quality interns
 
             <!-- Team Member 2 -->
             <div class="bg-white rounded-lg shadow-md overflow-hidden">
-                <img src="https://placehold.co/600x400.png?text=Priya+Patel" alt="Team Member" class="w-full h-64 object-cover">
+                <img src="https://placehold.co/600x400.png?text=Priya+Patel" alt="Priya Patel, Head of Education at CodeSprintX" class="w-full h-64 object-cover">
                 <div class="p-6">
                     <h3 class="text-xl font-semibold mb-1">Priya Patel</h3>
                     <p class="text-primary mb-3">Head of Education</p>
                     <p class="text-gray-600 mb-4">Priya oversees our curriculum development and ensures the quality of all our internship programs.</p>
                     <div class="flex space-x-3">
                         <a href="#" class="text-gray-400 hover:text-blue-500 transition-colors">
-                            <i class="fab fa-linkedin"></i>
+                            <i class="fab fa-linkedin" aria-hidden="true"></i>
                         </a>
                         <a href="#" class="text-gray-400 hover:text-blue-400 transition-colors">
-                            <i class="fab fa-twitter"></i>
+                            <i class="fab fa-twitter" aria-hidden="true"></i>
                         </a>
                     </div>
                 </div>
@@ -158,17 +158,17 @@ $pageDescription = "Learn about CodeSprintX's mission to provide quality interns
 
             <!-- Team Member 3 -->
             <div class="bg-white rounded-lg shadow-md overflow-hidden">
-                <img src="https://placehold.co/600x400.png?text=Vikram+Singh" alt="Team Member" class="w-full h-64 object-cover">
+                <img src="https://placehold.co/600x400.png?text=Vikram+Singh" alt="Vikram Singh, Director of Corporate Relations at CodeSprintX" class="w-full h-64 object-cover">
                 <div class="p-6">
                     <h3 class="text-xl font-semibold mb-1">Vikram Singh</h3>
                     <p class="text-primary mb-3">Director of Corporate Relations</p>
                     <p class="text-gray-600 mb-4">Vikram manages our partnerships with companies and helps students with placement opportunities.</p>
                     <div class="flex space-x-3">
                         <a href="#" class="text-gray-400 hover:text-blue-500 transition-colors">
-                            <i class="fab fa-linkedin"></i>
+                            <i class="fab fa-linkedin" aria-hidden="true"></i>
                         </a>
                         <a href="#" class="text-gray-400 hover:text-blue-400 transition-colors">
-                            <i class="fab fa-twitter"></i>
+                            <i class="fab fa-twitter" aria-hidden="true"></i>
                         </a>
                     </div>
                 </div>

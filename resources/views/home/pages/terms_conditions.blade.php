@@ -16,10 +16,10 @@ $pageDescription = "Read the terms and conditions for using CodeSprintX's intern
 </section>
 
 <!-- Terms & Conditions Content -->
-<section class="py-12 bg-white">
+<main id="main-content" class="py-12 bg-white" aria-labelledby="terms-title" tabindex="0">
     <div class="container mx-auto px-4 max-w-4xl">
         <div class="prose prose-lg max-w-none">
-            <h2>Introduction</h2>
+            <h2 id="terms-title">Introduction</h2>
             <p>Welcome to CodeSprintX. These Terms and Conditions ("Terms") govern your use of our website, services, and internship programs. By accessing our website or enrolling in our programs, you agree to be bound by these Terms.</p>
             <p>Please read these Terms carefully before using our services. If you do not agree with any part of these Terms, you must not use our services.</p>
 

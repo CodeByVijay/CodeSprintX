@@ -30,7 +30,7 @@ $pageDescription = "Get in touch with CodeSprintX. We're here to answer your que
                 <div class="space-y-6">
                     <div class="flex items-start">
                         <div class="bg-primary rounded-full p-3 text-white mr-4">
-                            <i class="fas fa-envelope"></i>
+                            <i class="fas fa-envelope" aria-hidden="true"></i>
                         </div>
                         <div>
                             <h4 class="font-medium text-gray-800">Email</h4>
@@ -40,7 +40,7 @@ $pageDescription = "Get in touch with CodeSprintX. We're here to answer your que
 
                     <div class="flex items-start">
                         <div class="bg-primary rounded-full p-3 text-white mr-4">
-                            <i class="fas fa-map-marker-alt"></i>
+                            <i class="fas fa-map-marker-alt" aria-hidden="true"></i>
                         </div>
                         <div>
                             <h4 class="font-medium text-gray-800">Address</h4>
@@ -69,10 +69,10 @@ $pageDescription = "Get in touch with CodeSprintX. We're here to answer your que
                             <i class="fab fa-twitter"></i>
                         </a> --}}
                         <a href="#" class="bg-pink-600 text-white rounded-full w-10 h-10 flex items-center justify-center hover:bg-pink-700 transition-colors">
-                            <i class="fab fa-instagram"></i>
+                            <i class="fab fa-instagram" aria-hidden="true"></i>
                         </a>
                         <a href="https://www.linkedin.com/company/codesprintx" target="_blank" class="bg-blue-700 text-white rounded-full w-10 h-10 flex items-center justify-center hover:bg-blue-800 transition-colors">
-                            <i class="fab fa-linkedin-in"></i>
+                            <i class="fab fa-linkedin-in" aria-hidden="true"></i>
                         </a>
                     </div>
                 </div>
@@ -85,25 +85,25 @@ $pageDescription = "Get in touch with CodeSprintX. We're here to answer your que
                 <form action="#" method="POST" class="space-y-4">
                     <div>
                         <label for="name" class="block text-gray-700 mb-2">Full Name</label>
-                        <input type="text" id="name" name="name" class="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent" required>
+                        <input type="text" id="name" name="name" class="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent" required aria-label="Full Name" aria-required="true" autocomplete="name">
                     </div>
 
                     <div>
                         <label for="email" class="block text-gray-700 mb-2">Email Address</label>
-                        <input type="email" id="email" name="email" class="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent" required>
+                        <input type="email" id="email" name="email" class="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent" required aria-label="Email Address" aria-required="true" autocomplete="email">
                     </div>
 
                     <div>
                         <label for="phone" class="block text-gray-700 mb-2">Phone Number</label>
-                        <input type="tel" id="phone" name="phone" class="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent">
+                        <input type="tel" id="phone" name="phone" class="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent" aria-label="Phone Number" autocomplete="tel">
                     </div>
 
                     <div>
                         <label for="message" class="block text-gray-700 mb-2">Message</label>
-                        <textarea id="message" name="message" rows="4" class="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent" required></textarea>
+                        <textarea id="message" name="message" rows="4" class="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent" required aria-label="Message" aria-required="true"></textarea>
                     </div>
 
-                    <button type="submit" class="w-full bg-primary text-white py-3 px-4 rounded-md hover:bg-secondary transition-colors focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary">
+                    <button type="submit" class="w-full bg-primary text-white py-3 px-4 rounded-md hover:bg-secondary transition-colors focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary" aria-label="Send Message">
                         Send Message
                     </button>
                 </form>
@@ -126,6 +126,7 @@ $pageDescription = "Get in touch with CodeSprintX. We're here to answer your que
                 {{-- <p class="text-gray-500">Map placeholder - replace with actual Google Maps embed</p> --}}
 
                 <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d28017.146327946597!2d77.19302304094629!3d28.62546724275067!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390ce2b43a255341%3A0x2b687f3210cdd91d!2sNew%20Delhi%2C%20Delhi%20110001!5e0!3m2!1sen!2sin!4v1749905624217!5m2!1sen!2sin" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d28017.146327946597!2d77.19302304094629!3d28.62546724275067!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390ce2b43a255341%3A0x2b687f3210cdd91d!2sNew%20Delhi%2C%20Delhi%20110001!5e0!3m2!1sen!2sin!4v1749905624217!5m2!1sen!2sin" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" title="Map showing CodeSprintX office location in New Delhi, India" aria-label="Map showing CodeSprintX office location in New Delhi, India"></iframe>
 
             </div>
         </div>

@@ -15,10 +15,10 @@ $pageDescription = "Learn about CodeSprintX's refund policy for internship progr
 </section>
 
 <!-- Refund Policy Content -->
-<section class="py-12 bg-white">
+<main id="main-content" class="py-12 bg-white" aria-labelledby="refund-policy-title" tabindex="0">
     <div class="container mx-auto px-4 max-w-4xl">
         <div class="prose prose-lg max-w-none">
-            <h2>Refund Policy Overview</h2>
+            <h2 id="refund-policy-title">Refund Policy Overview</h2>
             <p>At CodeSprintX, we are committed to providing high-quality internship programs. We understand that circumstances may arise where you need to request a refund. This policy outlines our refund terms and procedures.</p>
 
             <h2>Eligibility for Refunds</h2>

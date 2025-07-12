@@ -1,29 +1,29 @@
-<section class="py-16 bg-white" id="testimonials">
+<section class="py-16 bg-white" id="testimonials" aria-labelledby="testimonials-title">
     <div class="container mx-auto px-4">
         <div class="text-center mb-12" data-aos="fade-up">
-            <h2 class="text-2xl sm:text-3xl font-bold text-gray-800 mb-2">What Our Students Say</h2>
+            <h2 id="testimonials-title" class="text-2xl sm:text-3xl font-bold text-gray-800 mb-2">What Our Students Say</h2>
             <p class="text-gray-600 text-sm sm:text-base">Hear from those who have completed our internship programs</p>
         </div>
 
         <div class="testimonial-slider relative max-w-7xl mx-auto" data-aos="fade-up" data-aos-delay="100" aria-roledescription="carousel" aria-label="Student testimonials">
-            <div class="testimonial-track flex transition-transform duration-500 ease-in-out" role="list">
+            <div class="testimonial-track flex transition-transform duration-500 ease-in-out" role="list" tabindex="0">
                 <!-- Testimonial 1 -->
                 <div class="testimonial-slide w-full md:w-1/2 lg:w-1/3 flex-shrink-0 px-2 sm:px-4" aria-roledescription="slide" aria-label="Testimonial from Rahul Sharma" role="listitem">
                     <div class="bg-gray-50 rounded-lg shadow-md p-4 sm:p-8 h-full transition-all duration-300 hover:shadow-lg">
                         <div class="flex items-center mb-4 sm:mb-6">
-                            <img src="https://placehold.co/100x100.png" alt="Student" class="w-12 h-12 sm:w-16 sm:h-16 rounded-full object-cover mr-3 sm:mr-4 flex-shrink-0">
+                            <img src="https://placehold.co/100x100.png" alt="Rahul Sharma, Web Development Intern" class="w-12 h-12 sm:w-16 sm:h-16 rounded-full object-cover mr-3 sm:mr-4 flex-shrink-0" width="64" height="64" loading="lazy">
                             <div class="min-w-0">
                                 <h4 class="font-semibold text-base sm:text-lg truncate">Rahul Sharma</h4>
                                 <p class="text-gray-600 text-sm sm:text-base">Web Development Intern</p>
                             </div>
                         </div>
                         <p class="text-gray-700 italic text-sm sm:text-base leading-relaxed">"The 6-month web development internship at CodeSprintX was a game-changer for me. The structured learning path and real-world projects helped me land a job immediately after completion."</p>
-                        <div class="mt-3 sm:mt-4 text-yellow-400">
-                            <i class="fas fa-star text-sm"></i>
-                            <i class="fas fa-star text-sm"></i>
-                            <i class="fas fa-star text-sm"></i>
-                            <i class="fas fa-star text-sm"></i>
-                            <i class="fas fa-star text-sm"></i>
+                        <div class="mt-3 sm:mt-4 text-yellow-400" aria-label="5 out of 5 stars">
+                            <i class="fas fa-star text-sm" aria-hidden="true"></i>
+                            <i class="fas fa-star text-sm" aria-hidden="true"></i>
+                            <i class="fas fa-star text-sm" aria-hidden="true"></i>
+                            <i class="fas fa-star text-sm" aria-hidden="true"></i>
+                            <i class="fas fa-star text-sm" aria-hidden="true"></i>
                         </div>
                     </div>
                 </div>
@@ -32,7 +32,9 @@
                 <div class="testimonial-slide w-full md:w-1/2 lg:w-1/3 flex-shrink-0 px-4" aria-roledescription="slide" aria-label="Testimonial from Priya Patel" role="listitem">
                     <div class="bg-gray-50 rounded-lg shadow-md p-8 h-full transition-all duration-300 hover:shadow-lg">
                         <div class="flex items-center mb-6">
-                            <img src="https://placehold.co/100x100.png" alt="Student" class="w-16 h-16 rounded-full object-cover mr-4">
+
+                            <img src="https://placehold.co/100x100.png" alt="Priya Patel, Python Development Intern" class="w-16 h-16 rounded-full object-cover mr-4" width="64" height="64" loading="lazy">
+
                             <div>
                                 <h4 class="font-semibold text-lg">Priya Patel</h4>
                                 <p class="text-gray-600">Python Development Intern</p>
@@ -40,11 +42,11 @@
                         </div>
                         <p class="text-gray-700 italic">"I took the 3-month Python internship program and was amazed at how much I learned in such a short time. The mentors were supportive and the curriculum was comprehensive."</p>
                         <div class="mt-4 text-yellow-400">
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star-half-alt"></i>
+                            <i class="fas fa-star" aria-hidden="true"></i>
+                            <i class="fas fa-star" aria-hidden="true"></i>
+                            <i class="fas fa-star" aria-hidden="true"></i>
+                            <i class="fas fa-star" aria-hidden="true"></i>
+                            <i class="fas fa-star-half-alt" aria-hidden="true"></i>
                         </div>
                     </div>
                 </div>
@@ -53,7 +55,7 @@
                 <div class="testimonial-slide w-full md:w-1/2 lg:w-1/3 flex-shrink-0 px-4" aria-roledescription="slide" aria-label="Testimonial from Arjun Mehta" role="listitem">
                     <div class="bg-gray-50 rounded-lg shadow-md p-8 h-full transition-all duration-300 hover:shadow-lg">
                         <div class="flex items-center mb-6">
-                            <img src="https://placehold.co/100x100.png" alt="Student" class="w-16 h-16 rounded-full object-cover mr-4">
+                            <img src="https://placehold.co/100x100.png" alt="Arjun Mehta, Java Development Intern" class="w-16 h-16 rounded-full object-cover mr-4" width="64" height="64" loading="lazy">
                             <div>
                                 <h4 class="font-semibold text-lg">Arjun Mehta</h4>
                                 <p class="text-gray-600">Java Development Intern</p>
@@ -61,11 +63,11 @@
                         </div>
                         <p class="text-gray-700 italic">"The Java internship at CodeSprintX provided me with hands-on experience in enterprise application development. The skills I gained are extremely valuable in today's job market."</p>
                         <div class="mt-4 text-yellow-400">
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star" aria-hidden="true"></i>
+                            <i class="fas fa-star" aria-hidden="true"></i>
+                            <i class="fas fa-star" aria-hidden="true"></i>
+                            <i class="fas fa-star" aria-hidden="true"></i>
+                            <i class="fas fa-star" aria-hidden="true"></i>
                         </div>
                     </div>
                 </div>
@@ -74,7 +76,7 @@
                 <div class="testimonial-slide w-full md:w-1/2 lg:w-1/3 flex-shrink-0 px-4" aria-roledescription="slide" aria-label="Testimonial from Neha Gupta" role="listitem">
                     <div class="bg-gray-50 rounded-lg shadow-md p-8 h-full transition-all duration-300 hover:shadow-lg">
                         <div class="flex items-center mb-6">
-                            <img src="https://placehold.co/100x100.png" alt="Student" class="w-16 h-16 rounded-full object-cover mr-4">
+                            <img src="https://placehold.co/100x100.png" alt="Neha Gupta, Data Science Intern" class="w-16 h-16 rounded-full object-cover mr-4" width="64" height="64" loading="lazy">
                             <div>
                                 <h4 class="font-semibold text-lg">Neha Gupta</h4>
                                 <p class="text-gray-600">Data Science Intern</p>
@@ -95,7 +97,7 @@
                 <div class="testimonial-slide w-full md:w-1/2 lg:w-1/3 flex-shrink-0 px-4" aria-roledescription="slide" aria-label="Testimonial from Vikram Singh" role="listitem">
                     <div class="bg-gray-50 rounded-lg shadow-md p-8 h-full transition-all duration-300 hover:shadow-lg">
                         <div class="flex items-center mb-6">
-                            <img src="https://placehold.co/100x100.png" alt="Student" class="w-16 h-16 rounded-full object-cover mr-4">
+                            <img src="https://placehold.co/100x100.png" alt="Vikram Singh, Mobile App Development Intern" class="w-16 h-16 rounded-full object-cover mr-4" width="64" height="64" loading="lazy">
                             <div>
                                 <h4 class="font-semibold text-lg">Vikram Singh</h4>
                                 <p class="text-gray-600">Mobile App Development Intern</p>
@@ -116,7 +118,7 @@
                 <div class="testimonial-slide w-full md:w-1/2 lg:w-1/3 flex-shrink-0 px-4" aria-roledescription="slide" aria-label="Testimonial from Anjali Desai" role="listitem">
                     <div class="bg-gray-50 rounded-lg shadow-md p-8 h-full transition-all duration-300 hover:shadow-lg">
                         <div class="flex items-center mb-6">
-                            <img src="https://placehold.co/100x100.png" alt="Student" class="w-16 h-16 rounded-full object-cover mr-4">
+                            <img src="https://placehold.co/100x100.png" alt="Anjali Desai, UI/UX Design Intern" class="w-16 h-16 rounded-full object-cover mr-4" width="64" height="64" loading="lazy">
                             <div>
                                 <h4 class="font-semibold text-lg">Anjali Desai</h4>
                                 <p class="text-gray-600">UI/UX Design Intern</p>
@@ -137,7 +139,7 @@
                 <div class="testimonial-slide w-full md:w-1/2 lg:w-1/3 flex-shrink-0 px-4" aria-roledescription="slide" aria-label="Testimonial from Rohan Kapoor" role="listitem">
                     <div class="bg-gray-50 rounded-lg shadow-md p-8 h-full transition-all duration-300 hover:shadow-lg">
                         <div class="flex items-center mb-6">
-                            <img src="https://placehold.co/100x100.png" alt="Student" class="w-16 h-16 rounded-full object-cover mr-4">
+                            <img src="https://placehold.co/100x100.png" alt="Rohan Kapoor, Cybersecurity Intern" class="w-16 h-16 rounded-full object-cover mr-4" width="64" height="64" loading="lazy">
                             <div>
                                 <h4 class="font-semibold text-lg">Rohan Kapoor</h4>
                                 <p class="text-gray-600">Cybersecurity Intern</p>
@@ -158,7 +160,7 @@
                 <div class="testimonial-slide w-full md:w-1/2 lg:w-1/3 flex-shrink-0 px-4" aria-roledescription="slide" aria-label="Testimonial from Divya Malhotra" role="listitem">
                     <div class="bg-gray-50 rounded-lg shadow-md p-8 h-full transition-all duration-300 hover:shadow-lg">
                         <div class="flex items-center mb-6">
-                            <img src="https://placehold.co/100x100.png" alt="Student" class="w-16 h-16 rounded-full object-cover mr-4">
+                            <img src="https://placehold.co/100x100.png" alt="Divya Malhotra, AI/ML Intern" class="w-16 h-16 rounded-full object-cover mr-4" width="64" height="64" loading="lazy">
                             <div>
                                 <h4 class="font-semibold text-lg">Divya Malhotra</h4>
                                 <p class="text-gray-600">AI/ML Intern</p>

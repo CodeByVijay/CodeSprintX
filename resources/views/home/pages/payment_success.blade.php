@@ -6,7 +6,7 @@
             <div class="max-w-2xl mx-auto text-center">
                 <div class="bg-white rounded-lg shadow-lg p-8 mb-8">
                     <div class="inline-flex items-center justify-center w-16 h-16 rounded-full bg-green-100 text-green-500 mb-6">
-                        <i class="fas fa-check-circle text-3xl"></i>
+                        <i class="fas fa-check-circle text-3xl" aria-hidden="true"></i>
                     </div>
                     <h1 class="text-3xl font-bold text-gray-800 mb-4">Payment Successful!</h1>
                     <p class="text-lg text-gray-600 mb-6">Thank you for enrolling in our internship program. Your payment has been successfully processed.</p>
@@ -39,21 +39,21 @@
                     <div class="grid md:grid-cols-3 gap-6 text-center">
                         <div class="p-4">
                             <div class="w-12 h-12 rounded-full bg-blue-100 text-primary flex items-center justify-center mx-auto mb-3">
-                                <i class="fas fa-envelope"></i>
+                                <i class="fas fa-envelope" aria-hidden="true"></i>
                             </div>
                             <h3 class="font-medium text-gray-800 mb-2">Check Your Email</h3>
                             <p class="text-gray-600">Look for our welcome email with important information</p>
                         </div>
                         <div class="p-4">
                             <div class="w-12 h-12 rounded-full bg-blue-100 text-primary flex items-center justify-center mx-auto mb-3">
-                                <i class="fas fa-calendar-alt"></i>
+                                <i class="fas fa-calendar-alt" aria-hidden="true"></i>
                             </div>
                             <h3 class="font-medium text-gray-800 mb-2">Mark Your Calendar</h3>
                             <p class="text-gray-600">Your program starts in the next 48 hours</p>
                         </div>
                         <div class="p-4">
                             <div class="w-12 h-12 rounded-full bg-blue-100 text-primary flex items-center justify-center mx-auto mb-3">
-                                <i class="fas fa-laptop-code"></i>
+                                <i class="fas fa-laptop-code" aria-hidden="true"></i>
                             </div>
                             <h3 class="font-medium text-gray-800 mb-2">Prepare Your Setup</h3>
                             <p class="text-gray-600">Follow our guide to set up your development environment</p>

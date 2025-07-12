@@ -6,7 +6,7 @@
             <div class="max-w-2xl mx-auto text-center">
                 <div class="bg-white rounded-lg shadow-lg p-8 mb-8">
                     <div class="inline-flex items-center justify-center w-16 h-16 rounded-full bg-red-100 text-red-500 mb-6">
-                        <i class="fas fa-times-circle text-3xl"></i>
+                        <i class="fas fa-times-circle text-3xl" aria-hidden="true"></i>
                     </div>
                     <h1 class="text-3xl font-bold text-gray-800 mb-4">Payment Failed</h1>
                     <p class="text-lg text-gray-600 mb-6">We're sorry, but there was an issue processing your payment.</p>
@@ -35,6 +35,10 @@
                         <ul class="text-left space-y-3">
                             <li class="flex items-start">
                                 <i class="fas fa-info-circle text-blue-500 mt-1 mr-3"></i>
+                                <i class="fas fa-info-circle text-blue-500 mt-1 mr-3" aria-hidden="true"></i>
+                                <i class="fas fa-info-circle text-blue-500 mt-1 mr-3" aria-hidden="true"></i>
+                                <i class="fas fa-info-circle text-blue-500 mt-1 mr-3" aria-hidden="true"></i>
+                                <i class="fas fa-info-circle text-blue-500 mt-1 mr-3" aria-hidden="true"></i>
                                 <span class="text-gray-700">Insufficient funds in your account</span>
                             </li>
                             <li class="flex items-start">

@@ -38,8 +38,6 @@
     <meta property="twitter:image" content="{{ asset('assets/images/logos/logo_color.webp') }}">
 
     <!-- Favicon & App Icons -->
-    <link rel="icon" href="https://placehold.co/32x32.png?text=SC" type="image/png">
-    <link rel="apple-touch-icon" href="https://placehold.co/192x192.png?text=SC" type="image/png">
 
     <link rel="apple-touch-icon" sizes="180x180"
         href="{{ asset('assets/images/logos/favicon/apple-touch-icon.png') }}">
